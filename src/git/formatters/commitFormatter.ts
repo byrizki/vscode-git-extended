@@ -4,7 +4,7 @@ import type {
 	ActionContext,
 	HoverCommandsActionContext,
 	OpenPullRequestActionContext,
-} from '../../api/gitlens';
+} from '../../api/git-extended';
 import { getPresenceDataUri } from '../../avatars';
 import type { ShowQuickCommitCommandArgs } from '../../commands';
 import {

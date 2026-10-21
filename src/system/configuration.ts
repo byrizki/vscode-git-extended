@@ -1,7 +1,7 @@
 import type { ConfigurationChangeEvent, ConfigurationScope, Event, ExtensionContext } from 'vscode';
 import { ConfigurationTarget, EventEmitter, workspace } from 'vscode';
 import type { Config } from '../config';
-import { configPrefix } from '../constants';
+import { configPrefix, deprecatedConfigPrefix } from '../constants';
 import { areEqual } from './object';
 
 interface ConfigurationOverrides {
@@ -34,7 +34,7 @@ export class Configuration {
 	}
 
 	private onConfigurationChanged(e: ConfigurationChangeEvent) {
-		if (!e.affectsConfiguration(configPrefix)) {
+		if (!e.affectsConfiguration(configPrefix) && !e.affectsConfiguration(deprecatedConfigPrefix)) {
 			this._onDidChangeAny.fire(e);
 
 			return;
@@ -76,15 +76,22 @@ export class Configuration {
 		scope?: ConfigurationScope | null,
 		defaultValue?: NonNullable<ConfigPathValue<T>>,
 	): ConfigPathValue<T> {
-		const value =
-			defaultValue === undefined
-				? workspace.getConfiguration(configPrefix, scope).get<ConfigPathValue<T>>(section)!
-				: workspace.getConfiguration(configPrefix, scope).get<ConfigPathValue<T>>(section, defaultValue)!;
-		return this._overrides?.get == null ? value : this._overrides.get<T>(section, value);
+		let value = workspace.getConfiguration(configPrefix, scope).get<ConfigPathValue<T>>(section);
+		if (value === undefined) {
+			value = workspace.getConfiguration(deprecatedConfigPrefix, scope).get<ConfigPathValue<T>>(section);
+		}
+		if (value === undefined && defaultValue !== undefined) {
+			value = defaultValue;
+		}
+		return this._overrides?.get == null
+			? (value!)
+			: this._overrides.get<T>(section, value!);
 	}
 
 	getAll(skipOverrides?: boolean): Config {
-		const config = workspace.getConfiguration().get<Config>(configPrefix)!;
+		const config =
+			workspace.getConfiguration().get<Config>(configPrefix) ??
+			workspace.getConfiguration().get<Config>(deprecatedConfigPrefix)!;
 		return skipOverrides || this._overrides?.getAll == null ? config : this._overrides.getAll(config);
 	}
 
@@ -104,14 +111,34 @@ export class Configuration {
 		if (e == null) return true;
 
 		return Array.isArray(section)
-			? section.some(s => e.affectsConfiguration(`${configPrefix}.${s}`, scope!))
-			: e.affectsConfiguration(`${configPrefix}.${section}`, scope!);
+			? section.some(
+					s =>
+						e.affectsConfiguration(`${configPrefix}.${s}`, scope!) ||
+						e.affectsConfiguration(`${deprecatedConfigPrefix}.${s}`, scope!),
+			  )
+			: e.affectsConfiguration(`${configPrefix}.${section}`, scope!) ||
+					e.affectsConfiguration(`${deprecatedConfigPrefix}.${section}`, scope!);
 	}
 
 	inspect<T extends ConfigPath, V extends ConfigPathValue<T>>(section: T, scope?: ConfigurationScope | null) {
-		return workspace
+		const inspection = workspace
 			.getConfiguration(configPrefix, scope)
 			.inspect<V>(section === undefined ? configPrefix : section);
+		if (
+			inspection != null &&
+			(inspection.globalValue !== undefined ||
+				inspection.workspaceValue !== undefined ||
+				inspection.workspaceFolderValue !== undefined)
+		) {
+			return inspection;
+		}
+
+		return (
+			inspection ??
+			workspace
+				.getConfiguration(deprecatedConfigPrefix, scope)
+				.inspect<V>(section === undefined ? deprecatedConfigPrefix : section)
+		);
 	}
 
 	inspectAny<T>(section: string, scope?: ConfigurationScope | null) {

@@ -3,7 +3,11 @@ import { version as codeVersion, env, ExtensionMode, extensions, Uri, window, wo
 import { hrtime } from '@env/hrtime';
 import { isWeb } from '@env/platform';
 import { Api } from './api/api';
-import type { CreatePullRequestActionContext, GitLensApi, OpenPullRequestActionContext } from './api/gitlens';
+import type {
+	CreatePullRequestActionContext,
+	GitExtendedApi,
+	OpenPullRequestActionContext,
+} from './api/git-extended';
 import type { CreatePullRequestOnRemoteCommandArgs, OpenPullRequestOnRemoteCommandArgs } from './commands';
 import { fromOutputLevel, OutputLevel } from './config';
 import { Commands, ContextKeys, CoreCommands } from './constants';
@@ -33,7 +37,7 @@ import { Stopwatch } from './system/stopwatch';
 import { compare, fromString, satisfies } from './system/version';
 import { isViewNode } from './views/nodes/viewNode';
 
-export async function activate(context: ExtensionContext): Promise<GitLensApi | undefined> {
+export async function activate(context: ExtensionContext): Promise<GitExtendedApi | undefined> {
 	const gitlensVersion: string = context.extension.packageJSON.version;
 	const insiders = context.extension.id === 'eamodio.gitlens-insiders';
 	const prerelease = insiders || satisfies(gitlensVersion, '> 2020.0.0');

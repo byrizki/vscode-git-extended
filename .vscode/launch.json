@@ -7,7 +7,7 @@
 			"type": "extensionHost",
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
-			"args": ["--profile=Debugging (GitLens)", "--extensionDevelopmentPath=${workspaceFolder}"],
+			"args": ["--profile=Debugging (Git Extended)", "--extensionDevelopmentPath=${workspaceFolder}"],
 			"debugWebviews": true,
 			"rendererDebugOptions": {
 				"pauseForSourceMap": true,
@@ -78,7 +78,7 @@
 			"type": "extensionHost",
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
-			"args": ["--profile=Debugging (GitLens)", "--extensionDevelopmentPath=${workspaceFolder}"],
+			"args": ["--profile=Debugging (Git Extended)", "--extensionDevelopmentPath=${workspaceFolder}"],
 			"debugWebviews": true,
 			"rendererDebugOptions": {
 				"pauseForSourceMap": true,
@@ -107,7 +107,7 @@
 			"runtimeExecutable": "${execPath}",
 			"args": [
 				// "--folder-uri=vscode-vfs://github/gitkraken/vscode-gitlens",
-				"--profile=Debugging (GitLens)",
+				"--profile=Debugging (Git Extended)",
 				"--extensionDevelopmentPath=${workspaceFolder}",
 				"--extensionDevelopmentKind=web"
 			],

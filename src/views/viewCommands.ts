@@ -1,6 +1,6 @@
 import type { Disposable, TextDocumentShowOptions } from 'vscode';
 import { env, Uri, window } from 'vscode';
-import type { CreatePullRequestActionContext, OpenPullRequestActionContext } from '../api/gitlens';
+import type { CreatePullRequestActionContext, OpenPullRequestActionContext } from '../api/git-extended';
 import type {
 	DiffWithCommandArgs,
 	DiffWithPreviousCommandArgs,

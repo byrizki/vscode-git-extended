@@ -8,8 +8,8 @@
 	},
 	"license": "MIT",
 	"publisher": "git-extended",
-	"main": "./dist/gitlens.js",
-	"browser": "./dist/browser/gitlens.js",
+	"main": "./dist/git-extended.js",
+	"browser": "./dist/browser/git-extended.js",
 	"icon": "images/icon.png",
 	"preview": false,
 	"categories": [
@@ -205,42 +205,42 @@
 				"title": "Current Line Blame",
 				"order": 10,
 				"properties": {
-					"gitlens.currentLine.enabled": {
+					"git-extended.currentLine.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide a blame annotation for the current line, by default. Use the `Toggle Line Blame Annotations` command (`gitlens.toggleLineBlame`) to toggle the annotations on and off for the current window",
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.currentLine.pullRequests.enabled": {
+					"git-extended.currentLine.pullRequests.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide information about the Pull Request (if any) that introduced the commit in the current line blame annotation. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.currentLine.format": {
+					"git-extended.currentLine.format": {
 						"type": "string",
 						"default": "${author, }${agoOrDate}${' via 'pullRequest}${ • message|50?}",
-						"markdownDescription": "Specifies the format of the current line blame annotation. See [_Commit Tokens_](https://github.com/gitkraken/vscode-gitlens/wiki/Custom-Formatting#commit-tokens) in the GitLens docs. Date formatting is controlled by the `#gitlens.currentLine.dateFormat#` setting",
+						"markdownDescription": "Specifies the format of the current line blame annotation. See [_Commit Tokens_](https://github.com/byrizki/vscode-git-extended/wiki/Custom-Formatting#commit-tokens) in the Git Extended docs. Date formatting is controlled by the `#git-extended.currentLine.dateFormat#` setting",
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.currentLine.uncommittedChangesFormat": {
+					"git-extended.currentLine.uncommittedChangesFormat": {
 						"type": "string",
 						"default": null,
-						"markdownDescription": "Specifies the uncommitted changes format of the current line blame annotation. See [_Commit Tokens_](https://github.com/gitkraken/vscode-gitlens/wiki/Custom-Formatting#commit-tokens) in the GitLens docs. Date formatting is controlled by the `#gitlens.currentLine.dateFormat#` setting.\n\n**NOTE**: Setting this to an empty string will disable current line blame annotations for uncommitted changes.",
+						"markdownDescription": "Specifies the uncommitted changes format of the current line blame annotation. See [_Commit Tokens_](https://github.com/byrizki/vscode-git-extended/wiki/Custom-Formatting#commit-tokens) in the Git Extended docs. Date formatting is controlled by the `#git-extended.currentLine.dateFormat#` setting.\n\n**NOTE**: Setting this to an empty string will disable current line blame annotations for uncommitted changes.",
 						"scope": "window",
 						"order": 31
 					},
-					"gitlens.currentLine.scrollable": {
+					"git-extended.currentLine.scrollable": {
 						"type": "boolean",
 						"default": true,
-						"markdownDescription": "Specifies whether the current line blame annotation can be scrolled into view when it is outside the viewport. **NOTE**: Setting this to `false` will inhibit the hovers from showing over the annotation; Set `#gitlens.hovers.currentLine.over#` to `line` to enable the hovers to show anywhere over the line.",
+						"markdownDescription": "Specifies whether the current line blame annotation can be scrolled into view when it is outside the viewport. **NOTE**: Setting this to `false` will inhibit the hovers from showing over the annotation; Set `#git-extended.hovers.currentLine.over#` to `line` to enable the hovers to show anywhere over the line.",
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.currentLine.dateFormat": {
+					"git-extended.currentLine.dateFormat": {
 						"type": [
 							"string",
 							"null"
@@ -257,21 +257,21 @@
 				"title": "Git CodeLens",
 				"order": 11,
 				"properties": {
-					"gitlens.codeLens.enabled": {
+					"git-extended.codeLens.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide any Git CodeLens, by default. Use the `Toggle Git CodeLens` command (`gitlens.toggleCodeLens`) to toggle the Git CodeLens on and off for the current window",
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.codeLens.authors.enabled": {
+					"git-extended.codeLens.authors.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide an _authors_ CodeLens, showing number of authors of the file or code block and the most prominent author (if there is more than one)",
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.codeLens.authors.command": {
+					"git-extended.codeLens.authors.command": {
 						"type": [
 							"boolean",
 							"string"
@@ -317,14 +317,14 @@
 						"scope": "window",
 						"order": 21
 					},
-					"gitlens.codeLens.recentChange.enabled": {
+					"git-extended.codeLens.recentChange.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide a _recent change_ CodeLens, showing the author and date of the most recent commit for the file or code block",
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.codeLens.recentChange.command": {
+					"git-extended.codeLens.recentChange.command": {
 						"type": [
 							"boolean",
 							"string"
@@ -370,7 +370,7 @@
 						"scope": "window",
 						"order": 31
 					},
-					"gitlens.codeLens.scopes": {
+					"git-extended.codeLens.scopes": {
 						"type": "array",
 						"default": [
 							"document",
@@ -396,7 +396,7 @@
 						"scope": "language-overridable",
 						"order": 40
 					},
-					"gitlens.codeLens.symbolScopes": {
+					"git-extended.codeLens.symbolScopes": {
 						"type": "array",
 						"items": {
 							"type": "string"
@@ -406,35 +406,35 @@
 						"scope": "language-overridable",
 						"order": 50
 					},
-					"gitlens.codeLens.includeSingleLineSymbols": {
+					"git-extended.codeLens.includeSingleLineSymbols": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether to provide any Git CodeLens on symbols that span only a single line",
 						"scope": "window",
 						"order": 60
 					},
-					"gitlens.strings.codeLens.unsavedChanges.recentChangeAndAuthors": {
+					"git-extended.strings.codeLens.unsavedChanges.recentChangeAndAuthors": {
 						"type": "string",
 						"default": "$(ellipsis)",
 						"markdownDescription": "Specifies the string to be shown in place of both the _recent change_ and _authors_ CodeLens when there are unsaved changes",
 						"scope": "window",
 						"order": 70
 					},
-					"gitlens.strings.codeLens.unsavedChanges.recentChangeOnly": {
+					"git-extended.strings.codeLens.unsavedChanges.recentChangeOnly": {
 						"type": "string",
 						"default": "$(ellipsis)",
 						"markdownDescription": "Specifies the string to be shown in place of the _recent change_ CodeLens when there are unsaved changes",
 						"scope": "window",
 						"order": 71
 					},
-					"gitlens.strings.codeLens.unsavedChanges.authorsOnly": {
+					"git-extended.strings.codeLens.unsavedChanges.authorsOnly": {
 						"type": "string",
 						"default": "$(ellipsis)",
 						"markdownDescription": "Specifies the string to be shown in place of the _authors_ CodeLens when there are unsaved changes",
 						"scope": "window",
 						"order": 72
 					},
-					"gitlens.codeLens.dateFormat": {
+					"git-extended.codeLens.dateFormat": {
 						"type": [
 							"string",
 							"null"
@@ -444,7 +444,7 @@
 						"scope": "window",
 						"order": 73
 					},
-					"gitlens.codeLens.scopesByLanguage": {
+					"git-extended.codeLens.scopesByLanguage": {
 						"deprecationMessage": "Deprecated. Use per-language `gitlens.codeLens.scopes` and `gitlens.codeLens.symbolScopes` settings instead",
 						"markdownDeprecationMessage": "Deprecated. Use the per-language `#gitlens.codeLens.scopes#` and `#gitlens.codeLens.symbolScopes#` settings instead"
 					}
@@ -455,28 +455,28 @@
 				"title": "Status Bar Blame",
 				"order": 12,
 				"properties": {
-					"gitlens.statusBar.enabled": {
+					"git-extended.statusBar.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide blame information in the status bar",
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.statusBar.pullRequests.enabled": {
+					"git-extended.statusBar.pullRequests.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide information about the Pull Request (if any) that introduced the commit in the status bar. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.statusBar.format": {
+					"git-extended.statusBar.format": {
 						"type": "string",
 						"default": "${author}, ${agoOrDate}${' via 'pullRequest}",
-						"markdownDescription": "Specifies the format of the blame information in the status bar. See [_Commit Tokens_](https://github.com/gitkraken/vscode-gitlens/wiki/Custom-Formatting#commit-tokens) in the GitLens docs. Date formatting is controlled by the `#gitlens.statusBar.dateFormat#` setting",
+						"markdownDescription": "Specifies the format of the blame information in the status bar. See [_Commit Tokens_](https://github.com/byrizki/vscode-git-extended/wiki/Custom-Formatting#commit-tokens) in the Git Extended docs. Date formatting is controlled by the `#git-extended.statusBar.dateFormat#` setting",
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.statusBar.alignment": {
+					"git-extended.statusBar.alignment": {
 						"type": "string",
 						"default": "right",
 						"enum": [
@@ -491,7 +491,7 @@
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.statusBar.command": {
+					"git-extended.statusBar.command": {
 						"type": "string",
 						"default": "gitlens.showQuickCommitDetails",
 						"enum": [
@@ -536,22 +536,22 @@
 						"scope": "window",
 						"order": 50
 					},
-					"gitlens.statusBar.tooltipFormat": {
+					"git-extended.statusBar.tooltipFormat": {
 						"type": "string",
 						"default": "${avatar} &nbsp;__${author}__, ${ago}${' via 'pullRequest} &nbsp; _(${date})_ \n\n${message}${\n\n---\n\nfootnotes}\n\n${commands}",
 						"editPresentation": "multilineText",
-						"markdownDescription": "Specifies the format (in markdown) of hover shown over the blame information in the status bar. See [_Commit Tokens_](https://github.com/gitkraken/vscode-gitlens/wiki/Custom-Formatting#commit-tokens) in the GitLens docs",
+						"markdownDescription": "Specifies the format (in markdown) of hover shown over the blame information in the status bar. See [_Commit Tokens_](https://github.com/byrizki/vscode-git-extended/wiki/Custom-Formatting#commit-tokens) in the Git Extended docs",
 						"scope": "window",
 						"order": 60
 					},
-					"gitlens.statusBar.reduceFlicker": {
+					"git-extended.statusBar.reduceFlicker": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to avoid clearing the previous blame information when changing lines to reduce status bar \"flashing\"",
 						"scope": "window",
 						"order": 70
 					},
-					"gitlens.statusBar.dateFormat": {
+					"git-extended.statusBar.dateFormat": {
 						"type": [
 							"string",
 							"null"
@@ -568,56 +568,56 @@
 				"title": "Hovers",
 				"order": 13,
 				"properties": {
-					"gitlens.hovers.enabled": {
+					"git-extended.hovers.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide any hovers",
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.hovers.avatars": {
+					"git-extended.hovers.avatars": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show avatar images in hovers",
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.hovers.avatarSize": {
+					"git-extended.hovers.avatarSize": {
 						"type": "number",
 						"default": 32,
 						"markdownDescription": "Specifies the size of the avatar images in hovers",
 						"scope": "window",
 						"order": 21
 					},
-					"gitlens.hovers.pullRequests.enabled": {
+					"git-extended.hovers.pullRequests.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide information about the Pull Request (if any) that introduced the commit in the hovers. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.hovers.autolinks.enabled": {
+					"git-extended.hovers.autolinks.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to automatically link external resources in commit messages",
 						"scope": "window",
 						"order": 31
 					},
-					"gitlens.hovers.autolinks.enhanced": {
+					"git-extended.hovers.autolinks.enhanced": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to lookup additional details about automatically link external resources in commit messages. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 32
 					},
-					"gitlens.hovers.currentLine.enabled": {
+					"git-extended.hovers.currentLine.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide any hovers for the current line",
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.hovers.currentLine.over": {
+					"git-extended.hovers.currentLine.over": {
 						"type": "string",
 						"default": "annotation",
 						"enum": [
@@ -632,28 +632,28 @@
 						"scope": "window",
 						"order": 41
 					},
-					"gitlens.hovers.currentLine.details": {
+					"git-extended.hovers.currentLine.details": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide a _commit details_ hover for the current line",
 						"scope": "window",
 						"order": 42
 					},
-					"gitlens.hovers.currentLine.changes": {
+					"git-extended.hovers.currentLine.changes": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide a _changes (diff)_ hover for the current line",
 						"scope": "window",
 						"order": 43
 					},
-					"gitlens.hovers.annotations.enabled": {
+					"git-extended.hovers.annotations.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide any hovers when showing blame annotations",
 						"scope": "window",
 						"order": 50
 					},
-					"gitlens.hovers.annotations.over": {
+					"git-extended.hovers.annotations.over": {
 						"type": "string",
 						"default": "line",
 						"enum": [
@@ -668,29 +668,29 @@
 						"scope": "window",
 						"order": 51
 					},
-					"gitlens.hovers.annotations.details": {
+					"git-extended.hovers.annotations.details": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide a _commit details_ hover for all lines when showing blame annotations",
 						"scope": "window",
 						"order": 52
 					},
-					"gitlens.hovers.annotations.changes": {
+					"git-extended.hovers.annotations.changes": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide a _changes (diff)_ hover for all lines when showing blame annotations",
 						"scope": "window",
 						"order": 53
 					},
-					"gitlens.hovers.detailsMarkdownFormat": {
+					"git-extended.hovers.detailsMarkdownFormat": {
 						"type": "string",
 						"default": "${avatar} &nbsp;__${author}__, ${ago}${' via 'pullRequest} &nbsp; _(${date})_ \n\n${message}${\n\n---\n\nfootnotes}\n\n${commands}",
 						"editPresentation": "multilineText",
-						"markdownDescription": "Specifies the format (in markdown) of the _commit details_ hover. See [_Commit Tokens_](https://github.com/gitkraken/vscode-gitlens/wiki/Custom-Formatting#commit-tokens) in the GitLens docs",
+						"markdownDescription": "Specifies the format (in markdown) of the _commit details_ hover. See [_Commit Tokens_](https://github.com/byrizki/vscode-git-extended/wiki/Custom-Formatting#commit-tokens) in the Git Extended docs",
 						"scope": "window",
 						"order": 60
 					},
-					"gitlens.hovers.changesDiff": {
+					"git-extended.hovers.changesDiff": {
 						"type": "string",
 						"default": "line",
 						"enum": [
@@ -712,127 +712,127 @@
 				"title": "Views",
 				"order": 20,
 				"properties": {
-					"gitlens.views.defaultItemLimit": {
+					"git-extended.views.defaultItemLimit": {
 						"type": "number",
 						"default": 10,
 						"markdownDescription": "Specifies the default number of items to show in a view list. Use 0 to specify no limit",
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.views.pageItemLimit": {
+					"git-extended.views.pageItemLimit": {
 						"type": "number",
 						"default": 40,
 						"markdownDescription": "Specifies the number of items to show in a each page when paginating a view list. Use 0 to specify no limit",
 						"scope": "window",
 						"order": 11
 					},
-					"gitlens.views.showRelativeDateMarkers": {
+					"git-extended.views.showRelativeDateMarkers": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show relative date markers (_Less than a week ago_, _Over a week ago_, _Over a month ago_, etc) on revision (commit) histories in the views",
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.views.formats.commits.label": {
+					"git-extended.views.formats.commits.label": {
 						"type": "string",
 						"default": "${❰ tips ❱➤  }${message}",
-						"markdownDescription": "Specifies the format of commits in the views. See [_Commit Tokens_](https://github.com/gitkraken/vscode-gitlens/wiki/Custom-Formatting#commit-tokens) in the GitLens docs",
+						"markdownDescription": "Specifies the format of commits in the views. See [_Commit Tokens_](https://github.com/byrizki/vscode-git-extended/wiki/Custom-Formatting#commit-tokens) in the Git Extended docs",
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.views.formats.commits.description": {
+					"git-extended.views.formats.commits.description": {
 						"type": "string",
 						"default": "${author, }${agoOrDate}",
-						"markdownDescription": "Specifies the description format of commits in the views. See [_Commit Tokens_](https://github.com/gitkraken/vscode-gitlens/wiki/Custom-Formatting#commit-tokens) in the GitLens docs",
+						"markdownDescription": "Specifies the description format of commits in the views. See [_Commit Tokens_](https://github.com/byrizki/vscode-git-extended/wiki/Custom-Formatting#commit-tokens) in the Git Extended docs",
 						"scope": "window",
 						"order": 31
 					},
-					"gitlens.views.formats.commits.tooltip": {
+					"git-extended.views.formats.commits.tooltip": {
 						"type": "string",
 						"default": "${link}${' via 'pullRequest}${'&nbsp;&nbsp;•&nbsp;&nbsp;'changesDetail}${'&nbsp;&nbsp;&nbsp;&nbsp;'tips}\n\n${avatar} &nbsp;__${author}__, ${ago} &nbsp; _(${date})_ \n\n${message}${\n\n---\n\nfootnotes}",
-						"markdownDescription": "Specifies the tooltip format (in markdown) of commits in the views. See [_Commit Tokens_](https://github.com/eamodio/vscode-gitlens/wiki/Custom-Formatting#commit-tokens) in the GitLens docs",
+						"markdownDescription": "Specifies the tooltip format (in markdown) of commits in the views. See [_Commit Tokens_](https://github.com/eamodio/vscode-gitlens/wiki/Custom-Formatting#commit-tokens) in the Git Extended docs",
 						"scope": "window",
 						"order": 32
 					},
-					"gitlens.views.formats.commits.tooltipWithStatus": {
+					"git-extended.views.formats.commits.tooltipWithStatus": {
 						"type": "string",
 						"default": "${link}${' via 'pullRequest}&nbsp;&nbsp;•&nbsp;&nbsp;{{slot-status}}${'&nbsp;&nbsp;•&nbsp;&nbsp;'changesDetail}${'&nbsp;&nbsp;&nbsp;&nbsp;'tips}\n\n${avatar} &nbsp;__${author}__, ${ago} &nbsp; _(${date})_ \n\n${message}${\n\n---\n\nfootnotes}",
-						"markdownDescription": "Specifies the tooltip format (in markdown) of \"file\" commits in the views. See [_Commit Tokens_](https://github.com/eamodio/vscode-gitlens/wiki/Custom-Formatting#commit-tokens) in the GitLens docs",
+						"markdownDescription": "Specifies the tooltip format (in markdown) of \"file\" commits in the views. See [_Commit Tokens_](https://github.com/eamodio/vscode-gitlens/wiki/Custom-Formatting#commit-tokens) in the Git Extended docs",
 						"scope": "window",
 						"order": 32
 					},
-					"gitlens.views.formats.files.label": {
+					"git-extended.views.formats.files.label": {
 						"type": "string",
 						"default": "${working  }${file}",
-						"markdownDescription": "Specifies the format of a file in the views. See [_File Tokens_](https://github.com/gitkraken/vscode-gitlens/wiki/Custom-Formatting#file-tokens) in the GitLens docs",
+						"markdownDescription": "Specifies the format of a file in the views. See [_File Tokens_](https://github.com/byrizki/vscode-git-extended/wiki/Custom-Formatting#file-tokens) in the Git Extended docs",
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.views.formats.files.description": {
+					"git-extended.views.formats.files.description": {
 						"type": "string",
 						"default": "${directory}${  ←  originalPath}",
-						"markdownDescription": "Specifies the description format of a file in the views. See [_File Tokens_](https://github.com/gitkraken/vscode-gitlens/wiki/Custom-Formatting#file-tokens) in the GitLens docs",
+						"markdownDescription": "Specifies the description format of a file in the views. See [_File Tokens_](https://github.com/byrizki/vscode-git-extended/wiki/Custom-Formatting#file-tokens) in the Git Extended docs",
 						"scope": "window",
 						"order": 41
 					},
-					"gitlens.views.formats.stashes.label": {
+					"git-extended.views.formats.stashes.label": {
 						"type": "string",
 						"default": "${message}",
-						"markdownDescription": "Specifies the format of stashes in the views. See [_Commit Tokens_](https://github.com/gitkraken/vscode-gitlens/wiki/Custom-Formatting#commit-tokens) in the GitLens docs",
+						"markdownDescription": "Specifies the format of stashes in the views. See [_Commit Tokens_](https://github.com/byrizki/vscode-git-extended/wiki/Custom-Formatting#commit-tokens) in the Git Extended docs",
 						"scope": "window",
 						"order": 50
 					},
-					"gitlens.views.formats.stashes.description": {
+					"git-extended.views.formats.stashes.description": {
 						"type": "string",
 						"default": "${stashOnRef, }${agoOrDate}",
-						"markdownDescription": "Specifies the description format of stashes in the views. See [_Commit Tokens_](https://github.com/gitkraken/vscode-gitlens/wiki/Custom-Formatting#commit-tokens) in the GitLens docs",
+						"markdownDescription": "Specifies the description format of stashes in the views. See [_Commit Tokens_](https://github.com/byrizki/vscode-git-extended/wiki/Custom-Formatting#commit-tokens) in the Git Extended docs",
 						"scope": "window",
 						"order": 51
 					},
-					"gitlens.views.experimental.multiSelect.enabled": {
+					"git-extended.views.experimental.multiSelect.enabled": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether to enable experimental multi-select support in the views.\n**NOTE**: Requires a restart to take effect.",
 						"scope": "window",
 						"order": 60
 					},
-					"gitlens.views.commitFileFormat": {
+					"git-extended.views.commitFileFormat": {
 						"deprecationMessage": "Deprecated. Use `gitlens.views.formats.files.label` instead",
 						"markdownDeprecationMessage": "Deprecated. Use `#gitlens.views.formats.files.label#` instead"
 					},
-					"gitlens.views.commitFileDescriptionFormat": {
+					"git-extended.views.commitFileDescriptionFormat": {
 						"deprecationMessage": "Deprecated. Use `gitlens.views.formats.files.description` instead",
 						"markdownDeprecationMessage": "Deprecated. Use `#gitlens.views.formats.files.description#` instead"
 					},
-					"gitlens.views.commitFormat": {
+					"git-extended.views.commitFormat": {
 						"deprecationMessage": "Deprecated. Use `gitlens.views.formats.commits.label` instead",
 						"markdownDeprecationMessage": "Deprecated. Use `#gitlens.views.commits.files.label#` instead"
 					},
-					"gitlens.views.commitDescriptionFormat": {
+					"git-extended.views.commitDescriptionFormat": {
 						"deprecationMessage": "Deprecated. Use `gitlens.views.formats.commits.description` instead",
 						"markdownDeprecationMessage": "Deprecated. Use `#gitlens.views.formats.commits.description#` instead"
 					},
-					"gitlens.views.stashFileFormat": {
+					"git-extended.views.stashFileFormat": {
 						"deprecationMessage": "Deprecated. Use `gitlens.views.formats.files.label` instead",
 						"markdownDeprecationMessage": "Deprecated. Use `#gitlens.views.formats.files.label#` instead"
 					},
-					"gitlens.views.stashFileDescriptionFormat": {
+					"git-extended.views.stashFileDescriptionFormat": {
 						"deprecationMessage": "Deprecated. Use `gitlens.views.formats.files.description` instead",
 						"markdownDeprecationMessage": "Deprecated. Use `#gitlens.views.formats.files.description#` instead"
 					},
-					"gitlens.views.stashFormat": {
+					"git-extended.views.stashFormat": {
 						"deprecationMessage": "Deprecated. Use `gitlens.views.formats.stashes.label` instead",
 						"markdownDeprecationMessage": "Deprecated. Use `#gitlens.views.stashes.files.label#` instead"
 					},
-					"gitlens.views.stashDescriptionFormat": {
+					"git-extended.views.stashDescriptionFormat": {
 						"deprecationMessage": "Deprecated. Use `gitlens.views.formats.stashes.description` instead",
 						"markdownDeprecationMessage": "Deprecated. Use `#gitlens.views.formats.stashes.description#` instead"
 					},
-					"gitlens.views.statusFileFormat": {
+					"git-extended.views.statusFileFormat": {
 						"deprecationMessage": "Deprecated. Use `gitlens.views.formats.files.label` instead",
 						"markdownDeprecationMessage": "Deprecated. Use `#gitlens.views.formats.files.label#` instead"
 					},
-					"gitlens.views.statusFileDescriptionFormat": {
+					"git-extended.views.statusFileDescriptionFormat": {
 						"deprecationMessage": "Deprecated. Use `gitlens.views.formats.files.description` instead",
 						"markdownDeprecationMessage": "Deprecated. Use `#gitlens.views.formats.files.description#` instead"
 					}
@@ -843,7 +843,7 @@
 				"title": "Commits View",
 				"order": 21,
 				"properties": {
-					"gitlens.views.commits.showBranchComparison": {
+					"git-extended.views.commits.showBranchComparison": {
 						"type": [
 							"boolean",
 							"string"
@@ -863,28 +863,28 @@
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.views.commits.pullRequests.enabled": {
+					"git-extended.views.commits.pullRequests.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to query for pull requests associated with the current branch and commits in the _Commits_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 21
 					},
-					"gitlens.views.commits.pullRequests.showForBranches": {
+					"git-extended.views.commits.pullRequests.showForBranches": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show pull requests (if any) associated with the current branch in the _Commits_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 21
 					},
-					"gitlens.views.commits.pullRequests.showForCommits": {
+					"git-extended.views.commits.pullRequests.showForCommits": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show pull requests (if any) associated with commits in the _Commits_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 22
 					},
-					"gitlens.views.commits.files.layout": {
+					"git-extended.views.commits.files.layout": {
 						"type": "string",
 						"default": "auto",
 						"enum": [
@@ -901,28 +901,28 @@
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.views.commits.files.threshold": {
+					"git-extended.views.commits.files.threshold": {
 						"type": "number",
 						"default": 5,
-						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Commits_ view. Only applies when `#gitlens.views.commits.files.layout#` is set to `auto`",
+						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Commits_ view. Only applies when `#git-extended.views.commits.files.layout#` is set to `auto`",
 						"scope": "window",
 						"order": 31
 					},
-					"gitlens.views.commits.files.compact": {
+					"git-extended.views.commits.files.compact": {
 						"type": "boolean",
 						"default": true,
-						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Commits_ view. Only applies when `#gitlens.views.commits.files.layout#` is set to `tree` or `auto`",
+						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Commits_ view. Only applies when `#git-extended.views.commits.files.layout#` is set to `tree` or `auto`",
 						"scope": "window",
 						"order": 32
 					},
-					"gitlens.views.commits.avatars": {
+					"git-extended.views.commits.avatars": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show avatar images instead of commit (or status) icons in the _Commits_ view",
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.views.commits.reveal": {
+					"git-extended.views.commits.reveal": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to reveal commits in the _Commits_ view, otherwise they revealed in the _Repositories_ view",
@@ -936,28 +936,28 @@
 				"title": "Commit Details View",
 				"order": 22,
 				"properties": {
-					"gitlens.views.commitDetails.autolinks.enabled": {
+					"git-extended.views.commitDetails.autolinks.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to automatically link external resources in commit messages",
 						"scope": "window",
 						"order": 31
 					},
-					"gitlens.views.commitDetails.autolinks.enhanced": {
+					"git-extended.views.commitDetails.autolinks.enhanced": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to lookup additional details about automatically link external resources in commit messages. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 32
 					},
-					"gitlens.views.commitDetails.pullRequests.enabled": {
+					"git-extended.views.commitDetails.pullRequests.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to query for associated pull requests. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 21
 					},
-					"gitlens.views.commitDetails.files.layout": {
+					"git-extended.views.commitDetails.files.layout": {
 						"type": "string",
 						"default": "auto",
 						"enum": [
@@ -974,21 +974,21 @@
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.views.commitDetails.files.threshold": {
+					"git-extended.views.commitDetails.files.threshold": {
 						"type": "number",
 						"default": 5,
-						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Commit Details_ view. Only applies when `#gitlens.views.commitDetails.files.layout#` is set to `auto`",
+						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Commit Details_ view. Only applies when `#git-extended.views.commitDetails.files.layout#` is set to `auto`",
 						"scope": "window",
 						"order": 31
 					},
-					"gitlens.views.commitDetails.files.compact": {
+					"git-extended.views.commitDetails.files.compact": {
 						"type": "boolean",
 						"default": true,
-						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Commit Details_ view. Only applies when `#gitlens.views.commitDetails.files.layout#` is set to `tree` or `auto`",
+						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Commit Details_ view. Only applies when `#git-extended.views.commitDetails.files.layout#` is set to `tree` or `auto`",
 						"scope": "window",
 						"order": 32
 					},
-					"gitlens.views.commitDetails.avatars": {
+					"git-extended.views.commitDetails.avatars": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show avatar images instead of commit (or status) icons in the _Commit Details_ view",
@@ -1002,7 +1002,7 @@
 				"title": "Repositories View",
 				"order": 23,
 				"properties": {
-					"gitlens.views.repositories.showBranchComparison": {
+					"git-extended.views.repositories.showBranchComparison": {
 						"type": [
 							"boolean",
 							"string"
@@ -1022,119 +1022,119 @@
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.views.repositories.showUpstreamStatus": {
+					"git-extended.views.repositories.showUpstreamStatus": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show the upstream status of the current branch for each repository in the _Repositories_ view",
 						"scope": "window",
 						"order": 11
 					},
-					"gitlens.views.repositories.includeWorkingTree": {
+					"git-extended.views.repositories.includeWorkingTree": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether to include working tree file status for each repository in the _Repositories_ view",
 						"scope": "window",
 						"order": 12
 					},
-					"gitlens.views.repositories.pullRequests.enabled": {
+					"git-extended.views.repositories.pullRequests.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to query for pull requests associated with branches and commits in the _Repositories_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.views.repositories.pullRequests.showForBranches": {
+					"git-extended.views.repositories.pullRequests.showForBranches": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show pull requests (if any) associated with branches in the _Repositories_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 21
 					},
-					"gitlens.views.repositories.pullRequests.showForCommits": {
+					"git-extended.views.repositories.pullRequests.showForCommits": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show pull requests (if any) associated with commits in the _Repositories_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 22
 					},
-					"gitlens.views.repositories.showCommits": {
+					"git-extended.views.repositories.showCommits": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show the commits on the current branch for each repository in the _Repositories_ view",
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.views.repositories.showBranches": {
+					"git-extended.views.repositories.showBranches": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show the branches for each repository in the _Repositories_ view",
 						"scope": "window",
 						"order": 31
 					},
-					"gitlens.views.repositories.showRemotes": {
+					"git-extended.views.repositories.showRemotes": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show the remotes for each repository in the _Repositories_ view",
 						"scope": "window",
 						"order": 32
 					},
-					"gitlens.views.repositories.showStashes": {
+					"git-extended.views.repositories.showStashes": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show the stashes for each repository in the _Repositories_ view",
 						"scope": "window",
 						"order": 33
 					},
-					"gitlens.views.repositories.showTags": {
+					"git-extended.views.repositories.showTags": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show the tags for each repository in the _Repositories_ view",
 						"scope": "window",
 						"order": 34
 					},
-					"gitlens.views.repositories.showContributors": {
+					"git-extended.views.repositories.showContributors": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show the contributors for each repository in the _Repositories_ view",
 						"scope": "window",
 						"order": 35
 					},
-					"gitlens.views.repositories.showWorktrees": {
+					"git-extended.views.repositories.showWorktrees": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show the worktrees for each repository in the _Repositories_ view",
 						"scope": "window",
 						"order": 36
 					},
-					"gitlens.views.repositories.showIncomingActivity": {
+					"git-extended.views.repositories.showIncomingActivity": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether to show the experimental incoming activity for each repository in the _Repositories_ view",
 						"scope": "window",
 						"order": 37
 					},
-					"gitlens.views.repositories.autoRefresh": {
+					"git-extended.views.repositories.autoRefresh": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to automatically refresh the _Repositories_ view when the repository or the file system changes",
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.views.repositories.autoReveal": {
+					"git-extended.views.repositories.autoReveal": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to automatically reveal repositories in the _Repositories_ view when opening files",
 						"scope": "window",
 						"order": 50
 					},
-					"gitlens.views.repositories.avatars": {
+					"git-extended.views.repositories.avatars": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show avatar images instead of commit (or status) icons in the _Repositories_ view",
 						"scope": "window",
 						"order": 60
 					},
-					"gitlens.views.repositories.branches.layout": {
+					"git-extended.views.repositories.branches.layout": {
 						"type": "string",
 						"default": "tree",
 						"enum": [
@@ -1149,7 +1149,7 @@
 						"scope": "window",
 						"order": 70
 					},
-					"gitlens.views.repositories.files.layout": {
+					"git-extended.views.repositories.files.layout": {
 						"type": "string",
 						"default": "auto",
 						"enum": [
@@ -1166,28 +1166,28 @@
 						"scope": "window",
 						"order": 80
 					},
-					"gitlens.views.repositories.files.threshold": {
+					"git-extended.views.repositories.files.threshold": {
 						"type": "number",
 						"default": 5,
-						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Repositories_ view. Only applies when `#gitlens.views.repositories.files.layout#` is set to `auto`",
+						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Repositories_ view. Only applies when `#git-extended.views.repositories.files.layout#` is set to `auto`",
 						"scope": "window",
 						"order": 81
 					},
-					"gitlens.views.repositories.files.compact": {
+					"git-extended.views.repositories.files.compact": {
 						"type": "boolean",
 						"default": true,
-						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Repositories_ view. Only applies when `#gitlens.views.repositories.files.layout#` is set to `tree` or `auto`",
+						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Repositories_ view. Only applies when `#git-extended.views.repositories.files.layout#` is set to `tree` or `auto`",
 						"scope": "window",
 						"order": 82
 					},
-					"gitlens.views.repositories.compact": {
+					"git-extended.views.repositories.compact": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether to show the _Repositories_ view in a compact display density",
 						"scope": "window",
 						"order": 90
 					},
-					"gitlens.views.repositories.branches.showBranchComparison": {
+					"git-extended.views.repositories.branches.showBranchComparison": {
 						"type": [
 							"boolean",
 							"string"
@@ -1205,7 +1205,7 @@
 						"scope": "window",
 						"order": 100
 					},
-					"gitlens.views.repositories.enabled": {
+					"git-extended.views.repositories.enabled": {
 						"deprecationMessage": "Deprecated. This setting is no longer used",
 						"markdownDeprecationMessage": "Deprecated. This setting is no longer used"
 					}
@@ -1216,7 +1216,7 @@
 				"title": "File History View",
 				"order": 24,
 				"properties": {
-					"gitlens.views.fileHistory.files.layout": {
+					"git-extended.views.fileHistory.files.layout": {
 						"type": "string",
 						"default": "auto",
 						"enum": [
@@ -1233,35 +1233,35 @@
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.views.fileHistory.files.threshold": {
+					"git-extended.views.fileHistory.files.threshold": {
 						"type": "number",
 						"default": 5,
-						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _File History_ view. Only applies to folder history and when `#gitlens.views.fileHistory.files.layout#` is set to `auto`",
+						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _File History_ view. Only applies to folder history and when `#git-extended.views.fileHistory.files.layout#` is set to `auto`",
 						"scope": "window",
 						"order": 11
 					},
-					"gitlens.views.fileHistory.files.compact": {
+					"git-extended.views.fileHistory.files.compact": {
 						"type": "boolean",
 						"default": true,
-						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _File History_ view. Only applies to folder history and when `#gitlens.views.fileHistory.files.layout#` is set to `tree` or `auto`",
+						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _File History_ view. Only applies to folder history and when `#git-extended.views.fileHistory.files.layout#` is set to `tree` or `auto`",
 						"scope": "window",
 						"order": 12
 					},
-					"gitlens.views.fileHistory.avatars": {
+					"git-extended.views.fileHistory.avatars": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show avatar images instead of status icons in the _File History_ view",
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.advanced.fileHistoryFollowsRenames": {
+					"git-extended.advanced.fileHistoryFollowsRenames": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether file histories will follow renames — will affect how merge commits are shown in histories",
 						"scope": "window",
 						"order": 100
 					},
-					"gitlens.advanced.fileHistoryShowAllBranches": {
+					"git-extended.advanced.fileHistoryShowAllBranches": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether file histories will show commits from all branches",
@@ -1275,14 +1275,14 @@
 				"title": "Line History View",
 				"order": 25,
 				"properties": {
-					"gitlens.views.lineHistory.avatars": {
+					"git-extended.views.lineHistory.avatars": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show avatar images instead of status icons in the _Line History_ view",
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.views.lineHistory.enabled": {
+					"git-extended.views.lineHistory.enabled": {
 						"deprecationMessage": "Deprecated. This setting is no longer used",
 						"markdownDeprecationMessage": "Deprecated. This setting is no longer used"
 					}
@@ -1293,7 +1293,7 @@
 				"title": "Branches View",
 				"order": 26,
 				"properties": {
-					"gitlens.views.branches.showBranchComparison": {
+					"git-extended.views.branches.showBranchComparison": {
 						"type": [
 							"boolean",
 							"string"
@@ -1311,28 +1311,28 @@
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.views.branches.pullRequests.enabled": {
+					"git-extended.views.branches.pullRequests.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to query for pull requests associated with each branch and commits in the _Branches_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.views.branches.pullRequests.showForBranches": {
+					"git-extended.views.branches.pullRequests.showForBranches": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show pull requests (if any) associated with each branch in the _Branches_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 21
 					},
-					"gitlens.views.branches.pullRequests.showForCommits": {
+					"git-extended.views.branches.pullRequests.showForCommits": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show pull requests (if any) associated with commits in the _Branches_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 22
 					},
-					"gitlens.views.branches.branches.layout": {
+					"git-extended.views.branches.branches.layout": {
 						"type": "string",
 						"default": "tree",
 						"enum": [
@@ -1347,7 +1347,7 @@
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.sortBranchesBy": {
+					"git-extended.sortBranchesBy": {
 						"type": "string",
 						"default": "date:desc",
 						"enum": [
@@ -1366,7 +1366,7 @@
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.views.branches.files.layout": {
+					"git-extended.views.branches.files.layout": {
 						"type": "string",
 						"default": "auto",
 						"enum": [
@@ -1383,28 +1383,28 @@
 						"scope": "window",
 						"order": 50
 					},
-					"gitlens.views.branches.files.threshold": {
+					"git-extended.views.branches.files.threshold": {
 						"type": "number",
 						"default": 5,
-						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Branches_ view. Only applies when `#gitlens.views.branches.files.layout#` is set to `auto`",
+						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Branches_ view. Only applies when `#git-extended.views.branches.files.layout#` is set to `auto`",
 						"scope": "window",
 						"order": 51
 					},
-					"gitlens.views.branches.files.compact": {
+					"git-extended.views.branches.files.compact": {
 						"type": "boolean",
 						"default": true,
-						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Branches_ view. Only applies when `#gitlens.views.branches.files.layout#` is set to `tree` or `auto`",
+						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Branches_ view. Only applies when `#git-extended.views.branches.files.layout#` is set to `tree` or `auto`",
 						"scope": "window",
 						"order": 52
 					},
-					"gitlens.views.branches.avatars": {
+					"git-extended.views.branches.avatars": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show avatar images instead of commit (or status) icons in the _Branches_ view",
 						"scope": "window",
 						"order": 60
 					},
-					"gitlens.views.branches.reveal": {
+					"git-extended.views.branches.reveal": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to reveal branches in the _Branches_ view, otherwise they revealed in the _Repositories_ view",
@@ -1418,28 +1418,28 @@
 				"title": "Remotes View",
 				"order": 27,
 				"properties": {
-					"gitlens.views.remotes.pullRequests.enabled": {
+					"git-extended.views.remotes.pullRequests.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to query for pull requests associated with each branch and commits in the _Remotes_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.views.remotes.pullRequests.showForBranches": {
+					"git-extended.views.remotes.pullRequests.showForBranches": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show pull requests (if any) associated with each branch in the _Remotes_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 11
 					},
-					"gitlens.views.remotes.pullRequests.showForCommits": {
+					"git-extended.views.remotes.pullRequests.showForCommits": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show pull requests (if any) associated with commits in the _Remotes_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 12
 					},
-					"gitlens.views.remotes.branches.layout": {
+					"git-extended.views.remotes.branches.layout": {
 						"type": "string",
 						"default": "tree",
 						"enum": [
@@ -1454,7 +1454,7 @@
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.views.remotes.files.layout": {
+					"git-extended.views.remotes.files.layout": {
 						"type": "string",
 						"default": "auto",
 						"enum": [
@@ -1471,28 +1471,28 @@
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.views.remotes.files.threshold": {
+					"git-extended.views.remotes.files.threshold": {
 						"type": "number",
 						"default": 5,
-						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Remotes_ view. Only applies when `#gitlens.views.remotes.files.layout#` is set to `auto`",
+						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Remotes_ view. Only applies when `#git-extended.views.remotes.files.layout#` is set to `auto`",
 						"scope": "window",
 						"order": 31
 					},
-					"gitlens.views.remotes.files.compact": {
+					"git-extended.views.remotes.files.compact": {
 						"type": "boolean",
 						"default": true,
-						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Remotes_ view. Only applies when `#gitlens.views.remotes.files.layout#` is set to `tree` or `auto`",
+						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Remotes_ view. Only applies when `#git-extended.views.remotes.files.layout#` is set to `tree` or `auto`",
 						"scope": "window",
 						"order": 32
 					},
-					"gitlens.views.remotes.avatars": {
+					"git-extended.views.remotes.avatars": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show avatar images instead of commit (or status) icons in the _Remotes_ view",
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.views.remotes.reveal": {
+					"git-extended.views.remotes.reveal": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to reveal remotes in the _Remotes_ view, otherwise they revealed in the _Repositories_ view",
@@ -1506,7 +1506,7 @@
 				"title": "Stashes View",
 				"order": 28,
 				"properties": {
-					"gitlens.views.stashes.files.layout": {
+					"git-extended.views.stashes.files.layout": {
 						"type": "string",
 						"default": "auto",
 						"enum": [
@@ -1523,21 +1523,21 @@
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.views.stashes.files.threshold": {
+					"git-extended.views.stashes.files.threshold": {
 						"type": "number",
 						"default": 5,
-						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Stashes_ view. Only applies when `#gitlens.views.stashes.files.layout#` is set to `auto`",
+						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Stashes_ view. Only applies when `#git-extended.views.stashes.files.layout#` is set to `auto`",
 						"scope": "window",
 						"order": 11
 					},
-					"gitlens.views.stashes.files.compact": {
+					"git-extended.views.stashes.files.compact": {
 						"type": "boolean",
 						"default": true,
-						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Stashes_ view. Only applies when `#gitlens.views.stashes.files.layout#` is set to `tree` or `auto`",
+						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Stashes_ view. Only applies when `#git-extended.views.stashes.files.layout#` is set to `tree` or `auto`",
 						"scope": "window",
 						"order": 12
 					},
-					"gitlens.views.stashes.reveal": {
+					"git-extended.views.stashes.reveal": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to reveal stashes in the _Stashes_ view, otherwise they revealed in the _Repositories_ view",
@@ -1551,7 +1551,7 @@
 				"title": "Tags View",
 				"order": 29,
 				"properties": {
-					"gitlens.views.tags.branches.layout": {
+					"git-extended.views.tags.branches.layout": {
 						"type": "string",
 						"default": "tree",
 						"enum": [
@@ -1566,7 +1566,7 @@
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.sortTagsBy": {
+					"git-extended.sortTagsBy": {
 						"type": "string",
 						"default": "date:desc",
 						"enum": [
@@ -1585,7 +1585,7 @@
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.views.tags.files.layout": {
+					"git-extended.views.tags.files.layout": {
 						"type": "string",
 						"default": "auto",
 						"enum": [
@@ -1602,28 +1602,28 @@
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.views.tags.files.threshold": {
+					"git-extended.views.tags.files.threshold": {
 						"type": "number",
 						"default": 5,
-						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Tags_ view. Only applies when `#gitlens.views.tags.files.layout#` is set to `auto`",
+						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Tags_ view. Only applies when `#git-extended.views.tags.files.layout#` is set to `auto`",
 						"scope": "window",
 						"order": 31
 					},
-					"gitlens.views.tags.files.compact": {
+					"git-extended.views.tags.files.compact": {
 						"type": "boolean",
 						"default": true,
-						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Tags_ view. Only applies when `#gitlens.views.tags.files.layout#` is set to `tree` or `auto`",
+						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Tags_ view. Only applies when `#git-extended.views.tags.files.layout#` is set to `tree` or `auto`",
 						"scope": "window",
 						"order": 32
 					},
-					"gitlens.views.tags.avatars": {
+					"git-extended.views.tags.avatars": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show avatar images instead of commit (or status) icons in the _Tags_ view",
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.views.tags.reveal": {
+					"git-extended.views.tags.reveal": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to reveal tags in the _Tags_ view, otherwise they revealed in the _Repositories_ view",
@@ -1637,21 +1637,21 @@
 				"title": "Worktrees View",
 				"order": 30,
 				"properties": {
-					"gitlens.worktrees.promptForLocation": {
+					"git-extended.worktrees.promptForLocation": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to prompt for a path when creating new worktrees",
 						"scope": "resource",
 						"order": 10
 					},
-					"gitlens.worktrees.defaultLocation": {
+					"git-extended.worktrees.defaultLocation": {
 						"type": "string",
 						"default": null,
 						"markdownDescription": "Specifies the default path in which new worktrees will be created",
 						"scope": "resource",
 						"order": 11
 					},
-					"gitlens.worktrees.openAfterCreate": {
+					"git-extended.worktrees.openAfterCreate": {
 						"type": "string",
 						"default": "prompt",
 						"enum": [
@@ -1672,7 +1672,7 @@
 						"scope": "resource",
 						"order": 12
 					},
-					"gitlens.views.worktrees.showBranchComparison": {
+					"git-extended.views.worktrees.showBranchComparison": {
 						"type": [
 							"boolean",
 							"string"
@@ -1690,28 +1690,28 @@
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.views.worktrees.pullRequests.enabled": {
+					"git-extended.views.worktrees.pullRequests.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to query for pull requests associated with the worktree branch and commits in the _Worktrees_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.views.worktrees.pullRequests.showForBranches": {
+					"git-extended.views.worktrees.pullRequests.showForBranches": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show pull requests (if any) associated with the worktree branch in the _Worktrees_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 31
 					},
-					"gitlens.views.worktrees.pullRequests.showForCommits": {
+					"git-extended.views.worktrees.pullRequests.showForCommits": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show pull requests (if any) associated with commits in the _Worktrees_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 32
 					},
-					"gitlens.views.worktrees.files.layout": {
+					"git-extended.views.worktrees.files.layout": {
 						"type": "string",
 						"default": "auto",
 						"enum": [
@@ -1728,28 +1728,28 @@
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.views.worktrees.files.threshold": {
+					"git-extended.views.worktrees.files.threshold": {
 						"type": "number",
 						"default": 5,
-						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Worktrees_ view. Only applies when `#gitlens.views.worktrees.files.layout#` is set to `auto`",
+						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Worktrees_ view. Only applies when `#git-extended.views.worktrees.files.layout#` is set to `auto`",
 						"scope": "window",
 						"order": 41
 					},
-					"gitlens.views.worktrees.files.compact": {
+					"git-extended.views.worktrees.files.compact": {
 						"type": "boolean",
 						"default": true,
-						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Worktrees_ view. Only applies when `#gitlens.views.worktrees.files.layout#` is set to `tree` or `auto`",
+						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Worktrees_ view. Only applies when `#git-extended.views.worktrees.files.layout#` is set to `tree` or `auto`",
 						"scope": "window",
 						"order": 42
 					},
-					"gitlens.views.worktrees.avatars": {
+					"git-extended.views.worktrees.avatars": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show avatar images instead of commit (or status) icons in the _Worktrees_ view",
 						"scope": "window",
 						"order": 50
 					},
-					"gitlens.views.worktrees.reveal": {
+					"git-extended.views.worktrees.reveal": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to reveal worktrees in the _Worktrees_ view, otherwise they revealed in the _Repositories_ view",
@@ -1763,35 +1763,35 @@
 				"title": "Contributors View",
 				"order": 31,
 				"properties": {
-					"gitlens.views.contributors.showAllBranches": {
+					"git-extended.views.contributors.showAllBranches": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether to show commits from all branches in the _Contributors_ view",
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.views.contributors.showStatistics": {
+					"git-extended.views.contributors.showStatistics": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether to show contributor statistics in the _Contributors_ view. This can take a while to compute depending on the repository size",
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.views.contributors.pullRequests.enabled": {
+					"git-extended.views.contributors.pullRequests.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to query for pull requests associated with branches and commits in the _Contributors_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.views.contributors.pullRequests.showForCommits": {
+					"git-extended.views.contributors.pullRequests.showForCommits": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show pull requests (if any) associated with commits in the _Contributors_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 31
 					},
-					"gitlens.sortContributorsBy": {
+					"git-extended.sortContributorsBy": {
 						"type": "string",
 						"default": "count:desc",
 						"enum": [
@@ -1814,7 +1814,7 @@
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.views.contributors.files.layout": {
+					"git-extended.views.contributors.files.layout": {
 						"type": "string",
 						"default": "auto",
 						"enum": [
@@ -1831,28 +1831,28 @@
 						"scope": "window",
 						"order": 50
 					},
-					"gitlens.views.contributors.files.threshold": {
+					"git-extended.views.contributors.files.threshold": {
 						"type": "number",
 						"default": 5,
-						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Contributors_ view. Only applies when `#gitlens.views.contributors.files.layout#` is set to `auto`",
+						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Contributors_ view. Only applies when `#git-extended.views.contributors.files.layout#` is set to `auto`",
 						"scope": "window",
 						"order": 51
 					},
-					"gitlens.views.contributors.files.compact": {
+					"git-extended.views.contributors.files.compact": {
 						"type": "boolean",
 						"default": true,
-						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Contributors_ view. Only applies when `#gitlens.views.contributors.files.layout#` is set to `tree` or `auto`",
+						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Contributors_ view. Only applies when `#git-extended.views.contributors.files.layout#` is set to `tree` or `auto`",
 						"scope": "window",
 						"order": 52
 					},
-					"gitlens.views.contributors.avatars": {
+					"git-extended.views.contributors.avatars": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show avatar images instead of commit (or status) icons in the _Contributors_ view",
 						"scope": "window",
 						"order": 60
 					},
-					"gitlens.views.contributors.reveal": {
+					"git-extended.views.contributors.reveal": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to reveal contributors in the _Contributors_ view, otherwise they revealed in the _Repositories_ view",
@@ -1866,21 +1866,21 @@
 				"title": "Search & Compare View",
 				"order": 32,
 				"properties": {
-					"gitlens.views.searchAndCompare.pullRequests.enabled": {
+					"git-extended.views.searchAndCompare.pullRequests.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to query for pull requests associated with commits in the _Search & Compare_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.views.searchAndCompare.pullRequests.showForCommits": {
+					"git-extended.views.searchAndCompare.pullRequests.showForCommits": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show pull requests (if any) associated with commits in the _Search & Compare_ view. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 11
 					},
-					"gitlens.views.searchAndCompare.files.layout": {
+					"git-extended.views.searchAndCompare.files.layout": {
 						"type": "string",
 						"default": "auto",
 						"enum": [
@@ -1897,21 +1897,21 @@
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.views.searchAndCompare.files.threshold": {
+					"git-extended.views.searchAndCompare.files.threshold": {
 						"type": "number",
 						"default": 5,
-						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Search & Compare_ view. Only applies when `#gitlens.views.searchAndCompare.files.layout#` is set to `auto`",
+						"markdownDescription": "Specifies when to switch between displaying files as a `tree` or `list` based on the number of files in a nesting level in the _Search & Compare_ view. Only applies when `#git-extended.views.searchAndCompare.files.layout#` is set to `auto`",
 						"scope": "window",
 						"order": 21
 					},
-					"gitlens.views.searchAndCompare.files.compact": {
+					"git-extended.views.searchAndCompare.files.compact": {
 						"type": "boolean",
 						"default": true,
-						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Search & Compare_ view. Only applies when `#gitlens.views.searchAndCompare.files.layout#` is set to `tree` or `auto`",
+						"markdownDescription": "Specifies whether to compact (flatten) unnecessary file nesting in the _Search & Compare_ view. Only applies when `#git-extended.views.searchAndCompare.files.layout#` is set to `tree` or `auto`",
 						"scope": "window",
 						"order": 22
 					},
-					"gitlens.views.searchAndCompare.avatars": {
+					"git-extended.views.searchAndCompare.avatars": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show avatar images instead of commit (or status) icons in the _Search & Compare_ view",
@@ -1925,7 +1925,7 @@
 				"title": "File Blame",
 				"order": 100,
 				"properties": {
-					"gitlens.blame.toggleMode": {
+					"git-extended.blame.toggleMode": {
 						"type": "string",
 						"default": "file",
 						"enum": [
@@ -1940,21 +1940,21 @@
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.blame.format": {
+					"git-extended.blame.format": {
 						"type": "string",
 						"default": "${message|50?} ${agoOrDate|14-}",
-						"markdownDescription": "Specifies the format of the file blame annotations. See [_Commit Tokens_](https://github.com/gitkraken/vscode-gitlens/wiki/Custom-Formatting#commit-tokens) in the GitLens docs. Date formatting is controlled by the `#gitlens.blame.dateFormat#` setting",
+						"markdownDescription": "Specifies the format of the file blame annotations. See [_Commit Tokens_](https://github.com/byrizki/vscode-git-extended/wiki/Custom-Formatting#commit-tokens) in the Git Extended docs. Date formatting is controlled by the `#git-extended.blame.dateFormat#` setting",
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.blame.heatmap.enabled": {
+					"git-extended.blame.heatmap.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide a heatmap indicator in the file blame annotations",
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.blame.heatmap.location": {
+					"git-extended.blame.heatmap.location": {
 						"type": "string",
 						"default": "right",
 						"enum": [
@@ -1969,28 +1969,28 @@
 						"scope": "window",
 						"order": 31
 					},
-					"gitlens.blame.avatars": {
+					"git-extended.blame.avatars": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show avatar images in the file blame annotations",
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.blame.compact": {
+					"git-extended.blame.compact": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to compact (deduplicate) matching adjacent file blame annotations",
 						"scope": "window",
 						"order": 50
 					},
-					"gitlens.blame.highlight.enabled": {
+					"git-extended.blame.highlight.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to highlight lines associated with the current line",
 						"scope": "window",
 						"order": 60
 					},
-					"gitlens.blame.highlight.locations": {
+					"git-extended.blame.highlight.locations": {
 						"type": "array",
 						"default": [
 							"gutter",
@@ -2017,14 +2017,14 @@
 						"scope": "window",
 						"order": 61
 					},
-					"gitlens.blame.separateLines": {
+					"git-extended.blame.separateLines": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether file blame annotations will be separated by a small gap",
 						"scope": "window",
 						"order": 70
 					},
-					"gitlens.blame.dateFormat": {
+					"git-extended.blame.dateFormat": {
 						"type": [
 							"string",
 							"null"
@@ -2041,7 +2041,7 @@
 				"title": "File Changes",
 				"order": 101,
 				"properties": {
-					"gitlens.changes.toggleMode": {
+					"git-extended.changes.toggleMode": {
 						"type": "string",
 						"default": "file",
 						"enum": [
@@ -2056,7 +2056,7 @@
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.changes.locations": {
+					"git-extended.changes.locations": {
 						"type": "array",
 						"default": [
 							"gutter",
@@ -2090,7 +2090,7 @@
 				"title": "File Heatmap",
 				"order": 102,
 				"properties": {
-					"gitlens.heatmap.toggleMode": {
+					"git-extended.heatmap.toggleMode": {
 						"type": "string",
 						"default": "file",
 						"enum": [
@@ -2105,7 +2105,7 @@
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.heatmap.locations": {
+					"git-extended.heatmap.locations": {
 						"type": "array",
 						"default": [
 							"gutter",
@@ -2132,31 +2132,31 @@
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.heatmap.fadeLines": {
+					"git-extended.heatmap.fadeLines": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies the whether to fade out older lines",
 						"scope": "window",
 						"order": 21
 					},
-					"gitlens.heatmap.ageThreshold": {
+					"git-extended.heatmap.ageThreshold": {
 						"type": "number",
 						"default": 90,
-						"markdownDescription": "Specifies the age of the most recent change (in days) after which the file heatmap annotations will be cold rather than hot (i.e. will use `#gitlens.heatmap.coldColor#` instead of `#gitlens.heatmap.hotColor#`)",
+						"markdownDescription": "Specifies the age of the most recent change (in days) after which the file heatmap annotations will be cold rather than hot (i.e. will use `#git-extended.heatmap.coldColor#` instead of `#git-extended.heatmap.hotColor#`)",
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.heatmap.coldColor": {
+					"git-extended.heatmap.coldColor": {
 						"type": "string",
 						"default": "#0a60f6",
-						"markdownDescription": "Specifies the base color of the file heatmap annotations when the most recent change is older (cold) than the `#gitlens.heatmap.ageThreshold#` value",
+						"markdownDescription": "Specifies the base color of the file heatmap annotations when the most recent change is older (cold) than the `#git-extended.heatmap.ageThreshold#` value",
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.heatmap.hotColor": {
+					"git-extended.heatmap.hotColor": {
 						"type": "string",
 						"default": "#f66a0a",
-						"markdownDescription": "Specifies the base color of the file heatmap annotations when the most recent change is newer (hot) than the `#gitlens.heatmap.ageThreshold#` value",
+						"markdownDescription": "Specifies the base color of the file heatmap annotations when the most recent change is newer (hot) than the `#git-extended.heatmap.ageThreshold#` value",
 						"scope": "window",
 						"order": 50
 					}
@@ -2167,35 +2167,35 @@
 				"title": "Commit Graph",
 				"order": 105,
 				"properties": {
-					"gitlens.graph.defaultItemLimit": {
+					"git-extended.graph.defaultItemLimit": {
 						"type": "number",
 						"default": 500,
 						"markdownDescription": "Specifies the default number of items to show in the _Commit Graph_. Use 0 to specify no limit",
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.graph.pageItemLimit": {
+					"git-extended.graph.pageItemLimit": {
 						"type": "number",
 						"default": 200,
 						"markdownDescription": "Specifies the number of additional items to fetch when paginating in the _Commit Graph_. Use 0 to specify no limit",
 						"scope": "window",
 						"order": 11
 					},
-					"gitlens.graph.searchItemLimit": {
+					"git-extended.graph.searchItemLimit": {
 						"type": "number",
 						"default": 100,
 						"markdownDescription": "Specifies the number of results to gather when searching in the _Commit Graph_. Use 0 to specify no limit",
 						"scope": "window",
 						"order": 12
 					},
-					"gitlens.graph.scrollMarkers.enabled": {
+					"git-extended.graph.scrollMarkers.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show markers on the scrollbar in the _Commit Graph_",
 						"scope": "window",
 						"order": 13
 					},
-					"gitlens.graph.scrollMarkers.additionalTypes": {
+					"git-extended.graph.scrollMarkers.additionalTypes": {
 						"type": "array",
 						"default": [
 							"localBranches",
@@ -2223,14 +2223,14 @@
 						"scope": "window",
 						"order": 14
 					},
-					"gitlens.graph.scrollRowPadding": {
+					"git-extended.graph.scrollRowPadding": {
 						"type": "number",
 						"default": 0,
 						"markdownDescription": "Specifies the number of rows from the edge at which the graph will scroll when using keyboard or search to change the selected row",
 						"scope": "window",
 						"order": 14
 					},
-					"gitlens.graph.showDetailsView": {
+					"git-extended.graph.showDetailsView": {
 						"type": [
 							"boolean",
 							"string"
@@ -2250,56 +2250,56 @@
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.graph.showGhostRefsOnRowHover": {
+					"git-extended.graph.showGhostRefsOnRowHover": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show a ghost branch / tag when hovering over or selecting a row in the _Commit Graph_",
 						"scope": "window",
 						"order": 21
 					},
-					"gitlens.graph.highlightRowsOnRefHover": {
+					"git-extended.graph.highlightRowsOnRefHover": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to highlight rows associated with the branch / tag when hovering over it in the _Commit Graph_",
 						"scope": "window",
 						"order": 22
 					},
-					"gitlens.graph.dimMergeCommits": {
+					"git-extended.graph.dimMergeCommits": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether to dim (deemphasize) merge commit rows in the _Commit Graph_",
 						"scope": "window",
 						"order": 23
 					},
-					"gitlens.graph.showRemoteNames": {
+					"git-extended.graph.showRemoteNames": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether to show remote names on remote branches in the _Commit Graph_",
 						"scope": "window",
 						"order": 24
 					},
-					"gitlens.graph.avatars": {
+					"git-extended.graph.avatars": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show avatar images instead of author initials and remote icons in the _Commit Graph_",
 						"scope": "window",
 						"order": 25
 					},
-					"gitlens.graph.showUpstreamStatus": {
+					"git-extended.graph.showUpstreamStatus": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show a local branch's upstream status in the _Commit Graph_",
 						"scope": "window",
 						"order": 26
 					},
-					"gitlens.graph.pullRequests.enabled": {
+					"git-extended.graph.pullRequests.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show associated pull requests on remote branches in the _Commit Graph_. Requires a connection to a supported remote service (e.g. GitHub)",
 						"scope": "window",
 						"order": 27
 					},
-					"gitlens.graph.commitOrdering": {
+					"git-extended.graph.commitOrdering": {
 						"type": "string",
 						"default": "date",
 						"enum": [
@@ -2316,7 +2316,7 @@
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.graph.dateStyle": {
+					"git-extended.graph.dateStyle": {
 						"type": [
 							"string",
 							"null"
@@ -2334,7 +2334,7 @@
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.graph.dateFormat": {
+					"git-extended.graph.dateFormat": {
 						"type": [
 							"string",
 							"null"
@@ -2344,21 +2344,21 @@
 						"scope": "window",
 						"order": 41
 					},
-					"gitlens.graph.statusBar.enabled": {
+					"git-extended.graph.statusBar.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show the _Commit Graph_ in the status bar",
 						"scope": "window",
 						"order": 100
 					},
-					"gitlens.graph.experimental.minimap.enabled": {
+					"git-extended.graph.experimental.minimap.enabled": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether to show an experimental minimap of commit activity above the _Commit Graph_",
 						"scope": "window",
 						"order": 100
 					},
-					"gitlens.graph.experimental.minimap.additionalTypes": {
+					"git-extended.graph.experimental.minimap.additionalTypes": {
 						"type": "array",
 						"default": [
 							"localBranches",
@@ -2393,7 +2393,7 @@
 				"title": "Visual File History",
 				"order": 106,
 				"properties": {
-					"gitlens.visualHistory.queryLimit": {
+					"git-extended.visualHistory.queryLimit": {
 						"type": "number",
 						"default": 20,
 						"markdownDescription": "Specifies the limit on the how many commits can be queried for statistics in the Visual File History, because of rate limits. Only applies to virtual workspaces.",
@@ -2406,7 +2406,7 @@
 				"title": "Interactive Rebase Editor",
 				"order": 107,
 				"properties": {
-					"gitlens.rebaseEditor.ordering": {
+					"git-extended.rebaseEditor.ordering": {
 						"type": "string",
 						"default": "desc",
 						"enum": [
@@ -2421,7 +2421,7 @@
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.rebaseEditor.showDetailsView": {
+					"git-extended.rebaseEditor.showDetailsView": {
 						"type": [
 							"boolean",
 							"string"
@@ -2448,7 +2448,7 @@
 				"title": "Git Command Palette",
 				"order": 110,
 				"properties": {
-					"gitlens.gitCommands.sortBy": {
+					"git-extended.gitCommands.sortBy": {
 						"type": "string",
 						"default": "usage",
 						"enum": [
@@ -2463,7 +2463,7 @@
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.gitCommands.skipConfirmations": {
+					"git-extended.gitCommands.skipConfirmations": {
 						"type": "array",
 						"default": [
 							"fetch:command",
@@ -2524,14 +2524,14 @@
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.gitCommands.closeOnFocusOut": {
+					"git-extended.gitCommands.closeOnFocusOut": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to dismiss the _Git Command Palette_ when focus is lost (if not, press `ESC` to dismiss)",
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.gitCommands.search.showResultsInSideBar": {
+					"git-extended.gitCommands.search.showResultsInSideBar": {
 						"type": [
 							"boolean",
 							"null"
@@ -2541,28 +2541,28 @@
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.gitCommands.search.matchAll": {
+					"git-extended.gitCommands.search.matchAll": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether to match all or any commit message search patterns",
 						"scope": "window",
 						"order": 50
 					},
-					"gitlens.gitCommands.search.matchCase": {
+					"git-extended.gitCommands.search.matchCase": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether to match commit search patterns with or without regard to casing",
 						"scope": "window",
 						"order": 51
 					},
-					"gitlens.gitCommands.search.matchRegex": {
+					"git-extended.gitCommands.search.matchRegex": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to match commit search patterns using regular expressions",
 						"scope": "window",
 						"order": 52
 					},
-					"gitlens.gitCommands.search.showResultsInView": {
+					"git-extended.gitCommands.search.showResultsInView": {
 						"deprecationMessage": "Deprecated. This setting has been renamed to gitlens.gitCommands.search.showResultsInSideBar",
 						"markdownDeprecationMessage": "Deprecated. This setting has been renamed to `#gitlens.gitCommands.search.showResultsInSideBar#`"
 					}
@@ -2573,7 +2573,7 @@
 				"title": "Integrations",
 				"order": 111,
 				"properties": {
-					"gitlens.autolinks": {
+					"git-extended.autolinks": {
 						"type": [
 							"array",
 							"null"
@@ -2620,14 +2620,14 @@
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.integrations.enabled": {
+					"git-extended.integrations.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to enable rich integrations with any supported remote services",
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.remotes": {
+					"git-extended.remotes": {
 						"type": [
 							"array",
 							"null"
@@ -2748,7 +2748,7 @@
 						"scope": "resource",
 						"order": 30
 					},
-					"gitlens.partners": {
+					"git-extended.partners": {
 						"type": [
 							"object",
 							"null"
@@ -2770,7 +2770,7 @@
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.liveshare.allowGuestAccess": {
+					"git-extended.liveshare.allowGuestAccess": {
 						"type": "boolean",
 						"default": true,
 						"description": "Specifies whether to allow guest access to GitLens features when using Visual Studio Live Share",
@@ -2784,21 +2784,21 @@
 				"title": "Terminal",
 				"order": 112,
 				"properties": {
-					"gitlens.terminalLinks.enabled": {
+					"git-extended.terminalLinks.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to enable terminal links &mdash; autolinks in the integrated terminal to quickly jump to more details for commits, branches, tags, and more",
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.terminalLinks.showDetailsView": {
+					"git-extended.terminalLinks.showDetailsView": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show the _Commit Details_ view when clicking on a commit link in the integrated terminal",
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.terminal.overrideGitEditor": {
+					"git-extended.terminal.overrideGitEditor": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to use VS Code as Git's `core.editor` for Gitlens terminal commands",
@@ -2812,7 +2812,7 @@
 				"title": "Date & Times",
 				"order": 120,
 				"properties": {
-					"gitlens.defaultDateStyle": {
+					"git-extended.defaultDateStyle": {
 						"type": "string",
 						"default": "relative",
 						"enum": [
@@ -2827,7 +2827,7 @@
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.defaultDateFormat": {
+					"git-extended.defaultDateFormat": {
 						"type": [
 							"string",
 							"null"
@@ -2837,7 +2837,7 @@
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.defaultDateLocale": {
+					"git-extended.defaultDateLocale": {
 						"type": [
 							"string",
 							"null"
@@ -2847,7 +2847,7 @@
 						"scope": "window",
 						"order": 21
 					},
-					"gitlens.defaultDateShortFormat": {
+					"git-extended.defaultDateShortFormat": {
 						"type": [
 							"string",
 							"null"
@@ -2857,7 +2857,7 @@
 						"scope": "window",
 						"order": 22
 					},
-					"gitlens.defaultTimeFormat": {
+					"git-extended.defaultTimeFormat": {
 						"type": [
 							"string",
 							"null"
@@ -2867,7 +2867,7 @@
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.defaultDateSource": {
+					"git-extended.defaultDateSource": {
 						"type": "string",
 						"default": "authored",
 						"enum": [
@@ -2889,7 +2889,7 @@
 				"title": "Menus & Toolbars",
 				"order": 121,
 				"properties": {
-					"gitlens.menus": {
+					"git-extended.menus": {
 						"anyOf": [
 							{
 								"enum": [
@@ -3206,7 +3206,7 @@
 				"title": "Keyboard Shortcuts",
 				"order": 122,
 				"properties": {
-					"gitlens.keymap": {
+					"git-extended.keymap": {
 						"type": "string",
 						"default": "chorded",
 						"enum": [
@@ -3230,14 +3230,14 @@
 				"title": "Modes",
 				"order": 123,
 				"properties": {
-					"gitlens.mode.statusBar.enabled": {
+					"git-extended.mode.statusBar.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to provide the active GitLens mode in the status bar",
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.mode.statusBar.alignment": {
+					"git-extended.mode.statusBar.alignment": {
 						"type": "string",
 						"default": "right",
 						"enum": [
@@ -3252,13 +3252,13 @@
 						"scope": "window",
 						"order": 11
 					},
-					"gitlens.mode.active": {
+					"git-extended.mode.active": {
 						"type": "string",
 						"markdownDescription": "Specifies the active GitLens mode, if any",
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.modes": {
+					"git-extended.modes": {
 						"type": "object",
 						"properties": {
 							"zen": {
@@ -3408,21 +3408,21 @@
 				"title": "Advanced",
 				"order": 1000,
 				"properties": {
-					"gitlens.detectNestedRepositories": {
+					"git-extended.detectNestedRepositories": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether to attempt to detect nested repositories when opening files",
 						"scope": "resource",
 						"order": 0
 					},
-					"gitlens.telemetry.enabled": {
+					"git-extended.telemetry.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to allow the collection of product usage telemetry",
 						"scope": "window",
 						"order": 1
 					},
-					"gitlens.advanced.messages": {
+					"git-extended.advanced.messages": {
 						"type": "object",
 						"default": {
 							"suppressCommitHasNoPreviousCommitWarning": false,
@@ -3517,28 +3517,28 @@
 						"scope": "window",
 						"order": 5
 					},
-					"gitlens.advanced.repositorySearchDepth": {
+					"git-extended.advanced.repositorySearchDepth": {
 						"type": "number",
 						"default": null,
 						"markdownDescription": "Specifies how many folders deep to search for repositories. Defaults to `#git.repositoryScanMaxDepth#`",
 						"scope": "resource",
 						"order": 10
 					},
-					"gitlens.advanced.abbreviatedShaLength": {
+					"git-extended.advanced.abbreviatedShaLength": {
 						"type": "number",
 						"default": 7,
 						"markdownDescription": "Specifies the length of abbreviated commit SHAs",
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.advanced.abbreviateShaOnCopy": {
+					"git-extended.advanced.abbreviateShaOnCopy": {
 						"type": "boolean",
 						"default": false,
-						"markdownDescription": "Specifies whether to copy full or abbreviated commit SHAs to the clipboard. Abbreviates to the length of `#gitlens.advanced.abbreviatedShaLength#`.",
+						"markdownDescription": "Specifies whether to copy full or abbreviated commit SHAs to the clipboard. Abbreviates to the length of `#git-extended.advanced.abbreviatedShaLength#`.",
 						"scope": "window",
 						"order": 21
 					},
-					"gitlens.advanced.commitOrdering": {
+					"git-extended.advanced.commitOrdering": {
 						"type": [
 							"string",
 							"null"
@@ -3560,14 +3560,14 @@
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.blame.ignoreWhitespace": {
+					"git-extended.blame.ignoreWhitespace": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies whether to ignore whitespace when comparing revisions during blame operations",
 						"scope": "resource",
 						"order": 40
 					},
-					"gitlens.advanced.blame.customArguments": {
+					"git-extended.advanced.blame.customArguments": {
 						"type": [
 							"array",
 							"null"
@@ -3580,21 +3580,21 @@
 						"scope": "resource",
 						"order": 41
 					},
-					"gitlens.advanced.blame.delayAfterEdit": {
+					"git-extended.advanced.blame.delayAfterEdit": {
 						"type": "number",
 						"default": 5000,
 						"markdownDescription": "Specifies the time (in milliseconds) to wait before re-blaming an unsaved document after an edit. Use 0 to specify an infinite wait",
 						"scope": "window",
 						"order": 42
 					},
-					"gitlens.advanced.blame.sizeThresholdAfterEdit": {
+					"git-extended.advanced.blame.sizeThresholdAfterEdit": {
 						"type": "number",
 						"default": 5000,
 						"markdownDescription": "Specifies the maximum document size (in lines) allowed to be re-blamed after an edit while still unsaved. Use 0 to specify no maximum",
 						"scope": "window",
 						"order": 43
 					},
-					"gitlens.advanced.similarityThreshold": {
+					"git-extended.advanced.similarityThreshold": {
 						"type": [
 							"number",
 							"null"
@@ -3604,7 +3604,7 @@
 						"scope": "window",
 						"order": 50
 					},
-					"gitlens.advanced.externalDiffTool": {
+					"git-extended.advanced.externalDiffTool": {
 						"type": [
 							"string",
 							"null"
@@ -3614,7 +3614,7 @@
 						"scope": "window",
 						"order": 60
 					},
-					"gitlens.advanced.externalDirectoryDiffTool": {
+					"git-extended.advanced.externalDirectoryDiffTool": {
 						"type": [
 							"string",
 							"null"
@@ -3624,42 +3624,42 @@
 						"scope": "window",
 						"order": 61
 					},
-					"gitlens.advanced.quickPick.closeOnFocusOut": {
+					"git-extended.advanced.quickPick.closeOnFocusOut": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to dismiss quick pick menus when focus is lost (if not, press `ESC` to dismiss)",
 						"scope": "window",
 						"order": 70
 					},
-					"gitlens.advanced.maxListItems": {
+					"git-extended.advanced.maxListItems": {
 						"type": "number",
 						"default": 200,
 						"markdownDescription": "Specifies the maximum number of items to show in a list. Use 0 to specify no maximum",
 						"scope": "window",
 						"order": 80
 					},
-					"gitlens.advanced.maxSearchItems": {
+					"git-extended.advanced.maxSearchItems": {
 						"type": "number",
 						"default": 200,
 						"markdownDescription": "Specifies the maximum number of items to show in a search. Use 0 to specify no maximum",
 						"scope": "window",
 						"order": 81
 					},
-					"gitlens.advanced.caching.enabled": {
+					"git-extended.advanced.caching.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether git output will be cached — changing the default is not recommended",
 						"scope": "window",
 						"order": 90
 					},
-					"gitlens.debug": {
+					"git-extended.debug": {
 						"type": "boolean",
 						"default": false,
 						"markdownDescription": "Specifies debug mode",
 						"scope": "window",
 						"order": 100
 					},
-					"gitlens.deepLinks.schemeOverride": {
+					"git-extended.deepLinks.schemeOverride": {
 						"type": [
 							"boolean",
 							"string"
@@ -3669,7 +3669,7 @@
 						"scope": "window",
 						"order": 110
 					},
-					"gitlens.advanced.useSymmetricDifferenceNotation": {
+					"git-extended.advanced.useSymmetricDifferenceNotation": {
 						"deprecationMessage": "Deprecated. This setting is no longer used",
 						"markdownDescription": "Deprecated. This setting is no longer used"
 					}
@@ -3680,21 +3680,21 @@
 				"title": "General",
 				"order": 0,
 				"properties": {
-					"gitlens.showWelcomeOnInstall": {
+					"git-extended.showWelcomeOnInstall": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show the Welcome (Quick Setup) experience on first install",
 						"scope": "window",
 						"order": 10
 					},
-					"gitlens.showWhatsNewAfterUpgrades": {
+					"git-extended.showWhatsNewAfterUpgrades": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to show the What's New notification after upgrading to new feature releases",
 						"scope": "window",
 						"order": 20
 					},
-					"gitlens.outputLevel": {
+					"git-extended.outputLevel": {
 						"type": "string",
 						"default": "errors",
 						"enum": [
@@ -3713,7 +3713,7 @@
 						"scope": "window",
 						"order": 30
 					},
-					"gitlens.defaultGravatarsStyle": {
+					"git-extended.defaultGravatarsStyle": {
 						"type": "string",
 						"default": "robohash",
 						"enum": [
@@ -3736,7 +3736,7 @@
 						"scope": "window",
 						"order": 40
 					},
-					"gitlens.fileAnnotations.command": {
+					"git-extended.fileAnnotations.command": {
 						"type": [
 							"string",
 							"null"
@@ -3758,7 +3758,7 @@
 						"scope": "window",
 						"order": 50
 					},
-					"gitlens.proxy": {
+					"git-extended.proxy": {
 						"type": [
 							"object",
 							"null"
@@ -3792,14 +3792,14 @@
 						"scope": "window",
 						"order": 55
 					},
-					"gitlens.virtualRepositories.enabled": {
+					"git-extended.virtualRepositories.enabled": {
 						"type": "boolean",
 						"default": true,
 						"markdownDescription": "Specifies whether to enable virtual repositories support",
 						"scope": "window",
 						"order": 70
 					},
-					"gitlens.insiders": {
+					"git-extended.insiders": {
 						"deprecationMessage": "Deprecated. Use the pre-release edition of GitLens instead",
 						"markdownDeprecationMessage": "Deprecated. Use the pre-release of GitLens instead"
 					}
@@ -7205,6 +7205,13 @@
 				"default": {
 					"fontPath": "dist/glicons.woff2",
 					"fontCharacter": "\\f112"
+				}
+			},
+			"gitlens-git-extended": {
+				"description": "git-extended icon",
+				"default": {
+					"fontPath": "dist/glicons.woff2",
+					"fontCharacter": "\\f113"
 				}
 			},
 			"gitlens-gitlens": {
@@ -12774,14 +12781,14 @@
 				{
 					"id": "gitlens",
 					"title": "Git Extended",
-					"icon": "$(gitlens-gitlens)"
+					"icon": "$(gitlens-git-extended)"
 				}
 			],
 			"panel": [
 				{
 					"id": "gitlensPanel",
 					"title": "Git Extended",
-					"icon": "$(gitlens-gitlens)"
+					"icon": "$(gitlens-git-extended)"
 				}
 			]
 		},
@@ -13069,7 +13076,7 @@
 		"watch:webviews": "webpack --watch --mode development --config-name webviews",
 		"watch:tests": "concurrently \"tsc-alias -p tsconfig.test.json -w\" \"tsc -p tsconfig.test.json -w\"",
 		"-watch:tests": "webpack --watch -c webpack.config.test.js --mode development",
-		"web": "vscode-test-web --extensionDevelopmentPath=. --folder-uri=vscode-vfs://github/gitkraken/vscode-gitlens",
+		"web": "vscode-test-web --extensionDevelopmentPath=. --folder-uri=vscode-vfs://github/byrizki/vscode-git-extended",
 		"web:serve": "npx serve --cors -l 5000",
 		"web:tunnel": "npx localtunnel -p 5000",
 		"update-dts": "pushd \"src/@types\" && npx vscode-dts dev && popd",

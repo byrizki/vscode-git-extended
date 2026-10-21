@@ -8,7 +8,7 @@ import type {
 	TimelineItem,
 } from 'vscode';
 import { commands, Disposable, Uri, window } from 'vscode';
-import type { ActionContext } from '../api/gitlens';
+import type { ActionContext } from '../api/git-extended';
 import type { Commands } from '../constants';
 import type { GitBranch } from '../git/models/branch';
 import { isBranch } from '../git/models/branch';

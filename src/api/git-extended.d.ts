@@ -83,3 +83,6 @@ export interface ActionRunner<T extends ActionContext = ActionContext> {
 export interface GitLensApi {
 	registerActionRunner<T extends ActionContext>(action: Action<T>, runner: ActionRunner): Disposable;
 }
+
+export type GitExtendedApi = GitLensApi;
+

@@ -1,6 +1,6 @@
 import type { Command as CoreCommand, Disposable, Uri } from 'vscode';
 import { commands } from 'vscode';
-import type { Action, ActionContext } from '../api/gitlens';
+import type { Action, ActionContext } from '../api/git-extended';
 import type { Command } from '../commands/base';
 import type { CoreGitCommands } from '../constants';
 import { Commands, CoreCommands } from '../constants';

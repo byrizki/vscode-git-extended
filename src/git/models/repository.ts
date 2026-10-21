@@ -2,7 +2,7 @@ import type { CancellationToken, ConfigurationChangeEvent, Event, WorkspaceFolde
 import { Disposable, EventEmitter, ProgressLocation, RelativePattern, Uri, window, workspace } from 'vscode';
 import { md5 } from '@env/crypto';
 import { ForcePushMode } from '../../@types/vscode.git.enums';
-import type { CreatePullRequestActionContext } from '../../api/gitlens';
+import type { CreatePullRequestActionContext } from '../../api/git-extended';
 import { CoreGitCommands, CoreGitConfiguration, Schemes } from '../../constants';
 import type { Container } from '../../container';
 import type { FeatureAccess, Features, PlusFeatures } from '../../features';

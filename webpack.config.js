@@ -153,7 +153,7 @@ function getExtensionConfig(target, mode, env) {
 		devtool: mode === 'production' ? false : 'source-map',
 		output: {
 			chunkFilename: 'feature-[name].js',
-			filename: 'gitlens.js',
+			filename: 'git-extended.js',
 			libraryTarget: 'commonjs2',
 			path: target === 'webworker' ? path.join(__dirname, 'dist', 'browser') : path.join(__dirname, 'dist'),
 		},

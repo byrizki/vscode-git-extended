@@ -1,6 +1,6 @@
 import type { CancellationTokenSource, Extension, ExtensionContext, Uri } from 'vscode';
 import { extensions } from 'vscode';
-import type { ActionContext, HoverCommandsActionContext } from './api/gitlens';
+import type { ActionContext, HoverCommandsActionContext } from './api/git-extended';
 import type { InviteToLiveShareCommandArgs } from './commands';
 import { Commands, CoreCommands } from './constants';
 import { Container } from './container';

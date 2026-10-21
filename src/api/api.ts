@@ -1,7 +1,7 @@
 import type { Disposable } from 'vscode';
 import { Container } from '../container';
 import { builtInActionRunnerName } from './actionRunners';
-import type { Action, ActionContext, ActionRunner, GitLensApi } from './gitlens';
+import type { Action, ActionContext, ActionRunner, GitExtendedApi } from './git-extended';
 
 const emptyDisposable = Object.freeze({
 	dispose: () => {
@@ -9,7 +9,7 @@ const emptyDisposable = Object.freeze({
 	},
 });
 
-export class Api implements GitLensApi {
+export class Api implements GitExtendedApi {
 	readonly #container: Container;
 	constructor(container: Container) {
 		this.#container = container;
@@ -45,7 +45,7 @@ export function preview() {
 			// eslint-disable-next-line @typescript-eslint/no-unsafe-return
 			if (Container.instance.prereleaseOrDebugging) return fn!.apply(this, args);
 
-			console.error('GitLens preview APIs are only available in the pre-release edition');
+			console.error('Git Extended preview APIs are only available in the pre-release edition');
 			return emptyDisposable;
 		};
 	};
