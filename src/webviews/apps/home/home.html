@@ -28,25 +28,9 @@
 			</nav>
 		</div>
 		<header class="home__header">
-			<header-card id="header-card" image="#{webroot}/media/gitlens-logo.webp"></header-card>
+			<header-card id="header-card" image="#{webroot}/media/git-extended-logo.webp"></header-card>
 		</header>
 		<main class="home__main scrollable" id="main" tabindex="-1">
-			<style nonce="#{cspNonce}">
-				.video-banner {
-					--video-banner-bg: url(#{webroot}/media/getting-started.webp);
-				}
-				.vscode-high-contrast .video-banner,
-				.vscode-dark .video-banner {
-					--video-banner-play: url(#{webroot}/media/play-button.webp);
-				}
-				.vscode-high-contrast-light .video-banner,
-				.vscode-light .video-banner {
-					--video-banner-play: url(#{webroot}/media/play-button-dark.webp);
-				}
-				.gl-plus-banner {
-					background-image: url(#{webroot}/media/gitlens-backdrop-opacity.webp);
-				}
-			</style>
 			<div class="stepped-sections">
 				<stepped-section id="welcome">
 					<span slot="heading">Welcome to Git Extended</span>
@@ -54,10 +38,11 @@
 						Git Extended supercharges Git inside VS Code and unlocks the untapped knowledge within each
 						repository.
 					</p>
-					<a class="video-banner" href="https://www.youtube.com/watch?v=UQPb73Zz9qk">
-						<span>Get Started</span> <small>Tutorial Video</small>
-					</a>
 					<ul class="icon-list mb-0">
+						<li>
+							<code-icon icon="circle-filled"></code-icon>
+							<a href="command:gitlens.getStarted">Getting Started Walkthrough</a> &mdash; tour key features.
+						</li>
 						<li>
 							<code-icon icon="circle-filled"></code-icon>
 							<a href="command:gitlens.showWelcomePage?%22quick-setup%22">Quick Setup</a> &mdash; quickly
@@ -74,13 +59,13 @@
 					<span slot="heading">Features</span>
 					<span slot="description">always free and accessible</span>
 					<p>
-						GitLens is deeply integrated into many areas and aspects of VS Code, especially editors and
+						Git Extended is deeply integrated into many areas and aspects of VS Code, especially editors and
 						views. Learn more in the <a href="command:gitlens.getStarted">Feature Walkthrough</a>.
 					</p>
 					<card-section no-heading id="no-repo" aria-hidden="true">
 						<div class="centered">
 							<p>
-								To use GitLens, open a folder containing a git repository or clone from a URL from the
+								To use Git Extended, open a folder containing a git repository or clone from a URL from the
 								Explorer.
 							</p>
 
@@ -100,10 +85,10 @@
 								<span aria-hidden="true"
 									>the icon <span class="not-small">to the left</span
 									><span class="only-small">below</span></span
-								><span class="sr-only">a layout option</span> to set the location of your GitLens views.
+								><span class="sr-only">a layout option</span> to set the location of your Git Extended views.
 							</p>
 						</div>
-						<nav class="activitybar-banner__media" aria-label="GitLens Layout">
+						<nav class="activitybar-banner__media" aria-label="Git Extended Layout">
 							<a
 								href="command:gitlens.setViewsLayout?%7B%22layout%22%3A%22scm%22%7D"
 								class="activitybar-banner__nav-item"
@@ -113,8 +98,8 @@
 							<a
 								href="command:gitlens.setViewsLayout?%7B%22layout%22%3A%22gitlens%22%7D"
 								class="activitybar-banner__nav-item"
-								title="Move views to the GitLens side bar"
-								aria-label="Move views to the GitLens side bar"
+								title="Move views to the Git Extended side bar"
+								aria-label="Move views to the Git Extended side bar"
 							></a>
 							<svg
 								class="svg"
@@ -192,11 +177,11 @@
 					</p>
 				</stepped-section>
 			</div>
-			<div id="plus-sections">
+			<div id="worktree-sections">
 				<card-section dismissable id="worktrees">
 					<span slot="heading">Worktrees</span>
 					<img
-						src="#{webroot}/media/plus-worktrees-illustrated.webp"
+						src="#{webroot}/media/worktrees-illustrated.webp"
 						alt="Worktrees illustration"
 						class="plus-section-thumb mb-1"
 					/>

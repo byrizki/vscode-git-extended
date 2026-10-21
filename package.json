@@ -10,7 +10,7 @@
 	"publisher": "git-extended",
 	"main": "./dist/gitlens.js",
 	"browser": "./dist/browser/gitlens.js",
-	"icon": "images/gitlens-icon.png",
+	"icon": "images/icon.png",
 	"preview": false,
 	"categories": [
 		"Other",
@@ -12931,8 +12931,8 @@
 				"steps": [
 					{
 						"id": "gitlens.welcome.tutorial",
-						"title": "Watch Tutorial",
-						"description": "Sit back and watch the Getting Started video.\n\n[Watch Tutorial Video](https://www.youtube.com/watch?v=UQPb73Zz9qk \"Watch the Getting Started video\")",
+						"title": "Welcome to Git Extended",
+						"description": "Discover and personalize features that supercharge your Git experience.",
 						"media": {
 							"markdown": "walkthroughs/getting-started/0-tutorial.md"
 						}
@@ -12940,17 +12940,25 @@
 					{
 						"id": "gitlens.welcome.experience",
 						"title": "Get setup quickly",
-						"description": "Use the Quick Setup to easily configure frequently used GitLens features.\n\n[Open Quick Setup](command:gitlens.showWelcomePage?%22quick-setup%22 \"Opens the GitLens Quick Setup\")",
+						"description": "Use the Quick Setup to easily configure frequently used Git Extended features.\n\n[Open Quick Setup](command:gitlens.showWelcomePage?%22quick-setup%22 \"Opens the Git Extended Quick Setup\")",
 						"media": {
 							"markdown": "walkthroughs/getting-started/1-setup.md"
 						}
 					},
 					{
 						"id": "gitlens.welcome.settings",
-						"title": "Easily customize every aspect of GitLens",
-						"description": "A rich, interactive settings editor enables seemingly endless customization possibilities.\n\n[Open Settings](command:gitlens.showSettingsPage \"Opens the GitLens Interactive Settings\")",
+						"title": "Easily customize every aspect of Git Extended",
+						"description": "A rich, interactive settings editor enables seemingly endless customization possibilities.\n\n[Open Settings](command:gitlens.showSettingsPage \"Opens the Git Extended Interactive Settings\")",
 						"media": {
 							"markdown": "walkthroughs/getting-started/2-customize.md"
+						}
+					},
+					{
+						"id": "gitlens.welcome.worktrees",
+						"title": "Multitask with Worktrees",
+						"description": "Work on multiple branches simultaneously using native Git worktrees without disrupting your workspace.\n\n[Open Worktrees View](command:gitlens.showWorktreesView)",
+						"media": {
+							"markdown": "walkthroughs/getting-started/12-worktrees.md"
 						}
 					},
 					{
@@ -12972,7 +12980,7 @@
 					{
 						"id": "gitlens.welcome.revisionHistory",
 						"title": "Easily navigate revision history",
-						"description": "",
+						"description": "Step backwards and forwards through file revisions to compare changes over time.",
 						"media": {
 							"markdown": "walkthroughs/getting-started/5-revision-history.md"
 						}

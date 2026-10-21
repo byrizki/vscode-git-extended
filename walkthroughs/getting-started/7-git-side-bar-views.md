@@ -1,7 +1,7 @@
 ## Side Bar Views
 
 <p float="left">
-  <img src="../../images/docs/views-layout-gitlens.png" alt="Git Extended Side Bar Views" width="45%" />
+  <img src="../../images/docs/views-layout-git-extended.png" alt="Git Extended Side Bar Views" width="45%" />
   <img src="../../images/docs/views-layout-scm.png" alt="Source Control Side Bar Views" width="45%" />
 </p>
 

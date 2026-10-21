@@ -198,7 +198,7 @@ export class HomeWebviewView extends WebviewViewBase<State> {
 		if (subscriptionState.account?.email) {
 			avatar = getAvatarUriFromGravatarEmail(subscriptionState.account.email, 34).toString();
 		} else {
-			avatar = `${this.getWebRoot() ?? ''}/media/gitlens-logo.webp`;
+			avatar = `${this.getWebRoot() ?? ''}/media/git-extended-logo.webp`;
 		}
 
 		return {

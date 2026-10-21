@@ -57,7 +57,7 @@ Here are just some of the **features** that Git Extended provides:
 ## Worktrees view [#](#worktrees-view- 'Worktrees view')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/worktrees-illustrated.png" alt="Worktrees view" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/worktrees-illustrated.png" alt="Worktrees view" />
 </p>
 
 Worktrees help you multitask by minimizing the context switching between branches, allowing you to easily work on different branches of a repository simultaneously.
@@ -69,7 +69,7 @@ You can create multiple working trees, each of which can be opened in individual
 ## Revision Navigation [#](#revision-navigation- 'Revision Navigation')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/revision-navigation.gif" alt="Revision Navigation" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/revision-navigation.gif" alt="Revision Navigation" />
 </p>
 
 - Adds an _Open Changes with Previous Revision_ command (`gitlens.diffWithPrevious`) to compare the current file or revision with the previous commit revision
@@ -83,7 +83,7 @@ You can create multiple working trees, each of which can be opened in individual
 ## Current Line Blame [#](#current-line-blame- 'Current Line Blame')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/current-line-blame.png" alt="Current Line Blame" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/current-line-blame.png" alt="Current Line Blame" />
 </p>
 
 - Adds an unobtrusive, [customizable](#current-line-blame-settings- 'Jump to the Current Line Blame settings'), and [themable](#themable-colors- 'Jump to the Themable Colors'), **blame annotation** at the end of the current line
@@ -93,7 +93,7 @@ You can create multiple working trees, each of which can be opened in individual
 ## Git CodeLens [#](#git-codelens- 'Git CodeLens')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/code-lens.png" alt="Git CodeLens" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/code-lens.png" alt="Git CodeLens" />
 </p>
 
 - Adds Git authorship **CodeLens** to the top of the file and on code blocks ([optional](#git-codelens-settings- 'Jump to the Git CodeLens settings'), on by default)
@@ -118,7 +118,7 @@ You can create multiple working trees, each of which can be opened in individual
 ## Status Bar Blame [#](#status-bar-blame- 'Status Bar Blame')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/status-bar.png" alt="Status Bar Blame" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/status-bar.png" alt="Status Bar Blame" />
 </p>
 
 - Adds a [customizable](#status-bar-settings- 'Jump to the Status Bar Blame settings') **Git blame annotation** showing the commit and author who last modified the current line to the **status bar** ([optional](#status-bar-settings- 'Jump to the Status Bar Blame settings'), on by default)
@@ -141,7 +141,7 @@ You can create multiple working trees, each of which can be opened in individual
 ### Current Line Hovers
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/hovers-current-line.png" alt="Current Line Hovers" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/hovers-current-line.png" alt="Current Line Hovers" />
 </p>
 
 - Adds [customizable](#hover-settings- 'Jump to the Hover settings') Git blame hovers accessible over the current line
@@ -149,7 +149,7 @@ You can create multiple working trees, each of which can be opened in individual
 ### Details Hover
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/hovers-current-line-details.png" alt="Current Line Details Hover" />
+    <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/hovers-current-line-details.png" alt="Current Line Details Hover" />
   </p>
 
 - Adds a **details hover** annotation to the current line to show more commit details ([optional](#hover-settings- 'Jump to the Hover settings'), on by default)
@@ -160,7 +160,7 @@ You can create multiple working trees, each of which can be opened in individual
 ### Changes (diff) Hover
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/hovers-current-line-changes.png" alt="Current Line Changes (diff) Hover" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/hovers-current-line-changes.png" alt="Current Line Changes (diff) Hover" />
 </p>
 
 - Adds a **changes (diff) hover** annotation to the current line to show the line's previous version ([optional](#hover-settings- 'Jump to the Hover settings'), on by default)
@@ -170,7 +170,7 @@ You can create multiple working trees, each of which can be opened in individual
 ### Annotation Hovers
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/hovers-annotations.png" alt="Annotation Hovers" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/hovers-annotations.png" alt="Annotation Hovers" />
 </p>
 
 - Adds [customizable](#hover-settings- 'Jump to the Hover settings') Git blame hovers accessible when annotating
@@ -178,7 +178,7 @@ You can create multiple working trees, each of which can be opened in individual
 ### Details Hover
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/hovers-annotations-details.png" alt="Annotations Details Hover" />
+    <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/hovers-annotations-details.png" alt="Annotations Details Hover" />
   </p>
 
 - Adds a **details hover** annotation to each line while annotating to show more commit details ([optional](#hover-settings- 'Jump to the Hover settings'), on by default)
@@ -189,7 +189,7 @@ You can create multiple working trees, each of which can be opened in individual
 ### Changes (diff) Hover
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/hovers-annotations-changes.png" alt="Annotations Changes (diff) Hover" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/hovers-annotations-changes.png" alt="Annotations Changes (diff) Hover" />
 </p>
 
 - Adds a **changes (diff) hover** annotation to each line while annotating to show the line's previous version ([optional](#hover-settings- 'Jump to the Hover settings'), on by default)
@@ -199,7 +199,7 @@ You can create multiple working trees, each of which can be opened in individual
 ## File Blame [#](#file-blame- 'File Blame')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/gutter-blame.png" alt="File Blame">
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/gutter-blame.png" alt="File Blame">
 </p>
 
 - Adds on-demand, [customizable](#file-blame-settings- 'Jump to the File Blame settings'), and [themable](#themable-colors- 'Jump to Themable Colors'), **file blame annotations** to show the commit and author who last modified each line of a file
@@ -212,7 +212,7 @@ You can create multiple working trees, each of which can be opened in individual
 ## File Changes [#](#file-changes- 'File Changes')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/gutter-changes.png" alt="File Changes" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/gutter-changes.png" alt="File Changes" />
 </p>
 
 - Adds an on-demand, [customizable](#file-changes-settings- 'Jump to the File Changes settings') and [themable](#themable-colors- 'Jump to Themable Colors'), **file changes annotation** to highlight any local (unpublished) changes or lines changed by the most recent commit
@@ -222,7 +222,7 @@ You can create multiple working trees, each of which can be opened in individual
 ## File Heatmap [#](#file-heatmap- 'File Heatmap')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/gutter-heatmap.png" alt="File Heatmap" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/gutter-heatmap.png" alt="File Heatmap" />
 </p>
 
 - Adds an on-demand **heatmap** to the edge of the file to show how recently lines were changed
@@ -246,7 +246,7 @@ GitLens adds many side bar views to provide additional rich functionality. The d
 ### Commit Details View [#](#commit-details-view- 'Commits Details view')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/commit-details-view.png" alt="Commits Details view" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/commit-details-view.png" alt="Commits Details view" />
 </p>
 
 The _Commit Details_ view provides rich details for commits and stashes: author, commit ID, autolinks to pull requests and issues, changed files, and more.
@@ -264,7 +264,7 @@ Alternatively, you can search for or choose a commit directly from the view.
 ### Commits View [#](#commits-view- 'Commits view')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/commits-view.png" alt="Commits view" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/commits-view.png" alt="Commits view" />
 </p>
 
 A [customizable](#commits-view-settings- 'Jump to the Commits view settings') view to visualize, explore, and manage Git commits.
@@ -285,9 +285,9 @@ The _Commits_ view lists all of the commits on the current branch, and additiona
   - **Changes to pull from &lt;remote&gt;** &mdash; lists all of the commits waiting to be pulled when the current branch has commits that are waiting to be pulled from the upstream remote
   - **Changes to push to &lt;remote&gt;** &mdash; lists of all the files changed in the unpublished commits when the current branch has (unpublished) commits that waiting to be pushed to the upstream remote
   - **Merging into &lt;branch&gt;** or **Resolve conflicts before merging into &lt;branch&gt;** &mdash; lists any conflicted files. Conflicted files show comparisons with the common base of the current and incoming changes to aid in resolving the conflict by making it easier to see where changes originated
-    ![Merging](https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/commits-view-merge.png)
+    ![Merging](https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/commits-view-merge.png)
   - **Rebasing &lt;branch&gt;** or **Resolve conflicts to continue rebasing &lt;branch&gt;** &mdash; shows the number of rebase steps left, the commit the rebase is paused at, and lists any conflicted files. Conflicted files show comparisons with the common base of the current and incoming changes to aid in resolving the conflict by making it easier to see where changes originated
-    ![Rebasing](https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/commits-view-rebase.png)
+    ![Rebasing](https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/commits-view-rebase.png)
 - any associated pull request &mdash; shows any opened or merged pull request associated with the current branch
 
 ---
@@ -295,7 +295,7 @@ The _Commits_ view lists all of the commits on the current branch, and additiona
 ### Repositories View [#](#repositories-view- 'Repositories view')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/repositories-view.png" alt="Repositories view" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/repositories-view.png" alt="Repositories view" />
 </p>
 
 A hidden by default, [customizable](#repositories-view-settings- 'Jump to the Repositories view settings') view to visualize, explore, and manage Git repositories.
@@ -336,7 +336,7 @@ The Repositories view lists opened Git repositories, and additionally provides:
 ### File History View [#](#file-history-view- 'File History view')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/file-history-view.png" alt="File History view" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/file-history-view.png" alt="File History view" />
 </p>
 
 A [customizable](#file-history-view-settings- 'Jump to the File History view settings') view to visualize, navigate, and explore the revision history of the current file or just the selected lines of the current file.
@@ -350,14 +350,14 @@ The file history view lists all of the commits that changed the current file on 
 - (file history only) a toggle to show commits from all branches rather than just from the current base branch or reference
 - merge conflict status when applicable
   - **Merge Changes** &mdash; show comparisons with the common base of the current and incoming changes to aid in resolving the conflict by making it easier to see where changes originated
-    ![Merge Conflicts](https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/file-history-view-merge-conflict.png)
+    ![Merge Conflicts](https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/file-history-view-merge-conflict.png)
 
 ---
 
 ### Line History View [#](#line-history-view- 'Line History view')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/line-history-view.png" alt="Line History view" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/line-history-view.png" alt="Line History view" />
 </p>
 
 A hidden by default, [customizable](#line-history-view-settings- 'Jump to the Line History view settings') view to visualize, navigate, and explore the revision history of the selected lines of the current file.
@@ -374,7 +374,7 @@ The line history view lists all of the commits that changed the selected lines o
 ### Branches view [#](#branches-view- 'Branches View')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/branches-view.png" alt="Branches view" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/branches-view.png" alt="Branches view" />
 </p>
 
 A [customizable](#branches-view-settings- 'Jump to the Branches view settings') view to visualize, explore, and manage Git branches.
@@ -412,7 +412,7 @@ The _Branches_ view lists all of the local branches, and additionally provides:
 ### Remotes view [#](#remotes-view- 'Remotes View')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/remotes-view.png" alt="Remotes view" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/remotes-view.png" alt="Remotes view" />
 </p>
 
 A [customizable](#remotes-view-settings- 'Jump to the Remotes view settings') view to visualize, explore, and manage Git remotes and remote branches.
@@ -428,7 +428,7 @@ The _Remotes_ view lists all of the remotes and their remote branches, and addit
 ### Stashes View [#](#stashes-view- 'Stashes View')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/stashes-view.png" alt="Stashes view" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/stashes-view.png" alt="Stashes view" />
 </p>
 
 A [customizable](#stashes-view-settings- 'Jump to the Stashes view settings') view to visualize, explore, and manage Git stashes.
@@ -442,7 +442,7 @@ The _Stashes_ view lists all of the stashes, and additionally provides:
 ### Tags View [#](#tags-view- 'Tags View')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/tags-view.png" alt="Tags view" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/tags-view.png" alt="Tags view" />
 </p>
 
 A [customizable](#tags-view-settings- 'Jump to the Tags view settings') view to visualize, explore, and manage Git tags.
@@ -457,7 +457,7 @@ The _Tags_ view lists all of the tags, and additionally provides:
 ### Contributors View [#](#contributors-view- 'Contributors View')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/contributors-view.png" alt="Contributors view" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/contributors-view.png" alt="Contributors view" />
 </p>
 
 A hidden by default, [customizable](#contributors-view-settings- 'Jump to the Contributors view settings') view to visualize, navigate, and explore contributors.
@@ -471,7 +471,7 @@ The _Contributors_ view lists all of the contributors, and additionally provides
 ### Search & Compare View [#](#search--compare-view- 'Search & Compare View')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/search-and-compare-view.png" alt="Search & Compare view" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/search-and-compare-view.png" alt="Search & Compare view" />
 </p>
 
 A hidden by default, [customizable](#search--compare-view-settings- 'Jump to the Search & Compare view settings') view to search and explore commit histories by message, author, files, id, etc, or visualize comparisons between branches, tags, commits, and more.
@@ -506,7 +506,7 @@ The _Search & Compare_ view lists pinnable (saved) results for searching commit 
 ## Git Command Palette [#](#git-command-palette- 'Git Command Palette')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/git-command-palette.png" alt="Git Command Palette" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/git-command-palette.png" alt="Git Command Palette" />
 </p>
 
 - Adds a [customizable](#git-command-palette-settings- 'Jump to the Git Command Palette settings') _Git Command Palette_ command (`gitlens.gitCommands`) to provide guided (step-by-step) access to many common Git commands, as well as quick access to commit history and search, stashes, and more
@@ -519,13 +519,13 @@ The _Search & Compare_ view lists pinnable (saved) results for searching commit 
 - Adds a _Show Current Branch History_ command (`gitlens.showQuickRepoHistory`) to show a quick pick menu to explore the commit history of the current branch
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/menu-branch-history.png" alt="Branch History Quick Pick Menu" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/menu-branch-history.png" alt="Branch History Quick Pick Menu" />
 </p>
 
 - Adds a _Show File History_ command (`gitlens.showQuickFileHistory`) to show quick pick menu to explore the commit history of the current file
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/menu-file-history.png" alt="File History Quick Pick Menu" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/menu-file-history.png" alt="File History Quick Pick Menu" />
 </p>
 
 - Adds a _Search Commits_ command (`gitlens.showCommitSearch`) to show quick pick menu to search for commits
@@ -536,19 +536,19 @@ The _Search & Compare_ view lists pinnable (saved) results for searching commit 
   - or, by changes &mdash; use `~<pattern>` to find commits with differences whose patch text contains added/removed lines that match `<pattern>` &mdash; See [Git docs](https://git-scm.com/docs/git-log#Documentation/git-log.txt--Gltregexgt 'Open Git docs')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/menu-commit-search.png" alt="Commit Search Quick Pick Menu" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/menu-commit-search.png" alt="Commit Search Quick Pick Menu" />
 </p>
 
 - Adds a _Show Commit_ command (`gitlens.showQuickCommitDetails`) to show a quick pick menu to explore a commit and take action upon it
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/menu-commit-details.png" alt="Commit Details Quick Pick Menu" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/menu-commit-details.png" alt="Commit Details Quick Pick Menu" />
 </p>
 
 - Adds a _Show Line Commit_ command (`gitlens.showQuickCommitFileDetails`) to show a quick pick menu to explore a file of a commit and take action upon it
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/menu-commit-file-details.png" alt="Commit File Details Quick Pick Menu" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/menu-commit-file-details.png" alt="Commit File Details Quick Pick Menu" />
 </p>
 
 ### Quick Stash Access [#](#quick-stash-access- 'Quick Stash Access')
@@ -556,10 +556,10 @@ The _Search & Compare_ view lists pinnable (saved) results for searching commit 
 - Adds a _Show Stashes_ command (`gitlens.showQuickStashList`) to show a quick pick menu to explore your stashes
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/menu-stash-list.png" alt="Stashes Quick Pick Menu" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/menu-stash-list.png" alt="Stashes Quick Pick Menu" />
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/menu-stash-details.png" alt="Stash Details Quick Pick Menu" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/menu-stash-details.png" alt="Stash Details Quick Pick Menu" />
 </p>
 
 ### Quick Status Access [#](#quick-status-access- 'Quick Status Access')
@@ -567,13 +567,13 @@ The _Search & Compare_ view lists pinnable (saved) results for searching commit 
 - Adds a _Show Repository Status_ command (`gitlens.showQuickRepoStatus`) to show a quick pick menu to for visualizing the current repository status
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/menu-repo-status.png" alt="Repository Status Quick Pick Menu" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/menu-repo-status.png" alt="Repository Status Quick Pick Menu" />
 </p>
 
 ## Interactive Rebase Editor [#](#interactive-rebase-editor- 'Interactive Rebase Editor')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/rebase.gif" alt="Interactive Rebase Editor" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/rebase.gif" alt="Interactive Rebase Editor" />
 </p>
 
 - Adds a user-friendly interactive rebase editor to more easily configure an interactive rebase session
@@ -591,7 +591,7 @@ The _Search & Compare_ view lists pinnable (saved) results for searching commit 
 ## Terminal Links [#](#terminal-links- 'Terminal Links')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/terminal-links.gif" alt="Terminal Links" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/terminal-links.gif" alt="Terminal Links" />
 </p>
 
 - [Optionally](#terminal-links-settings- 'Jump to the Terminal Links settings') adds autolinks for branches, tags, and commit ranges in the integrated terminal to quickly explore their commit history
@@ -658,7 +658,7 @@ Additionally, these integrations provide commands to copy the URL of or open fil
 ## Menus & Toolbars [#](#menus--toolbars- 'Menus & Toolbars')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/menus.png" alt="Menus &amp; Toolbars" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/menus.png" alt="Menus &amp; Toolbars" />
 </p>
 
 GitLens provides [customizable](#menu--toolbar-settings-) menu and toolbar contributions to put you in control over where GitLens' commands are shown. The easiest way to configure these settings is via the GitLens [**interactive settings editor**](#configuration- 'Jump to Configuration').
@@ -666,7 +666,7 @@ GitLens provides [customizable](#menu--toolbar-settings-) menu and toolbar contr
 For example, if you uncheck the _Add to the editor group toolbar_ you will see the following items removed from the toolbar:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/menus-example.png" alt="Editor Group Toolbar example" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/menus-example.png" alt="Editor Group Toolbar example" />
 </p>
 
 You can also expand each group to control each area more granularly.
@@ -685,7 +685,7 @@ GitLens supports [user-defined](#modes-settings- 'Jump to the Modes settings') m
 # Configuration [#](#configuration- 'Configuration')
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/settings.png" alt="GitLens Interactive Settings" />
+  <img src="https://raw.githubusercontent.com/byrizki/vscode-git-extended/main/images/docs/settings.png" alt="GitLens Interactive Settings" />
 </p>
 
 GitLens provides a rich **interactive settings editor**, an easy-to-use interface, to configure many of GitLens' powerful features. It can be accessed via the _GitLens: Open Settings_ (`gitlens.showSettingsPage`) command from the [_Command Palette_](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
