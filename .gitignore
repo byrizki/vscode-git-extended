@@ -6,6 +6,7 @@ dist
 out
 node_modules
 images/settings
+*.vsix
 gitlens-*.vsix
 tsconfig*.tsbuildinfo
 .yarn
