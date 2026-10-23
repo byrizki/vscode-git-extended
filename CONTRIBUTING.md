@@ -192,11 +192,3 @@ Once the commit is completed, run `git push --follow-tags` to push the version c
 After the version commit and new tags are pushed to GitHub, the [Publish Stable workflow](.github/workflows/cd-stable.yml) will be triggered, which will automatically package the extension and deploy it to the [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=git-extended.git-extended). The [release notes](https://github.com/byrizki/vscode-git-extended/releases/latest) _should_ be generated during the action, but if not, this can be done manually using the notes from the [Change Log](CHANGELOG.md).
 
 If the action fails, the VSIX will need to be built locally with `yarn package` and uploaded manually in the marketplace.
-
-### Pre-release edition (currently disabled until VS Code's marketplace supports pre-releases)
-
-The [Publish Pre-release workflow](.github/workflows/cd-pre.yml) is automatically run every AM unless no new changes have been committed to `main`.
-
-### Insiders edition
-
-The [Publish Insiders workflow](.github/workflows/cd-insiders.yml) is automatically run every AM unless no new changes have been committed to `main`.

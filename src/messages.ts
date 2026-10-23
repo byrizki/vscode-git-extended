@@ -116,22 +116,6 @@ export function showGitVersionUnsupportedErrorMessage(
 	);
 }
 
-export function showInsidersErrorMessage() {
-	return showMessage(
-		'error',
-		'Git Extended (Insiders) cannot be used while Git Extended is also enabled. Please ensure that only one version is enabled.',
-	);
-}
-
-export function showPreReleaseExpiredErrorMessage(version: string, insiders: boolean) {
-	return showMessage(
-		'error',
-		`This Git Extended ${
-			insiders ? '(Insiders)' : 'pre-release'
-		} version (${version}) has expired. Please upgrade to a more recent version.`,
-	);
-}
-
 export function showLineUncommittedWarningMessage(message: string): Promise<MessageItem | undefined> {
 	return showMessage(
 		'warn',

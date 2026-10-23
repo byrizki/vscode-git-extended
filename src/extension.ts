@@ -1,5 +1,5 @@
 import type { ExtensionContext } from 'vscode';
-import { version as codeVersion, env, ExtensionMode, extensions, Uri, window, workspace } from 'vscode';
+import { version as codeVersion, env, ExtensionMode, Uri, window, workspace } from 'vscode';
 import { hrtime } from '@env/hrtime';
 import { isWeb } from '@env/platform';
 import { Api } from './api/api';
@@ -18,12 +18,7 @@ import { getBranchNameWithoutRemote, isBranch } from './git/models/branch';
 import { isCommit } from './git/models/commit';
 import { isRepository } from './git/models/repository';
 import { isTag } from './git/models/tag';
-import {
-	showDebugLoggingWarningMessage,
-	showInsidersErrorMessage,
-	showPreReleaseExpiredErrorMessage,
-	showWhatsNewMessage,
-} from './messages';
+import { showDebugLoggingWarningMessage, showWhatsNewMessage } from './messages';
 import { registerPartnerActionRunners } from './partners';
 import { Storage, SyncedStorageKeys } from './storage';
 import { executeCommand, registerCommands } from './system/command';
@@ -34,13 +29,11 @@ import { Logger } from './system/logger';
 import { LogLevel } from './system/logger.constants';
 import { flatten } from './system/object';
 import { Stopwatch } from './system/stopwatch';
-import { compare, fromString, satisfies } from './system/version';
+import { compare } from './system/version';
 import { isViewNode } from './views/nodes/viewNode';
 
 export async function activate(context: ExtensionContext): Promise<GitExtendedApi | undefined> {
 	const extensionVersion: string = context.extension.packageJSON.version;
-	const insiders = context.extension.id === 'git-extended.git-extended-insiders';
-	const prerelease = insiders || satisfies(extensionVersion, '> 2020.0.0');
 
 	const outputLevel = configuration.get('outputLevel');
 	Logger.configure(
@@ -67,7 +60,7 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 	);
 
 	const sw = new Stopwatch(
-		`Git Extended${prerelease ? (insiders ? ' (Insiders)' : ' (pre-release)') : ''} v${extensionVersion}`,
+		`Git Extended v${extensionVersion}`,
 		{
 			log: {
 				message: ` activating in ${env.appName}(${codeVersion}) on the ${isWeb ? 'web' : 'desktop'} (${
@@ -78,40 +71,6 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 		},
 	);
 
-	// If we are using the separate insiders extension, ensure that stable isn't also installed
-	if (insiders) {
-		const stable = extensions.getExtension('git-extended.git-extended');
-		if (stable != null) {
-			sw.stop({ message: ' was NOT activated because Git Extended is also enabled' });
-
-			// If we don't use a setTimeout here this notification will get lost for some reason
-			setTimeout(showInsidersErrorMessage, 0);
-
-			return undefined;
-		}
-	}
-
-	// Ensure that this pre-release or insiders version hasn't expired
-	if (prerelease) {
-		const v = fromString(extensionVersion);
-		// Get the build date from the version number
-		const date = new Date(v.major, v.minor - 1, Number(v.patch.toString().substring(0, 2)));
-
-		// If the build date is older than 14 days then show the expired error message
-		if (date.getTime() < Date.now() - 14 * 24 * 60 * 60 * 1000) {
-			sw.stop({
-				message: ` was NOT activated because this ${
-					insiders ? 'insiders' : 'pre-release'
-				} version (${extensionVersion}) has expired`,
-			});
-
-			// If we don't use a setTimeout here this notification will get lost for some reason
-			setTimeout(showPreReleaseExpiredErrorMessage, 0, extensionVersion, insiders);
-
-			return undefined;
-		}
-	}
-
 	if (!workspace.isTrusted) {
 		void setContext(ContextKeys.Untrusted, true);
 	}
@@ -119,8 +78,8 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 	setKeysForSync(context);
 
 	const storage = new Storage(context);
-	const syncedVersion = storage.get(prerelease && !insiders ? 'synced:preVersion' : 'synced:version');
-	const localVersion = storage.get(prerelease && !insiders ? 'preVersion' : 'version');
+	const syncedVersion = storage.get('synced:version');
+	const localVersion = storage.get('version');
 
 	let previousVersion: string | undefined;
 	if (localVersion == null || syncedVersion == null) {
@@ -155,7 +114,7 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 
 	// await migrateSettings(context, previousVersion);
 
-	const container = Container.create(context, storage, prerelease, extensionVersion, previousVersion);
+	const container = Container.create(context, storage, false, extensionVersion, previousVersion);
 	once(container.onReady)(() => {
 		context.subscriptions.push(...registerCommands(container));
 		registerBuiltInActionRunners(container);
@@ -172,11 +131,11 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 
 		void showWelcomeOrWhatsNew(container, extensionVersion, previousVersion);
 
-		void storage.store(prerelease && !insiders ? 'preVersion' : 'version', extensionVersion);
+		void storage.store('version', extensionVersion);
 
 		// Only update our synced version if the new version is greater
 		if (syncedVersion == null || compare(extensionVersion, syncedVersion) === 1) {
-			void storage.store(prerelease && !insiders ? 'synced:preVersion' : 'synced:version', extensionVersion);
+			void storage.store('synced:version', extensionVersion);
 		}
 
 		if (outputLevel === OutputLevel.Debug) {
@@ -205,8 +164,6 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 
 	container.telemetry.setGlobalAttributes({
 		debugging: container.debugging,
-		insiders: insiders,
-		prerelease: prerelease,
 		install: previousVersion == null,
 		upgrade: previousVersion != null && extensionVersion !== previousVersion,
 		upgradedFrom: previousVersion != null && extensionVersion !== previousVersion ? previousVersion : undefined,
