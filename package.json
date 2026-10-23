@@ -7,7 +7,7 @@
 		"vscode": "^1.72.0"
 	},
 	"license": "MIT",
-	"publisher": "git-extended",
+	"publisher": "byrizki",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/byrizki/vscode-git-extended.git"
@@ -9423,17 +9423,17 @@
 			"extension/context": [
 				{
 					"command": "git-extended.getStarted",
-					"when": "extension == git-extended.git-extended && extensionStatus == installed",
+					"when": "extension == byrizki.git-extended && extensionStatus == installed",
 					"group": "9_git_extended@1"
 				},
 				{
 					"command": "git-extended.showWelcomePage",
-					"when": "extension == git-extended.git-extended && extensionStatus == installed",
+					"when": "extension == byrizki.git-extended && extensionStatus == installed",
 					"group": "9_git_extended@2"
 				},
 				{
 					"command": "git-extended.showSettingsPage",
-					"when": "extension == git-extended.git-extended && extensionStatus == installed",
+					"when": "extension == byrizki.git-extended && extensionStatus == installed",
 					"group": "9_git_extended@3"
 				}
 			],

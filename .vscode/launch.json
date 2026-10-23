@@ -13,7 +13,7 @@
 				"pauseForSourceMap": true,
 				"sourceMapRenames": true,
 				"sourceMaps": true,
-				// "urlFilter": "*git-extended.git-extended*",
+				// "urlFilter": "*byrizki.git-extended*",
 				"webRoot": "${workspaceFolder}/src/webviews/apps"
 			},
 			"outFiles": ["${workspaceFolder}/dist/**/*.js"],
@@ -39,7 +39,7 @@
 				"pauseForSourceMap": true,
 				"sourceMapRenames": true,
 				"sourceMaps": true,
-				// "urlFilter": "*git-extended.git-extended*",
+				// "urlFilter": "*byrizki.git-extended*",
 				"webRoot": "${workspaceFolder}/src/webviews/apps"
 			},
 			"outFiles": ["${workspaceFolder}/dist/**/*.js"],
@@ -84,7 +84,7 @@
 				"pauseForSourceMap": true,
 				"sourceMapRenames": true,
 				"sourceMaps": true,
-				// "urlFilter": "*git-extended.git-extended*",
+				// "urlFilter": "*byrizki.git-extended*",
 				"webRoot": "${workspaceFolder}/src/webviews/apps"
 			},
 			"outFiles": ["${workspaceFolder}/dist/**/*.js"],
@@ -142,7 +142,7 @@
 				"pauseForSourceMap": true,
 				"sourceMapRenames": true,
 				"sourceMaps": true,
-				// "urlFilter": "*git-extended.git-extended*",
+				// "urlFilter": "*byrizki.git-extended*",
 				"webRoot": "${workspaceFolder}/src/webviews/apps"
 			},
 			"outFiles": ["${workspaceFolder}/dist/**/*.js"],
