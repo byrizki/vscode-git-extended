@@ -76,7 +76,7 @@ export class CommitFileNode<TView extends View = ViewsWithCommits | FileHistoryV
 		item.id = this.id;
 		item.contextValue = this.contextValue;
 		item.description = this.description;
-		item.resourceUri = Uri.parse(`gitlens-view://commit-file/status/${this.file.status}`);
+		item.resourceUri = Uri.parse(`git-extended-view://commit-file/status/${this.file.status}`);
 		item.tooltip = this.tooltip;
 
 		const icon = getGitFileStatusIcon(this.file.status);

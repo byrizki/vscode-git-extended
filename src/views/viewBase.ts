@@ -113,7 +113,7 @@ export abstract class ViewBase<
 
 	constructor(
 		public readonly container: Container,
-		public readonly id: `gitlens.views.${ViewsConfigKeys}`,
+		public readonly id: `git-extended.views.${ViewsConfigKeys}`,
 		public readonly name: string,
 		private readonly trackingFeature: TrackedUsageFeatures,
 	) {

@@ -42,7 +42,7 @@ export function executeActionCommand<T extends ActionContext>(action: Action<T>,
 	return commands.executeCommand(`${Commands.ActionPrefix}${action}`, { ...args, type: action });
 }
 
-type SupportedCommands = Commands | `gitlens.views.${string}.focus` | `gitlens.views.${string}.resetViewLocation`;
+type SupportedCommands = Commands | `git-extended.views.${string}.focus` | `git-extended.views.${string}.resetViewLocation`;
 
 export function executeCommand<U = any>(command: SupportedCommands): Thenable<U>;
 export function executeCommand<T = unknown, U = any>(command: SupportedCommands, arg: T): Thenable<U>;

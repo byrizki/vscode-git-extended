@@ -103,7 +103,7 @@ export class FileRevisionAsCommitNode extends ViewRefFileNode<ViewsWithCommits |
 			messageTruncateAtNewLine: true,
 		});
 
-		item.resourceUri = Uri.parse(`gitlens-view://commit-file/status/${this.file.status}`);
+		item.resourceUri = Uri.parse(`git-extended-view://commit-file/status/${this.file.status}`);
 
 		if (!this.commit.isUncommitted && this.view.config.avatars) {
 			item.iconPath = this._options.unpublished

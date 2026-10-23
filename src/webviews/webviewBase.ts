@@ -42,7 +42,7 @@ export abstract class WebviewBase<State> implements Disposable {
 
 	constructor(
 		protected readonly container: Container,
-		public readonly id: `gitlens.${WebviewIds}`,
+		public readonly id: `git-extended.${WebviewIds}`,
 		private readonly fileName: string,
 		private readonly iconPath: string,
 		title: string,

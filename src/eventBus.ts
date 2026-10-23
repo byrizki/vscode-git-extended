@@ -41,10 +41,10 @@ interface EventBusEvent<T extends keyof EventBusEventMap = keyof EventBusEventMa
 }
 
 export type EventBusSource =
-	| 'gitlens.rebase'
-	| `gitlens.${WebviewIds}`
-	| `gitlens.views.${WebviewViewIds}`
-	| `gitlens.views.${ViewsConfigKeys}`;
+	| 'git-extended.rebase'
+	| `git-extended.${WebviewIds}`
+	| `git-extended.views.${WebviewViewIds}`
+	| `git-extended.views.${ViewsConfigKeys}`;
 
 export type EventBusOptions = {
 	source?: EventBusSource;

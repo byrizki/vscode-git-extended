@@ -33,7 +33,7 @@ import { WorktreesNode } from './worktreesNode';
 export class RepositoryNode extends SubscribeableViewNode<RepositoriesView> {
 	static key = ':repository';
 	static getId(repoPath: string): string {
-		return `gitlens${this.key}(${repoPath})`;
+		return `git-extended${this.key}(${repoPath})`;
 	}
 
 	private _children: ViewNode[] | undefined;

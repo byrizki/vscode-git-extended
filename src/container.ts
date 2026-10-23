@@ -715,7 +715,7 @@ export class Container {
 				if (configuration.changed(e, ['mode', 'modes'])) {
 					if (this._configAffectedByModeRegex == null) {
 						this._configAffectedByModeRegex = new RegExp(
-							`^gitlens\\.(?:${configuration.name('mode')}|${configuration.name(
+							`^git-extended\\.(?:${configuration.name('mode')}|${configuration.name(
 								'modes',
 							)}|${configuration.name('blame')}|${configuration.name('changes')}|${configuration.name(
 								'heatmap',

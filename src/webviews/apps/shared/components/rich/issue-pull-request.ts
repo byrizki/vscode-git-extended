@@ -20,7 +20,7 @@ export class IssuePullRequest extends LitElement {
 		.icon {
 			grid-column: 1;
 			grid-row: 1 / 3;
-			color: var(--vscode-gitlens-mergedPullRequestIconColor);
+			color: var(--vscode-git-extended-mergedPullRequestIconColor);
 			text-align: center;
 			padding-top: 0.1rem;
 		}

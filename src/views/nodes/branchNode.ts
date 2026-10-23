@@ -486,7 +486,7 @@ export class BranchNode
 				  };
 		item.tooltip = tooltip;
 		item.resourceUri = Uri.parse(
-			`gitlens-view://branch/status/${await this.branch.getStatus()}${
+			`git-extended-view://branch/status/${await this.branch.getStatus()}${
 				this.options.showCurrent && this.current ? '/current' : ''
 			}`,
 		);

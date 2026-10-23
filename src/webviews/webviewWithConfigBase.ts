@@ -24,7 +24,7 @@ import { WebviewBase } from './webviewBase';
 export abstract class WebviewWithConfigBase<State> extends WebviewBase<State> {
 	constructor(
 		container: Container,
-		id: `gitlens.${WebviewIds}`,
+		id: `git-extended.${WebviewIds}`,
 		fileName: string,
 		iconPath: string,
 		title: string,

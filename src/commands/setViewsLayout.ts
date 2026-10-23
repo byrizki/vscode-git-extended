@@ -6,7 +6,7 @@ import { command, executeCommand, executeCoreCommand } from '../system/command';
 import { Command } from './base';
 
 export enum ViewsLayout {
-	GitLens = 'gitlens',
+	GitExtended = 'git-extended',
 	SourceControl = 'scm',
 }
 
@@ -32,14 +32,14 @@ export class SetViewsLayoutCommand extends Command {
 						layout: ViewsLayout.SourceControl,
 					},
 					{
-						label: 'GitLens Layout',
+						label: 'Git Extended Layout',
 						description: '',
-						detail: 'Shows all the views together on the GitLens side bar',
-						layout: ViewsLayout.GitLens,
+						detail: 'Shows all the views together on the Git Extended side bar',
+						layout: ViewsLayout.GitExtended,
 					},
 				],
 				{
-					placeHolder: 'Choose a GitLens views layout',
+					placeHolder: 'Choose a Git Extended views layout',
 				},
 			);
 			if (pick == null) return;
@@ -52,14 +52,14 @@ export class SetViewsLayoutCommand extends Command {
 		const views = viewsConfigKeys.filter(v => v !== 'contributors');
 
 		switch (layout) {
-			case ViewsLayout.GitLens:
+			case ViewsLayout.GitExtended:
 				try {
 					// Because of https://github.com/microsoft/vscode/issues/105774, run the command twice which seems to fix things
 					let count = 0;
 					while (count++ < 2) {
 						void (await executeCoreCommand(CoreCommands.MoveViews, {
-							viewIds: views.map(v => `gitlens.views.${v}`),
-							destinationId: 'workbench.view.extension.gitlens',
+							viewIds: views.map(v => `git-extended.views.${v}`),
+							destinationId: 'workbench.view.extension.git-extended',
 						}));
 					}
 				} catch {}
@@ -71,13 +71,13 @@ export class SetViewsLayoutCommand extends Command {
 					let count = 0;
 					while (count++ < 2) {
 						void (await executeCoreCommand(CoreCommands.MoveViews, {
-							viewIds: views.map(v => `gitlens.views.${v}`),
+							viewIds: views.map(v => `git-extended.views.${v}`),
 							destinationId: 'workbench.view.scm',
 						}));
 					}
 				} catch {
 					for (const view of views) {
-						void (await executeCommand(`gitlens.views.${view}.resetViewLocation`));
+						void (await executeCommand(`git-extended.views.${view}.resetViewLocation`));
 					}
 				}
 

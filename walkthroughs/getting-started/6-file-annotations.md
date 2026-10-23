@@ -16,7 +16,7 @@ When activated, Git Extended expands the gutter area to show the commit and auth
 
 💡 On an active file, use the [Toggle File Blame](command:workbench.action.quickOpen?%22>Git Extended%3A%20Toggle%20File%20Blame%22) command from the Command Palette to turn the annotation on and off.
 
-⚙️ Use the settings editor to customize the [file blame](command:gitlens.showSettingsPage?%22blame%22 'Jump to the File Blame settings').
+⚙️ Use the settings editor to customize the [file blame](command:git-extended.showSettingsPage?%22blame%22 'Jump to the File Blame settings').
 
 ### File Changes
 
@@ -28,7 +28,7 @@ When activated, indicators are shown on the editor to highlight any local, unpub
 
 💡 On an active file, use the [Toggle File Changes](command:workbench.action.quickOpen?%22>Git Extended%3A%20Toggle%20File%20Changes%22) command from the Command Palette to turn the annotation on and off.
 
-⚙️ Use the settings editor to customize the [file changes](command:gitlens.showSettingsPage?%22changes%22 'Jump to the File Changes settings').
+⚙️ Use the settings editor to customize the [file changes](command:git-extended.showSettingsPage?%22changes%22 'Jump to the File Changes settings').
 
 ### Heatmap
 
@@ -40,4 +40,4 @@ When activated, color-coded indicators are shown on the editor to highlight how 
 
 💡 On an active file, use the [Toggle File Heatmap](command:workbench.action.quickOpen?%22>Git Extended%3A%20Toggle%20File%20Heatmap%22) command from the Command Palette to turn the annotation on and off.
 
-⚙️ Use the settings editor to customize the [file heatmap](command:gitlens.showSettingsPage?%22heatmap%22 'Jump to the File Heatmap settings').
+⚙️ Use the settings editor to customize the [file heatmap](command:git-extended.showSettingsPage?%22heatmap%22 'Jump to the File Heatmap settings').

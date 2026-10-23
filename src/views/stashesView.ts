@@ -93,7 +93,7 @@ export class StashesView extends ViewBase<StashesViewNode, StashesViewConfig> {
 	protected readonly configKey = 'stashes';
 
 	constructor(container: Container) {
-		super(container, 'gitlens.views.stashes', 'Stashes', 'stashesView');
+		super(container, 'git-extended.views.stashes', 'Stashes', 'stashesView');
 	}
 
 	override get canReveal(): boolean {

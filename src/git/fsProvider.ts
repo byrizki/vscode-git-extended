@@ -13,7 +13,7 @@ import type { GitTreeEntry } from './models/tree';
 
 const emptyArray = new Uint8Array(0);
 
-export function fromGitLensFSUri(uri: Uri): { path: string; ref: string; repoPath: string } {
+export function fromGitExtendedFSUri(uri: Uri): { path: string; ref: string; repoPath: string } {
 	const gitUri = isGitUri(uri) ? uri : GitUri.fromRevisionUri(uri);
 	return { path: gitUri.relativePath, ref: gitUri.sha!, repoPath: gitUri.repoPath! };
 }
@@ -24,7 +24,7 @@ export class GitFileSystemProvider implements FileSystemProvider, Disposable {
 
 	constructor(private readonly container: Container) {
 		this._disposable = Disposable.from(
-			workspace.registerFileSystemProvider(Schemes.GitLens, this, {
+			workspace.registerFileSystemProvider(Schemes.GitExtended, this, {
 				isCaseSensitive: isLinux,
 				isReadonly: true,
 			}),
@@ -52,7 +52,7 @@ export class GitFileSystemProvider implements FileSystemProvider, Disposable {
 
 	@debug()
 	async readDirectory(uri: Uri): Promise<[string, FileType][]> {
-		const { path, ref, repoPath } = fromGitLensFSUri(uri);
+		const { path, ref, repoPath } = fromGitExtendedFSUri(uri);
 
 		const tree = await this.getTree(path, ref, repoPath);
 		if (tree === undefined) throw FileSystemError.FileNotFound(uri);
@@ -68,7 +68,7 @@ export class GitFileSystemProvider implements FileSystemProvider, Disposable {
 
 	@debug()
 	async readFile(uri: Uri): Promise<Uint8Array> {
-		const { path, ref, repoPath } = fromGitLensFSUri(uri);
+		const { path, ref, repoPath } = fromGitExtendedFSUri(uri);
 
 		if (ref === deletedOrMissing) return emptyArray;
 
@@ -82,7 +82,7 @@ export class GitFileSystemProvider implements FileSystemProvider, Disposable {
 
 	@debug()
 	async stat(uri: Uri): Promise<FileStat> {
-		const { path, ref, repoPath } = fromGitLensFSUri(uri);
+		const { path, ref, repoPath } = fromGitExtendedFSUri(uri);
 
 		if (ref === deletedOrMissing) {
 			return {

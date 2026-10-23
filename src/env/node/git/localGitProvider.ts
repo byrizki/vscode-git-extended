@@ -44,7 +44,7 @@ import type {
 	ScmRepository,
 } from '../../../git/gitProvider';
 import { GitProviderId, RepositoryVisibility } from '../../../git/gitProvider';
-import { encodeGitLensRevisionUriAuthority, GitUri } from '../../../git/gitUri';
+import { encodeGitExtendedRevisionUriAuthority, GitUri } from '../../../git/gitUri';
 import type { GitBlame, GitBlameAuthor, GitBlameLine, GitBlameLines } from '../../../git/models/blame';
 import type { BranchSortOptions } from '../../../git/models/branch';
 import {
@@ -207,7 +207,7 @@ export class LocalGitProvider implements GitProvider, Disposable {
 	readonly supportedSchemes: Set<string> = new Set([
 		Schemes.File,
 		Schemes.Git,
-		Schemes.GitLens,
+		Schemes.GitExtended,
 		Schemes.PRs,
 		// DocumentSchemes.Vsls,
 	]);
@@ -810,8 +810,8 @@ export class LocalGitProvider implements GitProvider, Disposable {
 		};
 
 		const uri = Uri.from({
-			scheme: Schemes.GitLens,
-			authority: encodeGitLensRevisionUriAuthority(metadata),
+			scheme: Schemes.GitExtended,
+			authority: encodeGitExtendedRevisionUriAuthority(metadata),
 			path: path,
 			query: ref ? JSON.stringify({ ref: shortenRevision(ref) }) : undefined,
 		});
@@ -1892,7 +1892,7 @@ export class LocalGitProvider implements GitProvider, Disposable {
 							tagName = tip.substring(5);
 							tagId = getTagId(repoPath, tagName);
 							context = {
-								webviewItem: 'gitlens:tag',
+								webviewItem: 'git-extended:tag',
 								webviewItemValue: {
 									type: 'tag',
 									ref: createReference(tagName, repoPath, {
@@ -1937,7 +1937,7 @@ export class LocalGitProvider implements GitProvider, Disposable {
 									getRemoteIconUri(this.container, remote, asWebviewUri)
 								)?.toString(true);
 								context = {
-									webviewItem: 'gitlens:branch+remote',
+									webviewItem: 'git-extended:branch+remote',
 									webviewItemValue: {
 										type: 'branch',
 										ref: createReference(tip, repoPath, {
@@ -1978,7 +1978,7 @@ export class LocalGitProvider implements GitProvider, Disposable {
 						branch = branchMap.get(tip);
 						branchId = branch?.id ?? getBranchId(repoPath, false, tip);
 						context = {
-							webviewItem: `gitlens:branch${head ? '+current' : ''}${
+							webviewItem: `git-extended:branch${head ? '+current' : ''}${
 								branch?.upstream != null ? '+tracking' : ''
 							}`,
 							webviewItemValue: {
@@ -2023,7 +2023,7 @@ export class LocalGitProvider implements GitProvider, Disposable {
 								contexts.refGroups = {};
 							}
 							contexts.refGroups[groupName] = serializeWebviewItemContext<GraphItemRefGroupContext>({
-								webviewItemGroup: `gitlens:refGroup${group.head ? '+current' : ''}`,
+								webviewItemGroup: `git-extended:refGroup${group.head ? '+current' : ''}`,
 								webviewItemGroupValue: {
 									type: 'refGroup',
 									refs: group.local != null ? [group.local, ...group.remotes] : group.remotes,
@@ -2062,7 +2062,7 @@ export class LocalGitProvider implements GitProvider, Disposable {
 
 				if (stashCommit != null) {
 					contexts.row = serializeWebviewItemContext<GraphItemRefContext>({
-						webviewItem: 'gitlens:stash',
+						webviewItem: 'git-extended:stash',
 						webviewItemValue: {
 							type: 'stash',
 							ref: createReference(commit.sha, repoPath, {
@@ -2074,7 +2074,7 @@ export class LocalGitProvider implements GitProvider, Disposable {
 					});
 				} else {
 					contexts.row = serializeWebviewItemContext<GraphItemRefContext>({
-						webviewItem: `gitlens:commit${head ? '+HEAD' : ''}${
+						webviewItem: `git-extended:commit${head ? '+HEAD' : ''}${
 							reachableFromHEAD.has(commit.sha) ? '+current' : ''
 						}`,
 						webviewItemValue: {
@@ -2087,7 +2087,7 @@ export class LocalGitProvider implements GitProvider, Disposable {
 					});
 
 					contexts.avatar = serializeWebviewItemContext<GraphItemContext>({
-						webviewItem: `gitlens:contributor${isCurrentUser ? '+current' : ''}`,
+						webviewItem: `git-extended:contributor${isCurrentUser ? '+current' : ''}`,
 						webviewItemValue: {
 							type: 'contributor',
 							repoPath: repoPath,

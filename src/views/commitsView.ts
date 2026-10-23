@@ -175,7 +175,7 @@ export class CommitsView extends ViewBase<CommitsViewNode, CommitsViewConfig> {
 	protected readonly configKey = 'commits';
 
 	constructor(container: Container) {
-		super(container, 'gitlens.views.commits', 'Commits', 'commitsView');
+		super(container, 'git-extended.views.commits', 'Commits', 'commitsView');
 		this.disposables.push(container.usage.onDidChange(this.onUsageChanged, this));
 	}
 

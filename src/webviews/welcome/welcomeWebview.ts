@@ -8,7 +8,7 @@ export class WelcomeWebview extends WebviewWithConfigBase<State> {
 	constructor(container: Container) {
 		super(
 			container,
-			'gitlens.welcome',
+			'git-extended.welcome',
 			'welcome.html',
 			'images/icon.png',
 			'Welcome to Git Extended',

@@ -110,8 +110,8 @@ export class IntegrationAuthenticationService implements Disposable {
 		await this.container.storage.deleteSecret(key);
 	}
 
-	private getSecretKey(providerId: string, id: string): `gitlens.integration.auth:${string}` {
-		return `gitlens.integration.auth:${providerId}|${id}`;
+	private getSecretKey(providerId: string, id: string): `git-extended.integration.auth:${string}` {
+		return `git-extended.integration.auth:${providerId}|${id}`;
 	}
 }
 

@@ -12,14 +12,14 @@
 				<div class="inline-nav__group">
 					<a
 						class="inline-nav__link inline-nav__link--text"
-						href="command:gitlens.showWelcomePage"
+						href="command:git-extended.showWelcomePage"
 						aria-label="Welcome"
 						title="Welcome"
 						><span class="codicon codicon-rocket"></span><span>Welcome</span></a
 					>
 					<a
 						class="inline-nav__link inline-nav__link--text"
-						href="command:gitlens.showSettingsPage"
+						href="command:git-extended.showSettingsPage"
 						aria-label="Settings"
 						title="Settings"
 						><span class="codicon codicon-settings"></span><span>Settings</span></a
@@ -41,16 +41,16 @@
 					<ul class="icon-list mb-0">
 						<li>
 							<code-icon icon="circle-filled"></code-icon>
-							<a href="command:gitlens.getStarted">Getting Started Walkthrough</a> &mdash; tour key features.
+							<a href="command:git-extended.getStarted">Getting Started Walkthrough</a> &mdash; tour key features.
 						</li>
 						<li>
 							<code-icon icon="circle-filled"></code-icon>
-							<a href="command:gitlens.showWelcomePage?%22quick-setup%22">Quick Setup</a> &mdash; quickly
+							<a href="command:git-extended.showWelcomePage?%22quick-setup%22">Quick Setup</a> &mdash; quickly
 							personalize Git Extended to your needs.
 						</li>
 						<li>
 							<code-icon icon="circle-filled"></code-icon>
-							<a href="command:gitlens.showSettingsPage">Interactive Settings editor</a> &mdash; fine-tune
+							<a href="command:git-extended.showSettingsPage">Interactive Settings editor</a> &mdash; fine-tune
 							your Git Extended experience.
 						</li>
 					</ul>
@@ -60,7 +60,7 @@
 					<span slot="description">always free and accessible</span>
 					<p>
 						Git Extended is deeply integrated into many areas and aspects of VS Code, especially editors and
-						views. Learn more in the <a href="command:gitlens.getStarted">Feature Walkthrough</a>.
+						views. Learn more in the <a href="command:git-extended.getStarted">Feature Walkthrough</a>.
 					</p>
 					<card-section no-heading id="no-repo" aria-hidden="true">
 						<div class="centered">
@@ -90,13 +90,13 @@
 						</div>
 						<nav class="activitybar-banner__media" aria-label="Git Extended Layout">
 							<a
-								href="command:gitlens.setViewsLayout?%7B%22layout%22%3A%22scm%22%7D"
+								href="command:git-extended.setViewsLayout?%7B%22layout%22%3A%22scm%22%7D"
 								class="activitybar-banner__nav-item"
 								title="Move views to the Source Control side bar"
 								aria-label="Move views to the Source Control side bar"
 							></a>
 							<a
-								href="command:gitlens.setViewsLayout?%7B%22layout%22%3A%22gitlens%22%7D"
+								href="command:git-extended.setViewsLayout?%7B%22layout%22%3A%22git-extended%22%7D"
 								class="activitybar-banner__nav-item"
 								title="Move views to the Git Extended side bar"
 								aria-label="Move views to the Git Extended side bar"
@@ -110,7 +110,7 @@
 							>
 								<rect x=".5" y=".5" width="40" height="90" rx="16.5" stroke="url(#a)" />
 								<rect x="3" y="3" width="35" height="85" rx="14" fill="#333" class="svg__bar" />
-								<g clip-path="url(#b)" class="svg__icon" data-gitlens-layout="gitlens">
+								<g clip-path="url(#b)" class="svg__icon" data-git-extended-layout="git-extended">
 									<path
 										d="m22.08 63-2.14-2.14.75-.75 2.14 2.13-.75.76ZM18.73 66.08v-5.16h1.06v5.16h-1.06Z"
 									/>
@@ -125,25 +125,25 @@
 									fill="#fff"
 									d="M3 52h1v23H3z"
 									class="svg__indicator"
-									data-gitlens-layout="gitlens"
+									data-git-extended-layout="git-extended"
 								/>
-								<g clip-path="url(#c)" class="svg__icon" data-gitlens-layout="scm">
+								<g clip-path="url(#c)" class="svg__icon" data-git-extended-layout="scm">
 									<path
 										d="M26.76 25.17a2.8 2.8 0 1 0-3.6 2.67 2.24 2.24 0 0 1-2.01 1.25h-2.24c-.83 0-1.63.31-2.24.87v-5.41a2.8 2.8 0 1 0-1.13 0v6.84a2.83 2.83 0 1 0 1.37.07 2.24 2.24 0 0 1 2-1.25h2.24a3.36 3.36 0 0 0 3.17-2.28 2.8 2.8 0 0 0 2.44-2.76ZM14.42 21.8a1.68 1.68 0 1 1 3.37 0 1.68 1.68 0 0 1-3.37 0Zm3.37 12.33a1.68 1.68 0 1 1-3.37 0 1.68 1.68 0 0 1 3.37 0Zm6.16-7.28a1.68 1.68 0 1 1 0-3.37 1.68 1.68 0 0 1 0 3.37Z"
 									/>
 								</g>
-								<path fill="#fff" d="M3 16h1v24H3z" class="svg__indicator" data-gitlens-layout="scm" />
+								<path fill="#fff" d="M3 16h1v24H3z" class="svg__indicator" data-git-extended-layout="scm" />
 								<path
 									d="M67.67 64a2.67 2.67 0 1 0-5.34 0 2.67 2.67 0 0 0 5.34 0ZM49 64l5 2.89V61.1L49 64Zm16-.5H53.5v1H65v-1Z"
 									fill="red"
 									class="svg__arrow"
-									data-gitlens-layout="gitlens"
+									data-git-extended-layout="git-extended"
 								/>
 								<path
 									d="M67.67 28a2.67 2.67 0 1 0-5.34 0 2.67 2.67 0 0 0 5.34 0ZM49 28l5 2.89V25.1L49 28Zm16-.5H53.5v1H65v-1Z"
 									fill="#007FD5"
 									class="svg__arrow"
-									data-gitlens-layout="scm"
+									data-git-extended-layout="scm"
 								/>
 								<defs>
 									<clipPath id="b">
@@ -199,7 +199,7 @@
 				<vscode-button appearance="secondary" data-action="command:workbench.action.toggleSidebarVisibility"
 					>Close</vscode-button
 				>
-				<a id="restore-welcome" class="link-minimal" href="command:gitlens.home.restoreWelcome"
+				<a id="restore-welcome" class="link-minimal" href="command:git-extended.home.restoreWelcome"
 					>Restore Home view state</a
 				>
 			</div>

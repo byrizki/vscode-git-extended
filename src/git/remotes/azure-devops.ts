@@ -37,7 +37,7 @@ export class AzureDevOpsRemote extends RemoteProvider {
 
 		// Azure DevOps allows projects and repository names with spaces. In that situation,
 		// the `path` will be previously encoded during git clone
-		// revert that encoding to avoid double-encoding by gitlens during copy remote and open remote
+		// revert that encoding to avoid double-encoding by git-extended during copy remote and open remote
 		path = decodeURIComponent(path);
 		super(domain, path, protocol, name);
 	}

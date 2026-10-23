@@ -1,5 +1,5 @@
 name: Bug report
-description: Create a report to help GitLens improve
+description: Create a report to help Git Extended improve
 labels: ['potential-bug', 'triage']
 body:
     - type: textarea
@@ -51,9 +51,9 @@ body:
           description: |
               Logs? Links? References? Anything that will give us more context about the issue you are encountering!
           placeholder: |
-              For intermittent issues, please enable debug logging by running the _GitLens: Enable Debug Logging_ command from the Command Palette (<kbd>F1</kbd> or <kbd>ctrl/cmd</kbd>+<kbd>shift</kbd>+<kbd>p</kbd>).
-              This will enable logging to the _GitLens_ & _GitLens (Git)_ channels in the _Output_ pane.
+              For intermittent issues, please enable debug logging by running the _Git Extended: Enable Debug Logging_ command from the Command Palette (<kbd>F1</kbd> or <kbd>ctrl/cmd</kbd>+<kbd>shift</kbd>+<kbd>p</kbd>).
+              This will enable logging to the _Git Extended_ & _Git Extended (Git)_ channels in the _Output_ pane.
 
-              Once enabled, please reproduce the issue, and attach the logs from the _GitLens_ channel, and if its Git related please also attach the logs from the _GitLens (Git)_ channel.
+              Once enabled, please reproduce the issue, and attach the logs from the _Git Extended_ channel, and if its Git related please also attach the logs from the _Git Extended (Git)_ channel.
       validations:
           required: false

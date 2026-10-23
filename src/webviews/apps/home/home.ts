@@ -245,9 +245,9 @@ export class HomeApp extends App<State> {
 	private updateLayout() {
 		const { layout } = this.state;
 
-		const $els = [...document.querySelectorAll('[data-gitlens-layout]')];
+		const $els = [...document.querySelectorAll('[data-git-extended-layout]')];
 		$els.forEach(el => {
-			const attr = el.getAttribute('data-gitlens-layout');
+			const attr = el.getAttribute('data-git-extended-layout');
 			el.classList.toggle('is-active', attr === layout);
 		});
 	}

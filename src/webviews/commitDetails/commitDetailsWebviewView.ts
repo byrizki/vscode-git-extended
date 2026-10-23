@@ -93,7 +93,7 @@ export class CommitDetailsWebviewView extends WebviewViewBase<State, Serialized<
 	constructor(container: Container) {
 		super(
 			container,
-			'gitlens.views.commitDetails',
+			'git-extended.views.commitDetails',
 			'commitDetails.html',
 			'Commit Details',
 			`${ContextKeys.WebviewViewPrefix}commitDetails`,
@@ -349,7 +349,7 @@ export class CommitDetailsWebviewView extends WebviewViewBase<State, Serialized<
 
 		let commit;
 		if (e.editor == null) {
-			if (getContext('gitlens:webview:graph:active') || getContext('gitlens:webview:rebaseEditor:active')) {
+			if (getContext('git-extended:webview:graph:active') || getContext('git-extended:webview:rebaseEditor:active')) {
 				commit = this._pendingContext?.commit ?? this._context.commit;
 				if (commit == null) return;
 			}
@@ -665,7 +665,7 @@ export class CommitDetailsWebviewView extends WebviewViewBase<State, Serialized<
 				commit = lineTracker.getState(line)?.commit;
 				if (commit != null) return commit;
 			}
-		} else if (getContext('gitlens:webview:graph:active') || getContext('gitlens:webview:rebaseEditor:active')) {
+		} else if (getContext('git-extended:webview:graph:active') || getContext('git-extended:webview:rebaseEditor:active')) {
 			commit = this._pendingContext?.commit ?? this._context.commit;
 			if (commit != null) return commit;
 		}
@@ -861,7 +861,7 @@ export class CommitDetailsWebviewView extends WebviewViewBase<State, Serialized<
 	}
 
 	private getShowOptions(params: FileActionParams): TextDocumentShowOptions | undefined {
-		return getContext('gitlens:webview:graph:active') || getContext('gitlens:webview:rebaseEditor:active')
+		return getContext('git-extended:webview:graph:active') || getContext('git-extended:webview:rebaseEditor:active')
 			? { ...params.showOptions, viewColumn: ViewColumn.Beside }
 			: params.showOptions;
 	}

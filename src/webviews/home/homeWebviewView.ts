@@ -30,7 +30,7 @@ import {
 
 export class HomeWebviewView extends WebviewViewBase<State> {
 	constructor(container: Container) {
-		super(container, 'gitlens.views.home', 'home.html', 'Home', `${ContextKeys.WebviewViewPrefix}home`, 'homeView');
+		super(container, 'git-extended.views.home', 'home.html', 'Home', `${ContextKeys.WebviewViewPrefix}home`, 'homeView');
 
 		this.disposables.push(
 			this.container.subscription.onDidChange(this.onSubscriptionChanged, this),
@@ -87,7 +87,7 @@ export class HomeWebviewView extends WebviewViewBase<State> {
 	protected override registerCommands(): Disposable[] {
 		return [
 			registerCommand(`${this.id}.refresh`, () => this.refresh(), this),
-			registerCommand('gitlens.home.toggleWelcome', async () => {
+			registerCommand('git-extended.home.toggleWelcome', async () => {
 				const welcomeVisible = !this.welcomeVisible;
 				await this.container.storage.store('views:welcome:visible', welcomeVisible);
 				if (welcomeVisible) {
@@ -98,14 +98,14 @@ export class HomeWebviewView extends WebviewViewBase<State> {
 
 				void this.refresh();
 			}),
-			registerCommand('gitlens.home.restoreWelcome', async () => {
+			registerCommand('git-extended.home.restoreWelcome', async () => {
 				await this.container.storage.store('home:steps:completed', []);
 				await this.container.storage.store('home:sections:dismissed', []);
 
 				void this.refresh();
 			}),
 
-			registerCommand('gitlens.home.showSCM', async () => {
+			registerCommand('git-extended.home.showSCM', async () => {
 				const completedActions = this.container.storage.get('home:actions:completed', []);
 				if (!completedActions.includes(CompletedActions.OpenedSCM)) {
 					completedActions.push(CompletedActions.OpenedSCM);

@@ -8,4 +8,4 @@
 
 Avoid interrupting your work in progress when needing to review a pull request or test a fix. Simply create a new worktree and open it in a new VS Code window, all without impacting your other work.
 
-💡 Open the [Worktrees View](command:gitlens.showWorktreesView) or run [Create Worktree](command:gitlens.views.createWorktree) to get started.
+💡 Open the [Worktrees View](command:git-extended.showWorktreesView) or run [Create Worktree](command:git-extended.views.createWorktree) to get started.

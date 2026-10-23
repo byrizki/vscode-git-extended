@@ -621,7 +621,7 @@ describe('UriEntryTrie Test Suite', () => {
 	// 	assertRepoEntry(
 	// 		trie.get(
 	// 			repoGL.uri.with({
-	// 				scheme: 'GITLENS',
+	// 				scheme: 'GIT-EXTENDED',
 	// 				authority: 'abcd',
 	// 				query: JSON.stringify({ ref: '1234567890' }),
 	// 			}),
@@ -1017,7 +1017,7 @@ describe('UriTrie(Repositories) Test Suite', () => {
 		assertRepoEntry(
 			trie.get(
 				repoGL.uri.with({
-					scheme: 'GITLENS',
+					scheme: 'GIT-EXTENDED',
 					authority: 'abcd',
 					query: JSON.stringify({ ref: '1234567890' }),
 				}),

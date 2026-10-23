@@ -349,7 +349,7 @@ export class WorktreeNode extends ViewNode<WorktreesView | RepositoriesView, Sta
 				? new ThemeIcon('check')
 				: icon;
 		item.tooltip = tooltip;
-		item.resourceUri = hasChanges ? Uri.parse('gitlens-view://worktree/changes') : undefined;
+		item.resourceUri = hasChanges ? Uri.parse('git-extended-view://worktree/changes') : undefined;
 		return item;
 	}
 

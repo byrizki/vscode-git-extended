@@ -224,21 +224,21 @@ export const enum ChangesLocations {
 }
 
 export const enum CodeLensCommand {
-	CopyRemoteCommitUrl = 'gitlens.copyRemoteCommitUrl',
-	CopyRemoteFileUrl = 'gitlens.copyRemoteFileUrl',
-	DiffWithPrevious = 'gitlens.diffWithPrevious',
-	OpenCommitOnRemote = 'gitlens.openCommitOnRemote',
-	OpenFileOnRemote = 'gitlens.openFileOnRemote',
-	RevealCommitInView = 'gitlens.revealCommitInView',
-	ShowCommitsInView = 'gitlens.showCommitsInView',
-	ShowQuickCommitDetails = 'gitlens.showQuickCommitDetails',
-	ShowQuickCommitFileDetails = 'gitlens.showQuickCommitFileDetails',
-	ShowQuickCurrentBranchHistory = 'gitlens.showQuickRepoHistory',
-	ShowQuickFileHistory = 'gitlens.showQuickFileHistory',
-	ToggleFileBlame = 'gitlens.toggleFileBlame',
-	ToggleFileChanges = 'gitlens.toggleFileChanges',
-	ToggleFileChangesOnly = 'gitlens.toggleFileChangesOnly',
-	ToggleFileHeatmap = 'gitlens.toggleFileHeatmap',
+	CopyRemoteCommitUrl = 'git-extended.copyRemoteCommitUrl',
+	CopyRemoteFileUrl = 'git-extended.copyRemoteFileUrl',
+	DiffWithPrevious = 'git-extended.diffWithPrevious',
+	OpenCommitOnRemote = 'git-extended.openCommitOnRemote',
+	OpenFileOnRemote = 'git-extended.openFileOnRemote',
+	RevealCommitInView = 'git-extended.revealCommitInView',
+	ShowCommitsInView = 'git-extended.showCommitsInView',
+	ShowQuickCommitDetails = 'git-extended.showQuickCommitDetails',
+	ShowQuickCommitFileDetails = 'git-extended.showQuickCommitFileDetails',
+	ShowQuickCurrentBranchHistory = 'git-extended.showQuickRepoHistory',
+	ShowQuickFileHistory = 'git-extended.showQuickFileHistory',
+	ToggleFileBlame = 'git-extended.toggleFileBlame',
+	ToggleFileChanges = 'git-extended.toggleFileChanges',
+	ToggleFileChangesOnly = 'git-extended.toggleFileChangesOnly',
+	ToggleFileHeatmap = 'git-extended.toggleFileHeatmap',
 }
 
 export const enum CodeLensScopes {
@@ -338,23 +338,23 @@ export const enum OutputLevel {
 }
 
 export const enum StatusBarCommand {
-	CopyRemoteCommitUrl = 'gitlens.copyRemoteCommitUrl',
-	CopyRemoteFileUrl = 'gitlens.copyRemoteFileUrl',
-	DiffWithPrevious = 'gitlens.diffWithPrevious',
-	DiffWithWorking = 'gitlens.diffWithWorking',
-	OpenCommitOnRemote = 'gitlens.openCommitOnRemote',
-	OpenFileOnRemote = 'gitlens.openFileOnRemote',
-	RevealCommitInView = 'gitlens.revealCommitInView',
-	ShowCommitsInView = 'gitlens.showCommitsInView',
-	ShowQuickCommitDetails = 'gitlens.showQuickCommitDetails',
-	ShowQuickCommitFileDetails = 'gitlens.showQuickCommitFileDetails',
-	ShowQuickCurrentBranchHistory = 'gitlens.showQuickRepoHistory',
-	ShowQuickFileHistory = 'gitlens.showQuickFileHistory',
-	ToggleCodeLens = 'gitlens.toggleCodeLens',
-	ToggleFileBlame = 'gitlens.toggleFileBlame',
-	ToggleFileChanges = 'gitlens.toggleFileChanges',
-	ToggleFileChangesOnly = 'gitlens.toggleFileChangesOnly',
-	ToggleFileHeatmap = 'gitlens.toggleFileHeatmap',
+	CopyRemoteCommitUrl = 'git-extended.copyRemoteCommitUrl',
+	CopyRemoteFileUrl = 'git-extended.copyRemoteFileUrl',
+	DiffWithPrevious = 'git-extended.diffWithPrevious',
+	DiffWithWorking = 'git-extended.diffWithWorking',
+	OpenCommitOnRemote = 'git-extended.openCommitOnRemote',
+	OpenFileOnRemote = 'git-extended.openFileOnRemote',
+	RevealCommitInView = 'git-extended.revealCommitInView',
+	ShowCommitsInView = 'git-extended.showCommitsInView',
+	ShowQuickCommitDetails = 'git-extended.showQuickCommitDetails',
+	ShowQuickCommitFileDetails = 'git-extended.showQuickCommitFileDetails',
+	ShowQuickCurrentBranchHistory = 'git-extended.showQuickRepoHistory',
+	ShowQuickFileHistory = 'git-extended.showQuickFileHistory',
+	ToggleCodeLens = 'git-extended.toggleCodeLens',
+	ToggleFileBlame = 'git-extended.toggleFileBlame',
+	ToggleFileChanges = 'git-extended.toggleFileChanges',
+	ToggleFileChangesOnly = 'git-extended.toggleFileChangesOnly',
+	ToggleFileHeatmap = 'git-extended.toggleFileHeatmap',
 }
 
 export const enum TagSorting {
@@ -582,7 +582,7 @@ export interface RemotesUrlsConfig {
 	fileRange: string;
 }
 
-// NOTE: Must be kept in sync with `gitlens.advanced.messages` setting in the package.json
+// NOTE: Must be kept in sync with `git-extended.advanced.messages` setting in the package.json
 export const enum SuppressedMessages {
 	CommitHasNoPreviousCommitWarning = 'suppressCommitHasNoPreviousCommitWarning',
 	CommitNotFoundWarning = 'suppressCommitNotFoundWarning',

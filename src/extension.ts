@@ -38,9 +38,9 @@ import { compare, fromString, satisfies } from './system/version';
 import { isViewNode } from './views/nodes/viewNode';
 
 export async function activate(context: ExtensionContext): Promise<GitExtendedApi | undefined> {
-	const gitlensVersion: string = context.extension.packageJSON.version;
+	const extensionVersion: string = context.extension.packageJSON.version;
 	const insiders = context.extension.id === 'git-extended.git-extended-insiders';
-	const prerelease = insiders || satisfies(gitlensVersion, '> 2020.0.0');
+	const prerelease = insiders || satisfies(extensionVersion, '> 2020.0.0');
 
 	const outputLevel = configuration.get('outputLevel');
 	Logger.configure(
@@ -67,7 +67,7 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 	);
 
 	const sw = new Stopwatch(
-		`Git Extended${prerelease ? (insiders ? ' (Insiders)' : ' (pre-release)') : ''} v${gitlensVersion}`,
+		`Git Extended${prerelease ? (insiders ? ' (Insiders)' : ' (pre-release)') : ''} v${extensionVersion}`,
 		{
 			log: {
 				message: ` activating in ${env.appName}(${codeVersion}) on the ${isWeb ? 'web' : 'desktop'} (${
@@ -93,7 +93,7 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 
 	// Ensure that this pre-release or insiders version hasn't expired
 	if (prerelease) {
-		const v = fromString(gitlensVersion);
+		const v = fromString(extensionVersion);
 		// Get the build date from the version number
 		const date = new Date(v.major, v.minor - 1, Number(v.patch.toString().substring(0, 2)));
 
@@ -102,11 +102,11 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 			sw.stop({
 				message: ` was NOT activated because this ${
 					insiders ? 'insiders' : 'pre-release'
-				} version (${gitlensVersion}) has expired`,
+				} version (${extensionVersion}) has expired`,
 			});
 
 			// If we don't use a setTimeout here this notification will get lost for some reason
-			setTimeout(showPreReleaseExpiredErrorMessage, 0, gitlensVersion, insiders);
+			setTimeout(showPreReleaseExpiredErrorMessage, 0, extensionVersion, insiders);
 
 			return undefined;
 		}
@@ -155,7 +155,7 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 
 	// await migrateSettings(context, previousVersion);
 
-	const container = Container.create(context, storage, prerelease, gitlensVersion, previousVersion);
+	const container = Container.create(context, storage, prerelease, extensionVersion, previousVersion);
 	once(container.onReady)(() => {
 		context.subscriptions.push(...registerCommands(container));
 		registerBuiltInActionRunners(container);
@@ -170,13 +170,13 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 			);
 		}
 
-		void showWelcomeOrWhatsNew(container, gitlensVersion, previousVersion);
+		void showWelcomeOrWhatsNew(container, extensionVersion, previousVersion);
 
-		void storage.store(prerelease && !insiders ? 'preVersion' : 'version', gitlensVersion);
+		void storage.store(prerelease && !insiders ? 'preVersion' : 'version', extensionVersion);
 
 		// Only update our synced version if the new version is greater
-		if (syncedVersion == null || compare(gitlensVersion, syncedVersion) === 1) {
-			void storage.store(prerelease && !insiders ? 'synced:preVersion' : 'synced:version', gitlensVersion);
+		if (syncedVersion == null || compare(extensionVersion, syncedVersion) === 1) {
+			void storage.store(prerelease && !insiders ? 'synced:preVersion' : 'synced:version', extensionVersion);
 		}
 
 		if (outputLevel === OutputLevel.Debug) {
@@ -208,8 +208,8 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 		insiders: insiders,
 		prerelease: prerelease,
 		install: previousVersion == null,
-		upgrade: previousVersion != null && gitlensVersion !== previousVersion,
-		upgradedFrom: previousVersion != null && gitlensVersion !== previousVersion ? previousVersion : undefined,
+		upgrade: previousVersion != null && extensionVersion !== previousVersion,
+		upgradedFrom: previousVersion != null && extensionVersion !== previousVersion ? previousVersion : undefined,
 	});
 
 	const api = new Api(container);

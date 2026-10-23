@@ -15,7 +15,7 @@ export class SettingsWebview extends WebviewWithConfigBase<State> {
 	constructor(container: Container) {
 		super(
 			container,
-			'gitlens.settings',
+			'git-extended.settings',
 			'settings.html',
 			'images/icon.png',
 			'Git Extended Settings',

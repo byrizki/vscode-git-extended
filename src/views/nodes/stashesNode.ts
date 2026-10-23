@@ -42,7 +42,7 @@ export class StashesNode extends ViewNode<StashesView | RepositoriesView> {
 		const item = new TreeItem('Stashes', TreeItemCollapsibleState.Collapsed);
 		item.id = this.id;
 		item.contextValue = ContextValues.Stashes;
-		item.iconPath = new ThemeIcon('gitlens-stashes');
+		item.iconPath = new ThemeIcon('git-extended-stashes');
 		return item;
 	}
 

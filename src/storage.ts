@@ -49,18 +49,18 @@ export class Storage implements Disposable {
 	get<T extends keyof GlobalStorage>(key: T, defaultValue: GlobalStorage[T]): GlobalStorage[T];
 	@debug({ logThreshold: 50 })
 	get(key: keyof (GlobalStorage & DeprecatedGlobalStorage), defaultValue?: unknown): unknown | undefined {
-		return this.context.globalState.get(`gitlens:${key}`, defaultValue);
+		return this.context.globalState.get(`git-extended:${key}`, defaultValue);
 	}
 
 	@debug({ logThreshold: 250 })
 	async delete(key: keyof (GlobalStorage & DeprecatedGlobalStorage)): Promise<void> {
-		await this.context.globalState.update(`gitlens:${key}`, undefined);
+		await this.context.globalState.update(`git-extended:${key}`, undefined);
 		this._onDidChange.fire({ key: key, workspace: false });
 	}
 
 	@debug({ args: { 1: false }, logThreshold: 250 })
 	async store<T extends keyof GlobalStorage>(key: T, value: GlobalStorage[T] | undefined): Promise<void> {
-		await this.context.globalState.update(`gitlens:${key}`, value);
+		await this.context.globalState.update(`git-extended:${key}`, value);
 		this._onDidChange.fire({ key: key, workspace: false });
 	}
 
@@ -88,18 +88,18 @@ export class Storage implements Disposable {
 		key: keyof (WorkspaceStorage & DeprecatedWorkspaceStorage),
 		defaultValue?: unknown,
 	): unknown | undefined {
-		return this.context.workspaceState.get(`gitlens:${key}`, defaultValue);
+		return this.context.workspaceState.get(`git-extended:${key}`, defaultValue);
 	}
 
 	@debug({ logThreshold: 250 })
 	async deleteWorkspace(key: keyof (WorkspaceStorage & DeprecatedWorkspaceStorage)): Promise<void> {
-		await this.context.workspaceState.update(`gitlens:${key}`, undefined);
+		await this.context.workspaceState.update(`git-extended:${key}`, undefined);
 		this._onDidChange.fire({ key: key, workspace: true });
 	}
 
 	@debug({ args: { 1: false }, logThreshold: 250 })
 	async storeWorkspace(key: keyof WorkspaceStorage, value: unknown | undefined): Promise<void> {
-		await this.context.workspaceState.update(`gitlens:${key}`, value);
+		await this.context.workspaceState.update(`git-extended:${key}`, value);
 		this._onDidChange.fire({ key: key, workspace: true });
 	}
 }
@@ -107,9 +107,9 @@ export class Storage implements Disposable {
 export type SecretKeys = string;
 
 export const enum SyncedStorageKeys {
-	Version = 'gitlens:synced:version',
-	PreReleaseVersion = 'gitlens:synced:preVersion',
-	HomeViewWelcomeVisible = 'gitlens:views:welcome:visible',
+	Version = 'git-extended:synced:version',
+	PreReleaseVersion = 'git-extended:synced:preVersion',
+	HomeViewWelcomeVisible = 'git-extended:views:welcome:visible',
 }
 
 export type DeprecatedGlobalStorage = {
@@ -168,7 +168,7 @@ export type WorkspaceStorage = {
 	'views:commitDetails:autolinksExpanded': boolean;
 } & { [key in `connected:${string}`]: boolean };
 
-export type StoredViewsLayout = 'gitlens' | 'scm';
+export type StoredViewsLayout = 'git-extended' | 'scm';
 export interface Stored<T, SchemaVersion extends number = 1> {
 	v: SchemaVersion;
 	data: T;

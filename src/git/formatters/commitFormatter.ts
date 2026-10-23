@@ -437,7 +437,7 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 		)} "Reveal in Side Bar")`;
 
 		if (arePlusFeaturesEnabled()) {
-			commands += ` &nbsp;[$(gitlens-graph)](${Command.getMarkdownCommandArgsCore<ShowInCommitGraphCommandArgs>(
+			commands += ` &nbsp;[$(git-extended-graph)](${Command.getMarkdownCommandArgsCore<ShowInCommitGraphCommandArgs>(
 				Commands.ShowInCommitGraph,
 				{ ref: getReferenceFromRevision(this._item) },
 			)} "Open in Commit Graph")`;

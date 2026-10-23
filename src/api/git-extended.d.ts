@@ -80,9 +80,7 @@ export interface ActionRunner<T extends ActionContext = ActionContext> {
 	// when?(context: T): boolean;
 }
 
-export interface GitLensApi {
+export interface GitExtendedApi {
 	registerActionRunner<T extends ActionContext>(action: Action<T>, runner: ActionRunner): Disposable;
 }
-
-export type GitExtendedApi = GitLensApi;
 

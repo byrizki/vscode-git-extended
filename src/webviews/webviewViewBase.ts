@@ -44,7 +44,7 @@ export abstract class WebviewViewBase<State, SerializedState = State> implements
 
 	constructor(
 		protected readonly container: Container,
-		public readonly id: `gitlens.views.${WebviewViewIds}`,
+		public readonly id: `git-extended.views.${WebviewViewIds}`,
 		protected readonly fileName: string,
 		title: string,
 		private readonly contextKeyPrefix: `${ContextKeys.WebviewViewPrefix}${WebviewViewIds}`,

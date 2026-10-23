@@ -107,13 +107,13 @@ export class WorktreesView extends ViewBase<WorktreesViewNode, WorktreesViewConf
 	protected readonly configKey = 'worktrees';
 
 	constructor(container: Container) {
-		super(container, 'gitlens.views.worktrees', 'Worktrees', 'workspaceView');
+		super(container, 'git-extended.views.worktrees', 'Worktrees', 'workspaceView');
 
 		this.disposables.push(
 			window.registerFileDecorationProvider({
 				provideFileDecoration: (uri, _token) => {
 					if (
-						uri.scheme !== 'gitlens-view' ||
+						uri.scheme !== 'git-extended-view' ||
 						uri.authority !== 'worktree' ||
 						!uri.path.includes('/changes')
 					) {
@@ -122,7 +122,7 @@ export class WorktreesView extends ViewBase<WorktreesViewNode, WorktreesViewConf
 
 					return {
 						badge: '●',
-						color: new ThemeColor('gitlens.decorations.worktreeView.hasUncommittedChangesForegroundColoSr'),
+						color: new ThemeColor('git-extended.decorations.worktreeView.hasUncommittedChangesForegroundColoSr'),
 						tooltip: 'Has Uncommitted Changes',
 					};
 				},

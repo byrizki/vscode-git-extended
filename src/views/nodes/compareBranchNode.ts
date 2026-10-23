@@ -177,7 +177,7 @@ export class CompareBranchNode extends ViewNode<BranchesView | CommitsView | Rep
 				title: `Compare ${this.branch.name}${this.compareWithWorkingTree ? ' (working)' : ''} with${
 					GlyphChars.Ellipsis
 				}`,
-				command: 'gitlens.views.editNode',
+				command: 'git-extended.views.editNode',
 				arguments: [this],
 			};
 		}

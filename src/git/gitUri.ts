@@ -70,7 +70,7 @@ export class GitUri extends (Uri as any as UriEx) {
 			return;
 		}
 
-		if (uri.scheme === Schemes.GitLens) {
+		if (uri.scheme === Schemes.GitExtended) {
 			super({
 				scheme: uri.scheme,
 				authority: uri.authority,
@@ -79,7 +79,7 @@ export class GitUri extends (Uri as any as UriEx) {
 				fragment: uri.fragment,
 			});
 
-			const metadata = decodeGitLensRevisionUriAuthority<RevisionUriData>(uri.authority);
+			const metadata = decodeGitExtendedRevisionUriAuthority<RevisionUriData>(uri.authority);
 			this.repoPath = metadata.repoPath;
 
 			let ref = metadata.ref;
@@ -266,7 +266,7 @@ export class GitUri extends (Uri as any as UriEx) {
 	static async fromUri(uri: Uri): Promise<GitUri> {
 		if (isGitUri(uri)) return uri;
 		if (!Container.instance.git.isTrackable(uri)) return new GitUri(uri);
-		if (uri.scheme === Schemes.GitLens) return new GitUri(uri);
+		if (uri.scheme === Schemes.GitExtended) return new GitUri(uri);
 
 		// If this is a git uri, find its repoPath
 		if (uri.scheme === Schemes.Git) {
@@ -350,11 +350,11 @@ export function isGitUri(uri: any): uri is GitUri {
 	return uri instanceof GitUri;
 }
 
-export function decodeGitLensRevisionUriAuthority<T>(authority: string): T {
+export function decodeGitExtendedRevisionUriAuthority<T>(authority: string): T {
 	return JSON.parse(decodeUtf8Hex(authority)) as T;
 }
 
-export function encodeGitLensRevisionUriAuthority<T>(metadata: T): string {
+export function encodeGitExtendedRevisionUriAuthority<T>(metadata: T): string {
 	return encodeUtf8Hex(JSON.stringify(metadata));
 }
 

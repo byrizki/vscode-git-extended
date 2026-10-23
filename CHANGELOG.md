@@ -146,13 +146,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Adds _Commit Graph_ enhancements
   - Adds the ability to set keyboard shortcuts to commits and stashes on the _Commit Graph_ &mdash; closes [#2345](https://github.com/byrizki/vscode-git-extended/issues/2345)
-    - Keyboard shortcuts can be applied to many of the `git-extended.graph.*` commands and should use `gitlens:webview:graph:focus && !gitlens:webview:graph:inputFocus` for their "When Expression" to only apply when the _Commit Graph_ is focused
+    - Keyboard shortcuts can be applied to many of the `git-extended.graph.*` commands and should use `git-extended:webview:graph:focus && !git-extended:webview:graph:inputFocus` for their "When Expression" to only apply when the _Commit Graph_ is focused
     - For example, add the following to your `keybindings.json` to allow <kbd>Ctrl</kbd>+<kbd>C</kbd> to copy the selected commit's SHA to the clipboard
       ```json
       {
       	"key": "ctrl+c",
       	"command": "git-extended.graph.copySha",
-      	"when": "gitlens:webview:graph:focus && !gitlens:webview:graph:inputFocus"
+      	"when": "git-extended:webview:graph:focus && !git-extended:webview:graph:inputFocus"
       }
       ```
   - Automatically selects the `HEAD` commit in the _Commit Graph_ when switching branches
@@ -223,7 +223,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Fixes [#2298](https://github.com/byrizki/vscode-git-extended/issues/2298) - Commit Graph does not update to current branch correctly
 - Fixes [#2300](https://github.com/byrizki/vscode-git-extended/issues/2300) - extra non-functional toolbar buttons when viewing PR diffs in VSCode web
 - Fixes [#2281](https://github.com/byrizki/vscode-git-extended/issues/2281) - Push and Pull buttons missing from the commits view w/ integrations disabled
-- Fixes [#2276](https://github.com/byrizki/vscode-git-extended/issues/2276) - Search commit by Sha not working in Gitlens side bar
+- Fixes [#2276](https://github.com/byrizki/vscode-git-extended/issues/2276) - Search commit by Sha not working in Git Extended side bar
 - Fixes issues with PR uris (scheme: `pr`) from not working properly, especially with virtual repositories
 
 ## [13.0.3] - 2022-10-20
@@ -344,7 +344,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Fixed
 
-- Fixes [#2017](https://github.com/byrizki/vscode-git-extended/issues/2017) - Gitlens+ pro keeps signing out
+- Fixes [#2017](https://github.com/byrizki/vscode-git-extended/issues/2017) - Git Extended+ pro keeps signing out
 - Fixes [#1935](https://github.com/byrizki/vscode-git-extended/issues/1935) - Constant prompt "Your github credentials do not have the required access"
 - Fixes [#2067](https://github.com/byrizki/vscode-git-extended/issues/2067) - Your 'github' credentials are either invalid or expired
 - Fixes [#2167](https://github.com/byrizki/vscode-git-extended/issues/2167) - Rollup diff between working tree and fetched remote doesn't show changes
@@ -368,7 +368,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Fixed
 
-- Fixes [#2048](https://github.com/byrizki/vscode-git-extended/issues/2048) - Gitlens not loading in vscode.dev
+- Fixes [#2048](https://github.com/byrizki/vscode-git-extended/issues/2048) - Git Extended not loading in vscode.dev
 
 ## [12.1.1] - 2022-06-16
 
@@ -423,7 +423,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Fixes [#2028](https://github.com/byrizki/vscode-git-extended/issues/2028) - Branch names with special characters like ';$|>' causes errors on the command line (terminal executed git commands)
 - Fixes [#2021](https://github.com/byrizki/vscode-git-extended/issues/2021) - GitLab remote provider uses legacy routes &mdash; thanks to [PR #2022](https://github.com/byrizki/vscode-git-extended/pull/2022) by Brian Williams ([@Brcrwilliams](https://github.com/Brcrwilliams))
 - Fixes [#1998](https://github.com/byrizki/vscode-git-extended/issues/1998) - Settings: time format reads 'Example date' instead of 'Example time' &mdash; thanks to [PR #1999](https://github.com/byrizki/vscode-git-extended/pull/1999) by Barney Carroll ([@barneycarroll](https://github.com/barneycarroll))
-- Fixes [#2012](https://github.com/byrizki/vscode-git-extended/issues/2012) - 'Gitlens: Open Changes with Revision...' results in error
+- Fixes [#2012](https://github.com/byrizki/vscode-git-extended/issues/2012) - 'Git Extended: Open Changes with Revision...' results in error
 - Fixes [#2014](https://github.com/byrizki/vscode-git-extended/issues/2014) - '#' encoded incorrectly
 - Fixes [#1787](https://github.com/byrizki/vscode-git-extended/issues/1787) - Remove '-review' from Gerrit Remote reviewDomain() &mdash; thanks to [PR #1954](https://github.com/byrizki/vscode-git-extended/pull/1954) by Felipe Santos ([@felipecrs](https://github.com/felipecrs))
 - Fixes [#1902](https://github.com/byrizki/vscode-git-extended/issues/1902) - Support replacing mirror/replica domain with main domain for remote provider &mdash; thanks to [PR #1954](https://github.com/byrizki/vscode-git-extended/pull/1954) by Felipe Santos ([@felipecrs](https://github.com/felipecrs))
@@ -477,7 +477,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Fixed
 
-- Fixes [#1888](https://github.com/byrizki/vscode-git-extended/issues/1888) - Gitlens breaks vscode auto repository detection settings
+- Fixes [#1888](https://github.com/byrizki/vscode-git-extended/issues/1888) - Git Extended breaks vscode auto repository detection settings
 - Fixes an issue where the Visual File History wasn't correctly opening the commit file details quick pick menu
 - Fixes an issue where the _Open Visual File History of Active File_ command wasn't showing in the Command Palette
 
@@ -520,7 +520,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Fixed
 
-- Fixes [#2117](https://github.com/byrizki/vscode-git-extended/issues/2117) - Gitlens freaks out when I'm off VPN
+- Fixes [#2117](https://github.com/byrizki/vscode-git-extended/issues/2117) - Git Extended freaks out when I'm off VPN
 - Fixes [#1859](https://github.com/byrizki/vscode-git-extended/issues/1859) - Git Extended dates use system locale instead of vscode language setting
 - Fixes [#1854](https://github.com/byrizki/vscode-git-extended/issues/1854) - All repos have the same name
 - Fixes [#1866](https://github.com/byrizki/vscode-git-extended/issues/1866) - Copy SHA and Copy Message don't work from the views (commits, branches, etc)
@@ -958,7 +958,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Fixes [#1087](https://github.com/byrizki/vscode-git-extended/issues/1087) - Error retrieving line history from UNC path &mdash; thanks to [PR #1209](https://github.com/byrizki/vscode-git-extended/pull/1209) by Mike Surcouf ([@mikes-gh](https://github.com/mikes-gh))
 - Fixes [#1176](https://github.com/byrizki/vscode-git-extended/issues/1176) - Can't selectively apply stash
 - Fixes [#1212](https://github.com/byrizki/vscode-git-extended/issues/1212) - Stashes list doesn't refresh on deletion
-- Fixes [#1191](https://github.com/byrizki/vscode-git-extended/issues/1191) - "Gitlens › Views › Repositories: Auto Refresh" not working
+- Fixes [#1191](https://github.com/byrizki/vscode-git-extended/issues/1191) - "Git Extended › Views › Repositories: Auto Refresh" not working
 - Fixes [#1202](https://github.com/byrizki/vscode-git-extended/issues/1202) - "Copy Remote File URL" url-encodes the URL
 - Fixes an issue where _Gutter \*_ file annotations wouldn't dynamically update when changing certain default configuration settings
 - Fixes an issue where `git shortlog` could hang (when there is no HEAD)
@@ -2125,7 +2125,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Adds Git Extended over Visual Studio Live Share
   - Live Share guests will now have read-only access to Git Extended' features, provided both the host and guest have Git Extended installed
   - Adds a `git-extended.liveshare.allowGuestAccess` setting to specify whether to allow guest access to Git Extended features when using Visual Studio Live Share
-- Adds a new Git virtual file system provider for the `gitlens:` scheme &mdash; closes [#430](https://github.com/byrizki/vscode-git-extended/issues/430)
+- Adds a new Git virtual file system provider for the `git-extended:` scheme &mdash; closes [#430](https://github.com/byrizki/vscode-git-extended/issues/430)
   - Replaces Git Extended' internal handling of file revisions, which allows for better performance, as well as avoiding the use of temp files. It also provides a much better experience when dealing with file encodings, images, etc.
 - Adds an _Explore the Repository from Here_ (`git-extended.views.exploreRepoRevision`) command which opens a virtual workspace folder (uses the new Git virtual file system provider) for the repository at the specified point in time (commit, branch, tag, etc) &mdash; closes [#398](https://github.com/byrizki/vscode-git-extended/issues/398)
 - Adds a new [_Repositories_ view](https://github.com/byrizki/vscode-git-extended/tree/98e225f39a8ebfb5c5bdd3018bc47b35a7e63a6c/#repositories-view- 'Jump to the Repositories view docs'), formerly the _Git Extended_ view, to visualize, navigate, and explore Git repositories &mdash; closes [#456](https://github.com/byrizki/vscode-git-extended/issues/456), [#470](https://github.com/byrizki/vscode-git-extended/issues/470), [#494](https://github.com/byrizki/vscode-git-extended/issues/494)
@@ -2297,7 +2297,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Removed
 
-- Removes `gitlens:activeIsTracked`, `gitlens:activeIsBlameable`, `gitlens:activeIsRevision`, and `gitlens:activeHasRemotes` contexts and consolidates them into `gitlens:activeFileStatus` for better performance and UX
+- Removes `git-extended:activeIsTracked`, `git-extended:activeIsBlameable`, `git-extended:activeIsRevision`, and `git-extended:activeHasRemotes` contexts and consolidates them into `git-extended:activeFileStatus` for better performance and UX
 
 ### Fixed
 
@@ -2359,7 +2359,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Fixes [#400](https://github.com/byrizki/vscode-git-extended/issues/400) - Reset TO commit also resets chosen one
 - Fixes [#399](https://github.com/byrizki/vscode-git-extended/issues/399) - "Open x in Remote" commands aren't always available
-- Fixes [#397](https://github.com/byrizki/vscode-git-extended/issues/397) - Error while opening the gitlens view using `Open View` command
+- Fixes [#397](https://github.com/byrizki/vscode-git-extended/issues/397) - Error while opening the git-extended view using `Open View` command
 - Fixes [#391](https://github.com/byrizki/vscode-git-extended/issues/391) - Git Extended adds some settings in settings.json
 - Fixes another case of [#343](https://github.com/byrizki/vscode-git-extended/issues/343) - Can't show blame when VSCode starts on branch without upstream &mdash; thanks to [PR #390](https://github.com/byrizki/vscode-git-extended/pull/390) by ryenus ([@ryenus](https://github.com/ryenus))
 - Fixes [#392](https://github.com/byrizki/vscode-git-extended/issues/392) - unable to contribute if default script shell is sh &mdash; thanks to [PR #393](https://github.com/byrizki/vscode-git-extended/pull/393) by Cédric Malard ([@cmalard](https://github.com/cmalard))
@@ -2521,7 +2521,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Adds new stand-alone _Git Extended File History_ explorer to visualize the history of the current file &mdash; undocked version of the _Git Extended_ explorer history view
 
-  ![Git Extended File History explorer](https://raw.githubusercontent.com/byrizki/vscode-git-extended/4ddb871459a3a1a1e132c8bdf83ac12e3b699649/images/ss-gitlens-history-explorer.png)
+  ![Git Extended File History explorer](https://raw.githubusercontent.com/byrizki/vscode-git-extended/4ddb871459a3a1a1e132c8bdf83ac12e3b699649/images/ss-git-extended-history-explorer.png)
 
 - Adds richer tooltips to the _Git Extended_ and _Git Extended Results_ explorers, and richer working tree and upstream status to the _Git Extended_ explorer
 
@@ -2799,7 +2799,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Fixed
 
-- Fixes [#249](https://github.com/byrizki/vscode-git-extended/issues/249) - Gitlens disappears from the status bar
+- Fixes [#249](https://github.com/byrizki/vscode-git-extended/issues/249) - Git Extended disappears from the status bar
 - Fixes issue where [Gravatars](https://en.gravatar.com/) in the gutter blame annotations weren't restored on tab switch
 - Fixes issue where the id (sha) was missing in the hover blame annotations for uncommitted changes
 
@@ -2875,7 +2875,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Fixed
 
 - Fixes [#239](https://github.com/byrizki/vscode-git-extended/issues/239) - `git-extended.advanced.quickPick.closeOnFocusOut` setting should be reversed
-- Fixes [#208](https://github.com/byrizki/vscode-git-extended/issues/208) - Gitlens doesn't work over UNC
+- Fixes [#208](https://github.com/byrizki/vscode-git-extended/issues/208) - Git Extended doesn't work over UNC
 
 ## [7.1.0] - 2017-12-22
 
@@ -3115,7 +3115,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Fixed
 
 - Fixes jumpy CodeLens when deleting characters from a line with a Git CodeLens
-- Fixes [#178](https://github.com/byrizki/vscode-git-extended/issues/178) - Slight but noticeable keyboard lag with Gitlens
+- Fixes [#178](https://github.com/byrizki/vscode-git-extended/issues/178) - Slight but noticeable keyboard lag with Git Extended
 - Fixes [#183](https://github.com/byrizki/vscode-git-extended/issues/183) - Remote with same url should only show once
 - Fixes [#185](https://github.com/byrizki/vscode-git-extended/issues/185) - Wrong relative date shows on mouse hover
 - Fixes issue where using the _Refresh_ command on a _Git Extended_ explorer node refreshed the whole view, rather than just the node
@@ -3342,7 +3342,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
   - **Repository View** - provides a full repository explorer
 
-    ![Git Extended Repository view](https://raw.githubusercontent.com/byrizki/vscode-git-extended/4ddb871459a3a1a1e132c8bdf83ac12e3b699649/images/ss-gitlens-explorer-repository.png)
+    ![Git Extended Repository view](https://raw.githubusercontent.com/byrizki/vscode-git-extended/4ddb871459a3a1a1e132c8bdf83ac12e3b699649/images/ss-git-extended-explorer-repository.png)
 
     - **Repository Status** node &mdash; provides the status of the repository
 
@@ -3384,7 +3384,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
   - **File History View** - provides the revision history of the active file
 
-    ![Git Extended File History view](https://raw.githubusercontent.com/byrizki/vscode-git-extended/4ddb871459a3a1a1e132c8bdf83ac12e3b699649/images/ss-gitlens-explorer-history.png)
+    ![Git Extended File History view](https://raw.githubusercontent.com/byrizki/vscode-git-extended/4ddb871459a3a1a1e132c8bdf83ac12e3b699649/images/ss-git-extended-explorer-history.png)
 
     - Automatically updates to track the active editor
     - Provides a context menu with _Open File_, _Open File in Remote_, and _Refresh_ commands
@@ -3839,7 +3839,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Fixed
 
-- Fixes [#59](https://github.com/byrizki/vscode-git-extended/issues/59) - Context menu shows gitlens commands even if folder/file is not under git
+- Fixes [#59](https://github.com/byrizki/vscode-git-extended/issues/59) - Context menu shows git-extended commands even if folder/file is not under git
 
 ## 3.2.1
 
@@ -4257,7 +4257,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Fixed
 
 - Fixes issues with certain git commands not working on Windows
-- Fixes [#31](https://github.com/byrizki/vscode-git-extended/issues/31) - Disable gitlens if the project does not have `.git` folder
+- Fixes [#31](https://github.com/byrizki/vscode-git-extended/issues/31) - Disable git-extended if the project does not have `.git` folder
 - Fixes issue where quick pick menus could fail if there was no active editor
 - Fixes CodeLens not updating in response to configuration changes
 

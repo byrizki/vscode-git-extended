@@ -117,7 +117,7 @@ export class RebaseStatusNode extends ViewNode<ViewsWithCommits> {
 
 	async openEditor() {
 		const rebaseTodoUri = Uri.joinPath(this.uri, '.git', 'rebase-merge', 'git-rebase-todo');
-		await executeCoreCommand(CoreCommands.OpenWith, rebaseTodoUri, 'gitlens.rebase', {
+		await executeCoreCommand(CoreCommands.OpenWith, rebaseTodoUri, 'git-extended.rebase', {
 			preview: false,
 		});
 	}
