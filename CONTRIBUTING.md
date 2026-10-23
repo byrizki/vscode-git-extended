@@ -8,12 +8,12 @@ Please note the [Code of Conduct](CODE_OF_CONDUCT.md) document, please follow it
 
 ## Your First Code Contribution
 
-Unsure where to begin contributing? You can start by looking through the [`help-wanted`](https://github.com/gitkraken/vscode-gitlens/labels/help-wanted) issues.
+Unsure where to begin contributing? You can start by looking through the [`help-wanted`](https://github.com/byrizki/vscode-git-extended/labels/help-wanted) issues.
 
 ### Getting the code
 
 ```
-git clone https://github.com/gitkraken/vscode-gitlens.git
+git clone https://github.com/byrizki/vscode-git-extended.git
 ```
 
 Prerequisites
@@ -102,13 +102,13 @@ yarn run package
 
 #### Using VS Code (desktop)
 
-1. Open the `vscode-gitlens` folder
+1. Open the `vscode-git-extended` folder
 2. Ensure the required [dependencies](#dependencies) are installed
 3. Choose the `Watch & Run` launch configuration from the launch dropdown in the Run and Debug viewlet and press `F5`.
 
 #### Using VS Code (desktop webworker)
 
-1. Open the `vscode-gitlens` folder
+1. Open the `vscode-git-extended` folder
 2. Ensure the required [dependencies](#dependencies) are installed
 3. Choose the `Watch & Run (web)` launch configuration from the launch dropdown in the Run and Debug viewlet and press `F5`.
 
@@ -116,7 +116,7 @@ yarn run package
 
 See https://code.visualstudio.com/api/extension-guides/web-extensions#test-your-web-extension-in-a-browser-using-vscodetestweb
 
-1. Open the `vscode-gitlens` folder
+1. Open the `vscode-git-extended` folder
 2. Ensure the required [dependencies](#dependencies) are installed
 3. Run the `build` or `watch` task from the command palette
 4. Run the `Run (local web)` task from the command palette
@@ -125,7 +125,7 @@ See https://code.visualstudio.com/api/extension-guides/web-extensions#test-your-
 
 See https://code.visualstudio.com/api/extension-guides/web-extensions#test-your-web-extension-in-on-vscode.dev
 
-1. Open the `vscode-gitlens` folder
+1. Open the `vscode-git-extended` folder
 2. Ensure the required [dependencies](#dependencies) are installed
 3. Run the `build` or `watch` task from the command palette
 4. Run the `Run (vscode.dev)` task from the command palette
@@ -144,19 +144,19 @@ Entries should be written in future tense:
 
 Be sure to give yourself much deserved credit by adding your name and user in the entry:
 
-> - Adds `gitlens.statusBar.alignment` settings to control the alignment of the status bar &mdash; thanks to [PR #72](https://github.com/gitkraken/vscode-gitlens/pull/72) by Zack Schuster ([@zackschuster](https://github.com/zackschuster))!
+> - Adds `git-extended.statusBar.alignment` settings to control the alignment of the status bar &mdash; thanks to [PR #72](https://github.com/byrizki/vscode-git-extended/pull/72) by Zack Schuster ([@zackschuster](https://github.com/zackschuster))!
 
 ### Update the README
 
-If this is your first contribution to GitLens, please give yourself credit by adding yourself to the `Contributors` section of the [README](README.md#contributors-) in the following format:
+If this is your first contribution to Git Extended, please give yourself credit by adding yourself to the `Contributors` section of the [README](README.md#contributors-) in the following format:
 
-> - `Your Name ([@<your-github-username>](https://github.com/<your-github-username>)) &mdash; [contributions](https://github.com/gitkraken/vscode-gitlens/commits?author=<your-github-username>)`
+> - `Your Name ([@<your-github-username>](https://github.com/<your-github-username>)) &mdash; [contributions](https://github.com/byrizki/vscode-git-extended/commits?author=<your-github-username>)`
 
 ## Publishing
 
 ### Versioning
 
-GitLens version changes are bucketed into two types:
+Git Extended version changes are bucketed into two types:
 
 - `minor`: normal release (new features, enhancements and fixes)
 - `patch`: hotfix release (just fixes)
@@ -189,7 +189,7 @@ Once the commit is completed, run `git push --follow-tags` to push the version c
 
 ### GitHub Actions and Deployment
 
-After the version commit and new tags are pushed to GitHub, the [Publish Stable workflow](.github/workflows/cd-stable.yml) will be triggered, which will automatically package the extension and deploy it to the [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens). The [release notes](https://github.com/gitkraken/vscode-gitlens/releases/latest) _should_ be generated during the action, but if not, this can be done manually using the notes from the [Change Log](CHANGELOG.md).
+After the version commit and new tags are pushed to GitHub, the [Publish Stable workflow](.github/workflows/cd-stable.yml) will be triggered, which will automatically package the extension and deploy it to the [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=git-extended.git-extended). The [release notes](https://github.com/byrizki/vscode-git-extended/releases/latest) _should_ be generated during the action, but if not, this can be done manually using the notes from the [Change Log](CHANGELOG.md).
 
 If the action fails, the VSIX will need to be built locally with `yarn package` and uploaded manually in the marketplace.
 

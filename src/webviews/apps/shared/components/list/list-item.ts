@@ -61,8 +61,8 @@ const template = html<ListItem>`
 const styles = css`
 	:host {
 		box-sizing: border-box;
-		padding-left: var(--gitlens-gutter-width);
-		padding-right: var(--gitlens-scrollbar-gutter-width);
+		padding-left: var(--git-extended-gutter-width);
+		padding-right: var(--git-extended-scrollbar-gutter-width);
 		padding-top: 0.1rem;
 		padding-bottom: 0.1rem;
 		line-height: 2.2rem;

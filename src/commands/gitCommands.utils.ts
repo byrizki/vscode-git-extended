@@ -52,7 +52,7 @@ export class PickCommandStep implements QuickPickStep {
 	readonly items: QuickCommand[];
 	readonly matchOnDescription = true;
 	readonly placeholder = 'Choose a git command';
-	readonly title = 'GitLens';
+	readonly title = 'Git Extended';
 
 	constructor(private readonly container: Container, args?: GitCommandsCommandArgs) {
 		const hasVirtualFolders = getContext<boolean>(ContextKeys.HasVirtualFolders, false);

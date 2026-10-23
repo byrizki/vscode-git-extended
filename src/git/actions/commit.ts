@@ -552,7 +552,7 @@ export async function reveal(
 ) {
 	const views = [Container.instance.commitsView, Container.instance.branchesView, Container.instance.remotesView];
 
-	// TODO@eamodio stop duplicate notifications
+	// TODO stop duplicate notifications
 
 	for (const view of views) {
 		const node = view.canReveal

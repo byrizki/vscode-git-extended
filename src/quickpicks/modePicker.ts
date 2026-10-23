@@ -34,7 +34,7 @@ export async function showModePicker(): Promise<ModesQuickPickItem | undefined> 
 	}
 
 	const pick = await window.showQuickPick(items, {
-		placeHolder: 'select a GitLens mode to enter',
+		placeHolder: 'select a Git Extended mode to enter',
 	});
 
 	return pick;

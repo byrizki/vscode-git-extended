@@ -106,7 +106,7 @@ const styles = css`
 	}
 
 	.brand {
-		color: var(--gitlens-brand-color-2);
+		color: var(--git-extended-brand-color-2);
 	}
 	.status {
 		color: var(--color-foreground--65);

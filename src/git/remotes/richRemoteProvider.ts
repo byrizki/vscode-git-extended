@@ -28,7 +28,7 @@ export interface IntegrationAuthenticationProvider {
 	createSession(descriptor?: IntegrationAuthenticationSessionDescriptor): Promise<AuthenticationSession | undefined>;
 }
 
-// TODO@eamodio revisit how once authenticated, all remotes are always connected, even after a restart
+// TODO revisit how once authenticated, all remotes are always connected, even after a restart
 
 export abstract class RichRemoteProvider extends RemoteProvider {
 	override readonly type: 'simple' | 'rich' = 'rich';
@@ -54,7 +54,7 @@ export abstract class RichRemoteProvider extends RemoteProvider {
 					this._ignoreSSLErrors.clear();
 				}
 			}),
-			// TODO@eamodio revisit how connections are linked or not
+			// TODO revisit how connections are linked or not
 			container.richRemoteProviders.onDidChangeConnectionState(e => {
 				if (e.key !== this.key) return;
 

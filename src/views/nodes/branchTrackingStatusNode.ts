@@ -109,7 +109,7 @@ export class BranchTrackingStatusNode extends ViewNode<ViewsWithCommits> impleme
 			this.status.state.ahead > 0
 		) {
 			showFiles = false;
-			// TODO@eamodio fix this
+			// TODO fix this
 			children.push(
 				...(await new BranchTrackingStatusFilesNode(
 					this.view,

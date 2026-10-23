@@ -5,8 +5,8 @@ import { log } from '../system/decorators/log';
 
 const AuthenticationUriPathPrefix = 'did-authenticate';
 
-// This service is in charge of registering a URI handler and handling/emitting URI events received by GitLens.
-// URI events to GitLens take the form of: vscode://eamodio.gitlens/... and are handled by the UriEventHandler.
+// This service is in charge of registering a URI handler and handling/emitting URI events received by Git Extended.
+// URI events to Git Extended take the form of: vscode://git-extended.git-extended/... and are handled by the UriEventHandler.
 // The UriEventHandler is responsible for parsing the URI and emitting the event to the UriService.
 export class UriService implements Disposable, UriHandler {
 	private _disposable: Disposable;

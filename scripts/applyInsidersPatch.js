@@ -16,7 +16,7 @@ packageJSON = JSON.stringify(
 	{
 		...packageJSON,
 		name: `${packageJSON.name}-insiders`,
-		displayName: 'GitLens (Insiders)',
+		displayName: 'Git Extended (Insiders)',
 		version: `${String(date.getFullYear())}.${date.getMonth() + 1}.${date.getDate()}${String(
 			date.getHours(),
 		).padStart(2, '0')}`,

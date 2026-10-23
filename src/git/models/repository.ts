@@ -230,7 +230,7 @@ export class Repository implements Disposable {
 		} else {
 			this.name = basename(uri.path);
 
-			// TODO@eamodio should we create a fake workspace folder?
+			// TODO should we create a fake workspace folder?
 			// folder = {
 			// 	uri: uri,
 			// 	name: this.name,
@@ -364,7 +364,7 @@ export class Repository implements Disposable {
 
 	@debug()
 	private onRepositoryChanged(uri: Uri | undefined, base: Uri) {
-		// TODO@eamodio Revisit -- as I can't seem to get this to work as a negative glob pattern match when creating the watcher
+		// TODO Revisit -- as I can't seem to get this to work as a negative glob pattern match when creating the watcher
 		if (uri?.path.includes('/fsmonitor--daemon/')) {
 			return;
 		}

@@ -1,4 +1,4 @@
-// NOTE@eamodio This file is referenced in the webviews to we can't use anything vscode or other imports that aren't available in the webviews
+// NOTE This file is referenced in the webviews to we can't use anything vscode or other imports that aren't available in the webviews
 import { getDateDifference } from './system/date';
 
 export const enum SubscriptionPlanId {
@@ -135,16 +135,16 @@ export function getSubscriptionPlan(
 export function getSubscriptionPlanName(id: SubscriptionPlanId) {
 	switch (id) {
 		case SubscriptionPlanId.FreePlus:
-			return 'GitLens Free';
+			return 'Git Extended Free';
 		case SubscriptionPlanId.Pro:
-			return 'GitLens Pro';
+			return 'Git Extended Pro';
 		case SubscriptionPlanId.Teams:
-			return 'GitLens Teams';
+			return 'Git Extended Teams';
 		case SubscriptionPlanId.Enterprise:
-			return 'GitLens Enterprise';
+			return 'Git Extended Enterprise';
 		case SubscriptionPlanId.Free:
 		default:
-			return 'GitLens';
+			return 'Git Extended';
 	}
 }
 

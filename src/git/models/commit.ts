@@ -33,7 +33,7 @@ export class GitCommit implements GitRevisionReference {
 	readonly refType: GitRevisionReference['refType'];
 	readonly shortSha: string;
 	readonly stashName: string | undefined;
-	// TODO@eamodio rename to stashNumber
+	// TODO rename to stashNumber
 	readonly number: string | undefined;
 	readonly stashOnRef: string | undefined;
 	readonly tips: string[] | undefined;

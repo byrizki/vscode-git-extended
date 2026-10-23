@@ -14,10 +14,10 @@ body:
       validations:
           required: true
     - type: input
-      id: gitlens
+      id: git-extended
       attributes:
-          label: GitLens Version
-          description: What version of GitLens are you using?
+          label: Git Extended Version
+          description: What version of Git Extended are you using?
           placeholder: 12.0.0
       validations:
           required: true

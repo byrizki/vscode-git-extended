@@ -209,7 +209,7 @@ export class GitUri extends (Uri as any as UriEx) {
 
 	@memoize()
 	documentUri() {
-		// TODO@eamodio which is correct?
+		// TODO which is correct?
 		return Uri.from({
 			scheme: this.scheme,
 			authority: this.authority,

@@ -1,4 +1,4 @@
-## ❤ Thank you for contributing to GitLens! ❤
+## ❤ Thank you for contributing to Git Extended! ❤
 
 ### 🚨 IMPORTANT 🚨
 

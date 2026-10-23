@@ -8,148 +8,148 @@ describe('Path Test Suite', () => {
 	}
 
 	it('splitPath: no repoPath', () => {
-		assertSplitPath(splitPath('C:\\User\\Name\\code\\gitkraken\\vscode-gitlens', ''), [
-			'c:/User/Name/code/gitkraken/vscode-gitlens',
+		assertSplitPath(splitPath('C:\\User\\Name\\code\\byrizki\\vscode-git-extended', ''), [
+			'c:/User/Name/code/byrizki/vscode-git-extended',
 			'',
 		]);
 
-		assertSplitPath(splitPath('C:\\User\\Name\\code\\gitkraken\\vscode-gitlens\\', ''), [
-			'c:/User/Name/code/gitkraken/vscode-gitlens',
+		assertSplitPath(splitPath('C:\\User\\Name\\code\\byrizki\\vscode-git-extended\\', ''), [
+			'c:/User/Name/code/byrizki/vscode-git-extended',
 			'',
 		]);
 
-		assertSplitPath(splitPath('C:/User/Name/code/gitkraken/vscode-gitlens', ''), [
-			'c:/User/Name/code/gitkraken/vscode-gitlens',
+		assertSplitPath(splitPath('C:/User/Name/code/byrizki/vscode-git-extended', ''), [
+			'c:/User/Name/code/byrizki/vscode-git-extended',
 			'',
 		]);
 
-		assertSplitPath(splitPath('C:/User/Name/code/gitkraken/vscode-gitlens/', ''), [
-			'c:/User/Name/code/gitkraken/vscode-gitlens',
+		assertSplitPath(splitPath('C:/User/Name/code/byrizki/vscode-git-extended/', ''), [
+			'c:/User/Name/code/byrizki/vscode-git-extended',
 			'',
 		]);
 	});
 
 	it('splitPath: no repoPath (split base)', () => {
-		assertSplitPath(splitPath('C:\\User\\Name\\code\\gitkraken\\vscode-gitlens', '', true), [
-			'vscode-gitlens',
-			'c:/User/Name/code/gitkraken',
+		assertSplitPath(splitPath('C:\\User\\Name\\code\\byrizki\\vscode-git-extended', '', true), [
+			'vscode-git-extended',
+			'c:/User/Name/code/byrizki',
 		]);
 
-		assertSplitPath(splitPath('C:\\User\\Name\\code\\gitkraken\\vscode-gitlens\\', '', true), [
-			'vscode-gitlens',
-			'c:/User/Name/code/gitkraken',
+		assertSplitPath(splitPath('C:\\User\\Name\\code\\byrizki\\vscode-git-extended\\', '', true), [
+			'vscode-git-extended',
+			'c:/User/Name/code/byrizki',
 		]);
 
-		assertSplitPath(splitPath('C:/User/Name/code/gitkraken/vscode-gitlens', '', true), [
-			'vscode-gitlens',
-			'c:/User/Name/code/gitkraken',
+		assertSplitPath(splitPath('C:/User/Name/code/byrizki/vscode-git-extended', '', true), [
+			'vscode-git-extended',
+			'c:/User/Name/code/byrizki',
 		]);
 
-		assertSplitPath(splitPath('C:/User/Name/code/gitkraken/vscode-gitlens/', '', true), [
-			'vscode-gitlens',
-			'c:/User/Name/code/gitkraken',
+		assertSplitPath(splitPath('C:/User/Name/code/byrizki/vscode-git-extended/', '', true), [
+			'vscode-git-extended',
+			'c:/User/Name/code/byrizki',
 		]);
 	});
 
 	it('splitPath: match', () => {
 		assertSplitPath(
 			splitPath(
-				'C:\\User\\Name\\code\\gitkraken\\vscode-gitlens\\foo\\bar\\baz.ts',
-				'C:\\User\\Name\\code\\gitkraken\\vscode-gitlens',
+				'C:\\User\\Name\\code\\byrizki\\vscode-git-extended\\foo\\bar\\baz.ts',
+				'C:\\User\\Name\\code\\byrizki\\vscode-git-extended',
 			),
-			['foo/bar/baz.ts', 'c:/User/Name/code/gitkraken/vscode-gitlens'],
+			['foo/bar/baz.ts', 'c:/User/Name/code/byrizki/vscode-git-extended'],
 		);
 
 		assertSplitPath(
 			splitPath(
-				'C:\\User\\Name\\code\\gitkraken\\vscode-gitlens\\foo\\bar\\baz.ts',
-				'C:\\User\\Name\\code\\gitkraken\\vscode-gitlens\\',
+				'C:\\User\\Name\\code\\byrizki\\vscode-git-extended\\foo\\bar\\baz.ts',
+				'C:\\User\\Name\\code\\byrizki\\vscode-git-extended\\',
 			),
-			['foo/bar/baz.ts', 'c:/User/Name/code/gitkraken/vscode-gitlens'],
+			['foo/bar/baz.ts', 'c:/User/Name/code/byrizki/vscode-git-extended'],
 		);
 
 		assertSplitPath(
 			splitPath(
-				'C:\\User\\Name\\code\\gitkraken\\vscode-gitlens\\foo\\bar\\baz.ts',
-				'c:/User/Name/code/gitkraken/vscode-gitlens',
+				'C:\\User\\Name\\code\\byrizki\\vscode-git-extended\\foo\\bar\\baz.ts',
+				'c:/User/Name/code/byrizki/vscode-git-extended',
 			),
-			['foo/bar/baz.ts', 'c:/User/Name/code/gitkraken/vscode-gitlens'],
+			['foo/bar/baz.ts', 'c:/User/Name/code/byrizki/vscode-git-extended'],
 		);
 
 		assertSplitPath(
 			splitPath(
-				'C:\\User\\Name\\code\\gitkraken\\vscode-gitlens\\foo\\bar\\baz.ts',
-				'c:/User/Name/code/gitkraken/vscode-gitlens/',
+				'C:\\User\\Name\\code\\byrizki\\vscode-git-extended\\foo\\bar\\baz.ts',
+				'c:/User/Name/code/byrizki/vscode-git-extended/',
 			),
-			['foo/bar/baz.ts', 'c:/User/Name/code/gitkraken/vscode-gitlens'],
+			['foo/bar/baz.ts', 'c:/User/Name/code/byrizki/vscode-git-extended'],
 		);
 
 		assertSplitPath(
 			splitPath(
-				'C:/User/Name/code/gitkraken/vscode-gitlens/foo/bar/baz.ts',
-				'c:/User/Name/code/gitkraken/vscode-gitlens',
+				'C:/User/Name/code/byrizki/vscode-git-extended/foo/bar/baz.ts',
+				'c:/User/Name/code/byrizki/vscode-git-extended',
 			),
-			['foo/bar/baz.ts', 'c:/User/Name/code/gitkraken/vscode-gitlens'],
+			['foo/bar/baz.ts', 'c:/User/Name/code/byrizki/vscode-git-extended'],
 		);
 
 		assertSplitPath(
 			splitPath(
-				'C:/User/Name/code/gitkraken/vscode-gitlens/foo/bar/baz.ts',
-				'c:/User/Name/code/gitkraken/vscode-gitlens/',
+				'C:/User/Name/code/byrizki/vscode-git-extended/foo/bar/baz.ts',
+				'c:/User/Name/code/byrizki/vscode-git-extended/',
 			),
-			['foo/bar/baz.ts', 'c:/User/Name/code/gitkraken/vscode-gitlens'],
+			['foo/bar/baz.ts', 'c:/User/Name/code/byrizki/vscode-git-extended'],
 		);
 	});
 
 	it('splitPath: match (casing)', () => {
 		assertSplitPath(
 			splitPath(
-				'C:/USER/NAME/CODE/GITKRAKEN/VSCODE-GITLENS/FOO/BAR/BAZ.TS',
-				'c:/User/Name/code/gitkraken/vscode-gitlens/',
+				'C:/USER/NAME/CODE/BYRIZKI/VSCODE-GIT-EXTENDED/FOO/BAR/BAZ.TS',
+				'c:/User/Name/code/byrizki/vscode-git-extended/',
 				undefined,
 				true,
 			),
-			['FOO/BAR/BAZ.TS', 'c:/USER/NAME/CODE/GITKRAKEN/VSCODE-GITLENS'],
+			['FOO/BAR/BAZ.TS', 'c:/USER/NAME/CODE/BYRIZKI/VSCODE-GIT-EXTENDED'],
 		);
 
 		assertSplitPath(
 			splitPath(
-				'C:/USER/NAME/CODE/GITKRAKEN/VSCODE-GITLENS/FOO/BAR/BAZ.TS',
-				'c:/User/Name/code/gitkraken/vscode-gitlens/',
+				'C:/USER/NAME/CODE/BYRIZKI/VSCODE-GIT-EXTENDED/FOO/BAR/BAZ.TS',
+				'c:/User/Name/code/byrizki/vscode-git-extended/',
 				undefined,
 				false,
 			),
-			['USER/NAME/CODE/GITKRAKEN/VSCODE-GITLENS/FOO/BAR/BAZ.TS', 'c:'],
+			['USER/NAME/CODE/BYRIZKI/VSCODE-GIT-EXTENDED/FOO/BAR/BAZ.TS', 'c:'],
 		);
 
 		assertSplitPath(
 			splitPath(
-				'/USER/NAME/CODE/GITKRAKEN/VSCODE-GITLENS/FOO/BAR/BAZ.TS',
-				'/User/Name/code/gitkraken/vscode-gitlens/',
+				'/USER/NAME/CODE/BYRIZKI/VSCODE-GIT-EXTENDED/FOO/BAR/BAZ.TS',
+				'/User/Name/code/byrizki/vscode-git-extended/',
 				undefined,
 				true,
 			),
-			['FOO/BAR/BAZ.TS', '/USER/NAME/CODE/GITKRAKEN/VSCODE-GITLENS'],
+			['FOO/BAR/BAZ.TS', '/USER/NAME/CODE/BYRIZKI/VSCODE-GIT-EXTENDED'],
 		);
 
 		assertSplitPath(
 			splitPath(
-				'/USER/NAME/CODE/GITKRAKEN/VSCODE-GITLENS/FOO/BAR/BAZ.TS',
-				'/User/Name/code/gitkraken/vscode-gitlens/',
+				'/USER/NAME/CODE/BYRIZKI/VSCODE-GIT-EXTENDED/FOO/BAR/BAZ.TS',
+				'/User/Name/code/byrizki/vscode-git-extended/',
 				undefined,
 				false,
 			),
-			['/USER/NAME/CODE/GITKRAKEN/VSCODE-GITLENS/FOO/BAR/BAZ.TS', '/User/Name/code/gitkraken/vscode-gitlens'],
+			['/USER/NAME/CODE/BYRIZKI/VSCODE-GIT-EXTENDED/FOO/BAR/BAZ.TS', '/User/Name/code/byrizki/vscode-git-extended'],
 		);
 	});
 
 	it('splitPath: no match', () => {
 		assertSplitPath(
 			splitPath(
-				'/foo/User/Name/code/gitkraken/vscode-gitlens/foo/bar/baz.ts',
-				'/User/Name/code/gitkraken/vscode-gitlens',
+				'/foo/User/Name/code/byrizki/vscode-git-extended/foo/bar/baz.ts',
+				'/User/Name/code/byrizki/vscode-git-extended',
 			),
-			['/foo/User/Name/code/gitkraken/vscode-gitlens/foo/bar/baz.ts', '/User/Name/code/gitkraken/vscode-gitlens'],
+			['/foo/User/Name/code/byrizki/vscode-git-extended/foo/bar/baz.ts', '/User/Name/code/byrizki/vscode-git-extended'],
 		);
 	});
 });

@@ -73,7 +73,7 @@ async function buildExtension(target, mode) {
 	const result = await esbuild.build({
 		bundle: true,
 		entryPoints: ['src/extension.ts'],
-		entryNames: '[dir]/gitlens',
+		entryNames: '[dir]/git-extended',
 		alias: alias,
 		drop: ['debugger'],
 		external: ['vscode'],
@@ -100,12 +100,12 @@ async function buildExtension(target, mode) {
 		fs.mkdirSync(path.join('dist', 'meta'));
 	}
 	fs.writeFileSync(
-		path.join('dist', 'meta', `gitlens${target === 'webworker' ? '.browser' : ''}.json`),
+		path.join('dist', 'meta', `git-extended${target === 'webworker' ? '.browser' : ''}.json`),
 		JSON.stringify(result.metafile),
 	);
 
 	if (mode === 'production') {
-		const file = path.join(out, 'gitlens.js');
+		const file = path.join(out, 'git-extended.js');
 		console.log(`Minifying ${file}...`);
 
 		const code = fs.readFileSync(file, 'utf8');

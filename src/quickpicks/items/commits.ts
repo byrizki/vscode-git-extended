@@ -68,7 +68,7 @@ export class CommitFileQuickPickItem extends CommandQuickPickItem {
 			picked: picked,
 		});
 
-		// TODO@eamodio - add line diff details
+		// TODO - add line diff details
 		// this.detail = this.commit.getFormattedDiffStatus({ expand: true });
 	}
 
@@ -266,7 +266,7 @@ export class CommitOpenDetailsCommandQuickPickItem extends CommandQuickPickItem 
 
 export class CommitOpenInGraphCommandQuickPickItem extends CommandQuickPickItem {
 	constructor(private readonly commit: GitCommit, item?: QuickPickItem) {
-		super(item ?? '$(gitlens-graph) Open in Commit Graph');
+		super(item ?? '$(git-extended-graph) Open in Commit Graph');
 	}
 
 	override execute(options: { preserveFocus?: boolean; preview?: boolean }): Promise<void> {

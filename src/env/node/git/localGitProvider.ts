@@ -740,7 +740,7 @@ export class LocalGitProvider implements GitProvider, Disposable {
 	async getBestRevisionUri(repoPath: string, path: string, ref: string | undefined): Promise<Uri | undefined> {
 		if (ref === deletedOrMissing) return undefined;
 
-		// TODO@eamodio Align this with isTrackedCore?
+		// TODO Align this with isTrackedCore?
 		if (!ref || (isUncommitted(ref) && !isUncommittedStaged(ref))) {
 			// Make sure the file exists in the repo
 			let data = await this.git.ls_files(repoPath, path);
@@ -1734,7 +1734,7 @@ export class LocalGitProvider implements GitProvider, Disposable {
 		const selectSha = first(refParser.parse(getSettledValue(refResult) ?? ''));
 
 		let stdin: string | undefined;
-		// TODO@eamodio this is insanity -- there *HAS* to be a better way to get git log to return stashes
+		// TODO this is insanity -- there *HAS* to be a better way to get git log to return stashes
 		const stash = getSettledValue(stashResult);
 		if (stash != null && stash.commits.size !== 0) {
 			stdin = join(
@@ -4461,7 +4461,7 @@ export class LocalGitProvider implements GitProvider, Disposable {
 
 			const stash = await this.getStash(repoPath);
 			let stdin: string | undefined;
-			// TODO@eamodio this is insanity -- there *HAS* to be a better way to get git log to return stashes
+			// TODO this is insanity -- there *HAS* to be a better way to get git log to return stashes
 			if (stash != null && stash.commits.size !== 0) {
 				stdin = join(
 					map(stash.commits.values(), c => c.sha.substring(0, 9)),

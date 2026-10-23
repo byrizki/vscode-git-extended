@@ -267,7 +267,7 @@ export async function getBranchesAndOrTags(
 		singleRepo = true;
 		const repo = repos instanceof Repository ? repos : repos[0];
 
-		// TODO@eamodio handle paging
+		// TODO handle paging
 		const [branchesResult, tagsResult] = await Promise.allSettled([
 			include.includes('branches')
 				? repo.getBranches({
@@ -281,7 +281,7 @@ export async function getBranchesAndOrTags(
 		branches = getSettledValue(branchesResult)?.values ?? [];
 		tags = getSettledValue(tagsResult)?.values ?? [];
 	} else {
-		// TODO@eamodio handle paging
+		// TODO handle paging
 		const [branchesByRepoResult, tagsByRepoResult] = await Promise.allSettled([
 			include.includes('branches')
 				? Promise.allSettled(
@@ -1860,7 +1860,7 @@ async function getShowCommitOrStashStepItems<
 		if (commitOnCurrentBranch) {
 			unpublished = !published;
 			if (unpublished) {
-				// TODO@eamodio Add Undo commit, if HEAD & unpushed
+				// TODO Add Undo commit, if HEAD & unpushed
 
 				items.push(
 					new GitCommandQuickPickItem('Push to Commit...', {
@@ -2414,7 +2414,7 @@ export async function* ensureAccessStep<
 	} else {
 		if (access.subscription.required == null) return undefined;
 
-		placeholder = 'You need GitLens Pro to access GitLens+ features on this repo';
+		placeholder = 'You need Git Extended Pro to access Git Extended+ features on this repo';
 		if (isSubscriptionPaidPlan(access.subscription.required) && access.subscription.current.account != null) {
 			directives.push(createDirectiveQuickPickItem(Directive.RequiresPaidSubscription, true));
 		} else if (

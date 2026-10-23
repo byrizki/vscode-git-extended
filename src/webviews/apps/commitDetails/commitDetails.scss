@@ -1,6 +1,6 @@
 :root {
-	--gitlens-gutter-width: 20px;
-	--gitlens-scrollbar-gutter-width: 10px;
+	--git-extended-gutter-width: 20px;
+	--git-extended-scrollbar-gutter-width: 10px;
 }
 
 // generic resets
@@ -349,8 +349,8 @@ ul {
 		z-index: 1;
 		padding: {
 			top: 1rem;
-			left: var(--gitlens-gutter-width);
-			right: var(--gitlens-scrollbar-gutter-width);
+			left: var(--git-extended-gutter-width);
+			right: var(--git-extended-scrollbar-gutter-width);
 			bottom: 0.5rem;
 		}
 		background-color: var(--vscode-sideBar-background);
@@ -370,8 +370,8 @@ ul {
 		padding: 0.5rem;
 		margin: {
 			top: 1rem;
-			left: var(--gitlens-gutter-width);
-			right: var(--gitlens-scrollbar-gutter-width);
+			left: var(--git-extended-gutter-width);
+			right: var(--git-extended-scrollbar-gutter-width);
 			bottom: 1.75rem;
 		}
 	}
@@ -447,7 +447,7 @@ ul {
 	}
 
 	&__rich {
-		padding: 0 var(--gitlens-scrollbar-gutter-width) 1.5rem var(--gitlens-gutter-width);
+		padding: 0 var(--git-extended-scrollbar-gutter-width) 1.5rem var(--git-extended-gutter-width);
 
 		> :first-child {
 			margin-top: 0;
@@ -468,8 +468,8 @@ ul {
 	&__file {
 		--tree-level: 1;
 		padding: {
-			left: calc(var(--gitlens-gutter-width) * var(--tree-level));
-			right: var(--gitlens-scrollbar-gutter-width);
+			left: calc(var(--git-extended-gutter-width) * var(--tree-level));
+			right: var(--git-extended-scrollbar-gutter-width);
 			top: 1px;
 			bottom: 1px;
 		}
@@ -478,8 +478,8 @@ ul {
 	}
 	&__item-skeleton {
 		padding: {
-			left: var(--gitlens-gutter-width);
-			right: var(--gitlens-scrollbar-gutter-width);
+			left: var(--git-extended-gutter-width);
+			right: var(--git-extended-scrollbar-gutter-width);
 			top: 1px;
 			bottom: 1px;
 		}
@@ -501,8 +501,8 @@ ul {
 
 	&__none {
 		padding: {
-			left: var(--gitlens-gutter-width);
-			right: var(--gitlens-scrollbar-gutter-width);
+			left: var(--git-extended-gutter-width);
+			right: var(--git-extended-scrollbar-gutter-width);
 		}
 	}
 

@@ -13,7 +13,7 @@
 				"pauseForSourceMap": true,
 				"sourceMapRenames": true,
 				"sourceMaps": true,
-				// "urlFilter": "*eamodio.gitlens*",
+				// "urlFilter": "*git-extended.git-extended*",
 				"webRoot": "${workspaceFolder}/src/webviews/apps"
 			},
 			"outFiles": ["${workspaceFolder}/dist/**/*.js"],
@@ -39,7 +39,7 @@
 				"pauseForSourceMap": true,
 				"sourceMapRenames": true,
 				"sourceMaps": true,
-				// "urlFilter": "*eamodio.gitlens*",
+				// "urlFilter": "*git-extended.git-extended*",
 				"webRoot": "${workspaceFolder}/src/webviews/apps"
 			},
 			"outFiles": ["${workspaceFolder}/dist/**/*.js"],
@@ -84,7 +84,7 @@
 				"pauseForSourceMap": true,
 				"sourceMapRenames": true,
 				"sourceMaps": true,
-				// "urlFilter": "*eamodio.gitlens*",
+				// "urlFilter": "*git-extended.git-extended*",
 				"webRoot": "${workspaceFolder}/src/webviews/apps"
 			},
 			"outFiles": ["${workspaceFolder}/dist/**/*.js"],
@@ -106,7 +106,7 @@
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
 			"args": [
-				// "--folder-uri=vscode-vfs://github/gitkraken/vscode-gitlens",
+				// "--folder-uri=vscode-vfs://github/byrizki/vscode-git-extended",
 				"--profile=Debugging (Git Extended)",
 				"--extensionDevelopmentPath=${workspaceFolder}",
 				"--extensionDevelopmentKind=web"
@@ -142,7 +142,7 @@
 				"pauseForSourceMap": true,
 				"sourceMapRenames": true,
 				"sourceMaps": true,
-				// "urlFilter": "*eamodio.gitlens*",
+				// "urlFilter": "*git-extended.git-extended*",
 				"webRoot": "${workspaceFolder}/src/webviews/apps"
 			},
 			"outFiles": ["${workspaceFolder}/dist/**/*.js"],

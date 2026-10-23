@@ -68,19 +68,19 @@ export class StatusBarController implements Disposable {
 				this._statusBarMode =
 					this._statusBarMode ??
 					window.createStatusBarItem(
-						'gitlens.mode',
+						'git-extended.mode',
 						alignment,
 						alignment === StatusBarAlignment.Right ? 999 : 1,
 					);
-				this._statusBarMode.name = 'GitLens Modes';
+				this._statusBarMode.name = 'Git Extended Modes';
 				this._statusBarMode.command = Commands.SwitchMode;
 				this._statusBarMode.text = mode.statusBarItemName;
 				this._statusBarMode.tooltip = new MarkdownString(
-					`**${mode.statusBarItemName}** ${GlyphChars.Dash} ${mode.description}\n\n---\n\nClick to Switch GitLens Modes`,
+					`**${mode.statusBarItemName}** ${GlyphChars.Dash} ${mode.description}\n\n---\n\nClick to Switch Git Extended Modes`,
 					true,
 				);
 				this._statusBarMode.accessibilityInformation = {
-					label: `GitLens Mode: ${mode.statusBarItemName}\nClick to Switch GitLens Modes`,
+					label: `Git Extended Mode: ${mode.statusBarItemName}\nClick to Switch Git Extended Modes`,
 				};
 				this._statusBarMode.show();
 			} else {
@@ -107,11 +107,11 @@ export class StatusBarController implements Disposable {
 			this._statusBarBlame =
 				this._statusBarBlame ??
 				window.createStatusBarItem(
-					'gitlens.blame',
+					'git-extended.blame',
 					alignment,
 					alignment === StatusBarAlignment.Right ? 1000 : 0,
 				);
-			this._statusBarBlame.name = 'GitLens Current Line Blame';
+			this._statusBarBlame.name = 'Git Extended Current Line Blame';
 			this._statusBarBlame.command = configuration.get('statusBar.command');
 
 			if (configuration.changed(e, 'statusBar.enabled')) {

@@ -635,7 +635,7 @@ export class FileAnnotationController implements Disposable {
 		if (highlight.enabled) {
 			const { locations } = highlight;
 
-			// TODO@eamodio: Read from the theme color when the API exists
+			// TODO: Read from the theme color when the API exists
 			const gutterHighlightColor = '#00bcf2'; // new ThemeColor(Colors.LineHighlightOverviewRulerColor)
 			const gutterHighlightUri = locations.includes(BlameHighlightLocations.Gutter)
 				? Uri.parse(

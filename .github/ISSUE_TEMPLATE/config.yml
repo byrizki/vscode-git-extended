@@ -1,11 +1,8 @@
 blank_issues_enabled: false
 contact_links:
     - name: Q & A
-      url: https://github.com/gitkraken/vscode-gitlens/discussions?discussions_q=category%3AQ%26A
-      about: Ask and answer questions about GitLens
+      url: https://github.com/byrizki/vscode-git-extended/discussions?discussions_q=category%3AQ%26A
+      about: Ask and answer questions about Git Extended
     - name: Documentation
-      url: https://help.gitkraken.com/gitlens
-      about: Read the GitLens support documentation
-    - name: GitLens+ Support
-      url: https://gitkraken.com/gitlens-support
-      about: Get email support for GitLens+ issues and questions
+      url: https://github.com/byrizki/vscode-git-extended
+      about: Read the Git Extended support documentation

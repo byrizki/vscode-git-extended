@@ -10,7 +10,7 @@ import type {
 } from './api/git-extended';
 import type { CreatePullRequestOnRemoteCommandArgs, OpenPullRequestOnRemoteCommandArgs } from './commands';
 import { fromOutputLevel, OutputLevel } from './config';
-import { Commands, ContextKeys, CoreCommands } from './constants';
+import { Commands, ContextKeys } from './constants';
 import { Container } from './container';
 import { setContext } from './context';
 import { isGitUri } from './git/gitUri';
@@ -26,7 +26,7 @@ import {
 } from './messages';
 import { registerPartnerActionRunners } from './partners';
 import { Storage, SyncedStorageKeys } from './storage';
-import { executeCommand, executeCoreCommand, registerCommands } from './system/command';
+import { executeCommand, registerCommands } from './system/command';
 import { configuration, Configuration } from './system/configuration';
 import { setDefaultDateLocales } from './system/date';
 import { once } from './system/event';
@@ -39,13 +39,13 @@ import { isViewNode } from './views/nodes/viewNode';
 
 export async function activate(context: ExtensionContext): Promise<GitExtendedApi | undefined> {
 	const gitlensVersion: string = context.extension.packageJSON.version;
-	const insiders = context.extension.id === 'eamodio.gitlens-insiders';
+	const insiders = context.extension.id === 'git-extended.git-extended-insiders';
 	const prerelease = insiders || satisfies(gitlensVersion, '> 2020.0.0');
 
 	const outputLevel = configuration.get('outputLevel');
 	Logger.configure(
 		{
-			name: 'GitLens',
+			name: 'Git Extended',
 			createChannel: function (name: string) {
 				return window.createOutputChannel(name);
 			},
@@ -67,7 +67,7 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 	);
 
 	const sw = new Stopwatch(
-		`GitLens${prerelease ? (insiders ? ' (Insiders)' : ' (pre-release)') : ''} v${gitlensVersion}`,
+		`Git Extended${prerelease ? (insiders ? ' (Insiders)' : ' (pre-release)') : ''} v${gitlensVersion}`,
 		{
 			log: {
 				message: ` activating in ${env.appName}(${codeVersion}) on the ${isWeb ? 'web' : 'desktop'} (${
@@ -80,9 +80,9 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 
 	// If we are using the separate insiders extension, ensure that stable isn't also installed
 	if (insiders) {
-		const stable = extensions.getExtension('eamodio.gitlens');
+		const stable = extensions.getExtension('git-extended.git-extended');
 		if (stable != null) {
-			sw.stop({ message: ' was NOT activated because GitLens is also enabled' });
+			sw.stop({ message: ' was NOT activated because Git Extended is also enabled' });
 
 			// If we don't use a setTimeout here this notification will get lost for some reason
 			setTimeout(showInsidersErrorMessage, 0);
@@ -200,7 +200,7 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 		void setContext(ContextKeys.Debugging, true);
 	}
 
-	// TODO@eamodio do we want to capture any vscode settings that are relevant to GitLens?
+	// TODO do we want to capture any vscode settings that are relevant to Git Extended?
 	const flatCfg = flatten(configuration.getAll(true), { prefix: 'config', stringify: 'all' });
 
 	container.telemetry.setGlobalAttributes({
@@ -236,13 +236,11 @@ export async function activate(context: ExtensionContext): Promise<GitExtendedAp
 		endTime,
 	);
 
-	setTimeout(uninstallDeprecatedAuthentication, 25000);
-
 	return Promise.resolve(api);
 }
 
 export function deactivate() {
-	Logger.log('GitLens deactivating...');
+	Logger.log('Git Extended deactivating...');
 	Container.instance.deactivate();
 }
 
@@ -301,7 +299,7 @@ function registerBuiltInActionRunners(container: Container): void {
 
 async function showWelcomeOrWhatsNew(container: Container, version: string, previousVersion: string | undefined) {
 	if (previousVersion == null) {
-		Logger.log(`GitLens first-time install; window.focused=${window.state.focused}`);
+		Logger.log(`Git Extended first-time install; window.focused=${window.state.focused}`);
 
 		if (configuration.get('showWelcomeOnInstall') === false) return;
 
@@ -331,7 +329,7 @@ async function showWelcomeOrWhatsNew(container: Container, version: string, prev
 	}
 
 	if (previousVersion !== version) {
-		Logger.log(`GitLens upgraded from v${previousVersion} to v${version}; window.focused=${window.state.focused}`);
+		Logger.log(`Git Extended upgraded from v${previousVersion} to v${version}; window.focused=${window.state.focused}`);
 	}
 
 	const [major, minor] = version.split('.').map(v => parseInt(v, 10));
@@ -371,10 +369,4 @@ async function showWelcomeOrWhatsNew(container: Container, version: string, prev
 			container.context.subscriptions.push(disposable);
 		}
 	}
-}
-
-function uninstallDeprecatedAuthentication() {
-	if (extensions.getExtension('gitkraken.gitkraken-authentication') == null) return;
-
-	void executeCoreCommand(CoreCommands.UninstallExtension, 'gitkraken.gitkraken-authentication');
 }

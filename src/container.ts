@@ -371,7 +371,7 @@ export class Container {
 	@memoize()
 	get env(): 'dev' | 'staging' | 'production' {
 		if (this.prereleaseOrDebugging) {
-			const env = configuration.getAny('gitkraken.env');
+			const env = configuration.getAny('git-extended.env');
 			if (env === 'dev') return 'dev';
 			if (env === 'staging') return 'staging';
 		}

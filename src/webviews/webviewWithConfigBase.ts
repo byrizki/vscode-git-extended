@@ -126,7 +126,7 @@ export abstract class WebviewWithConfigBase<State> extends WebviewBase<State> {
 						case 'commit-uncommitted': {
 							const commit = new GitCommit(
 								this.container,
-								'~/code/eamodio/vscode-gitlens-demo',
+								'~/code/byrizki/vscode-git-extended-demo',
 								'fe26af408293cba5b4bfd77306e1ac9ff7ccaef8',
 								new GitCommitIdentity('You', 'eamodio@gmail.com', new Date('2016-11-12T20:41:00.000Z')),
 								new GitCommitIdentity('You', 'eamodio@gmail.com', new Date('2020-11-01T06:57:21.000Z')),
@@ -134,7 +134,7 @@ export abstract class WebviewWithConfigBase<State> extends WebviewBase<State> {
 								['3ac1d3f51d7cf5f438cc69f25f6740536ad80fef'],
 								params.type === 'commit-uncommitted' ? 'Uncommitted changes' : 'Supercharged',
 								new GitFileChange(
-									'~/code/eamodio/vscode-gitlens-demo',
+									'~/code/byrizki/vscode-git-extended-demo',
 									'code.ts',
 									GitFileIndexStatus.Modified,
 								),
@@ -163,7 +163,7 @@ export abstract class WebviewWithConfigBase<State> extends WebviewBase<State> {
 									},
 									'1',
 									'Supercharged',
-									'https://github.com/gitkraken/vscode-gitlens/pulls/1',
+									'https://github.com/byrizki/vscode-git-extended/pulls/1',
 									PullRequestState.Merged,
 									new Date('Sat, 12 Nov 2016 19:41:00 GMT'),
 									undefined,

@@ -10,7 +10,7 @@ export class RefreshHoverCommand extends Command {
 	}
 
 	async execute() {
-		// TODO@eamodio figure out how to really refresh/update a hover
+		// TODO figure out how to really refresh/update a hover
 		await executeCoreCommand(CoreCommands.EditorShowHover);
 	}
 }

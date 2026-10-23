@@ -4,7 +4,7 @@ import { Schemes } from './constants';
 import type { Repository } from './git/models/repository';
 import { addVslsPrefixIfNeeded, normalizePath } from './system/path';
 import { UriTrie } from './system/trie';
-// TODO@eamodio don't import from string here since it will break the tests because of ESM dependencies
+// TODO don't import from string here since it will break the tests because of ESM dependencies
 // import { CharCode } from './string';
 
 const slash = 47; //CharCode.Slash;
@@ -42,7 +42,7 @@ export function normalizeRepoUri(uri: Uri): { path: string; ignoreCase: boolean 
 				path = path.slice(1);
 			}
 
-			// TODO@eamodio Revisit this, as we can't strip off the authority details (e.g. metadata) ultimately (since you in theory could have a workspace with more than 1 virtual repo which are the same except for the authority)
+			// TODO Revisit this, as we can't strip off the authority details (e.g. metadata) ultimately (since you in theory could have a workspace with more than 1 virtual repo which are the same except for the authority)
 			const authority = uri.authority?.split('+', 1)[0];
 			return { path: authority ? `${authority}/${path}` : path, ignoreCase: false };
 		}

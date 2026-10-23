@@ -14,15 +14,15 @@ describe('PathEntryTrie Test Suite', () => {
 
 	const repoGL: Repo = {
 		type: 'repo',
-		name: 'vscode-gitlens',
-		path: 'c:/Users/Name/code/gitkraken/vscode-gitlens',
-		fsPath: 'C:\\Users\\Name\\code\\gitkraken\\vscode-gitlens',
+		name: 'vscode-git-extended',
+		path: 'c:/Users/Name/code/byrizki/vscode-git-extended',
+		fsPath: 'C:\\Users\\Name\\code\\byrizki\\vscode-git-extended',
 	};
 	const repoNested: Repo = {
 		type: 'repo',
 		name: 'repo',
-		path: 'c:/Users/Name/code/gitkraken/vscode-gitlens/nested/repo',
-		fsPath: 'C:\\Users\\Name\\code\\gitkraken\\vscode-gitlens\\nested\\repo',
+		path: 'c:/Users/Name/code/byrizki/vscode-git-extended/nested/repo',
+		fsPath: 'C:\\Users\\Name\\code\\byrizki\\vscode-git-extended\\nested\\repo',
 	};
 	const repoVSC: Repo = {
 		type: 'repo',
@@ -56,7 +56,7 @@ describe('PathEntryTrie Test Suite', () => {
 		assert.strictEqual(trie.has(repoVSC.fsPath), true);
 
 		assert.strictEqual(trie.has('C:\\Users\\Name\\code\\company\\repo'), false);
-		assert.strictEqual(trie.has('D:\\Users\\Name\\code\\gitkraken\\vscode-gitlens'), false);
+		assert.strictEqual(trie.has('D:\\Users\\Name\\code\\byrizki\\vscode-git-extended'), false);
 	});
 
 	it('has: repo (ignore case)', () => {
@@ -107,7 +107,7 @@ describe('PathEntryTrie Test Suite', () => {
 		assert.strictEqual(entry?.value?.path, repoVSC.path);
 
 		assert.strictEqual(trie.get('C:\\Users\\Name\\code\\company\\repo'), undefined);
-		assert.strictEqual(trie.get('D:\\Users\\Name\\code\\gitkraken\\vscode-gitlens'), undefined);
+		assert.strictEqual(trie.get('D:\\Users\\Name\\code\\byrizki\\vscode-git-extended'), undefined);
 	});
 
 	it('get: repo (ignore case)', () => {
@@ -292,21 +292,21 @@ describe('UriEntryTrie Test Suite', () => {
 
 	const repoGL: Repo = {
 		type: 'repo',
-		name: 'vscode-gitlens',
-		uri: Uri.file('c:/Users/Name/code/gitkraken/vscode-gitlens'),
-		fsPath: 'c:/Users/Name/code/gitkraken/vscode-gitlens',
+		name: 'vscode-git-extended',
+		uri: Uri.file('c:/Users/Name/code/byrizki/vscode-git-extended'),
+		fsPath: 'c:/Users/Name/code/byrizki/vscode-git-extended',
 	};
 	const repoNested: Repo = {
 		type: 'repo',
 		name: 'repo',
-		uri: Uri.file('c:/Users/Name/code/gitkraken/vscode-gitlens/nested/repo'),
-		fsPath: 'c:/Users/Name/code/gitkraken/vscode-gitlens/nested/repo',
+		uri: Uri.file('c:/Users/Name/code/byrizki/vscode-git-extended/nested/repo'),
+		fsPath: 'c:/Users/Name/code/byrizki/vscode-git-extended/nested/repo',
 	};
 	const repoGLvfs: Repo = {
 		type: 'repo',
-		name: 'vscode-gitlens',
-		uri: Uri.parse('vscode-vfs://github/gitkraken/vscode-gitlens'),
-		fsPath: 'github/gitkraken/vscode-gitlens',
+		name: 'vscode-git-extended',
+		uri: Uri.parse('vscode-vfs://github/byrizki/vscode-git-extended'),
+		fsPath: 'github/byrizki/vscode-git-extended',
 	};
 	const repoVSCvfs: Repo = {
 		type: 'repo',
@@ -337,7 +337,7 @@ describe('UriEntryTrie Test Suite', () => {
 
 	function assertFileEntry(actual: UriEntry<Repo | File> | undefined, expected: Uri): void {
 		assert.strictEqual(actual?.path, basename(expected.path));
-		if (expected.scheme === 'file' || expected.scheme === 'git' || expected.scheme === 'gitlens') {
+		if (expected.scheme === 'file' || expected.scheme === 'git' || expected.scheme === 'git-extended') {
 			assert.strictEqual(actual?.fullPath, expected.path.slice(1));
 		} else {
 			assert.strictEqual(actual?.fullPath, `${expected.authority}${expected.path}`);
@@ -373,7 +373,7 @@ describe('UriEntryTrie Test Suite', () => {
 		assert.strictEqual(trie.has(repoNested.uri.with({ path: repoGL.uri.path.toUpperCase() })), !isLinux);
 
 		assert.strictEqual(trie.has(Uri.file('C:\\Users\\Name\\code\\company\\repo')), false);
-		assert.strictEqual(trie.has(Uri.file('D:\\Users\\Name\\code\\gitkraken\\vscode-gitlens')), false);
+		assert.strictEqual(trie.has(Uri.file('D:\\Users\\Name\\code\\byrizki\\vscode-git-extended')), false);
 	});
 
 	it('has(file://): file', () => {
@@ -444,11 +444,11 @@ describe('UriEntryTrie Test Suite', () => {
 		);
 	});
 
-	// it('has(gitlens://): repo', () => {
+	// it('has(git-extended://): repo', () => {
 	// 	assert.strictEqual(
 	// 		trie.has(
 	// 			repoGL.uri.with({
-	// 				scheme: 'gitlens',
+	// 				scheme: 'git-extended',
 	// 				authority: 'abcd',
 	// 				query: JSON.stringify({ ref: '1234567890' }),
 	// 			}),
@@ -460,7 +460,7 @@ describe('UriEntryTrie Test Suite', () => {
 	// 			Uri.parse(
 	// 				repoGL.uri
 	// 					.with({
-	// 						scheme: 'gitlens',
+	// 						scheme: 'git-extended',
 	// 						authority: 'abcd',
 	// 						query: JSON.stringify({ ref: '1234567890' }),
 	// 					})
@@ -473,7 +473,7 @@ describe('UriEntryTrie Test Suite', () => {
 	// 	assert.strictEqual(
 	// 		trie.has(
 	// 			repoNested.uri.with({
-	// 				scheme: 'gitlens',
+	// 				scheme: 'git-extended',
 	// 				authority: 'abcd',
 	// 				query: JSON.stringify({ ref: '1234567890' }),
 	// 			}),
@@ -485,7 +485,7 @@ describe('UriEntryTrie Test Suite', () => {
 	// 			Uri.parse(
 	// 				repoNested.uri
 	// 					.with({
-	// 						scheme: 'gitlens',
+	// 						scheme: 'git-extended',
 	// 						authority: 'abcd',
 	// 						query: JSON.stringify({ ref: '1234567890' }),
 	// 					})
@@ -499,7 +499,7 @@ describe('UriEntryTrie Test Suite', () => {
 	// 	assert.strictEqual(
 	// 		trie.has(
 	// 			Uri.file('C:\\Users\\Name\\code\\company\\repo').with({
-	// 				scheme: 'gitlens',
+	// 				scheme: 'git-extended',
 	// 				authority: 'abcd',
 	// 				query: JSON.stringify({ ref: '1234567890' }),
 	// 			}),
@@ -508,11 +508,11 @@ describe('UriEntryTrie Test Suite', () => {
 	// 	);
 	// });
 
-	// it('has(gitlens://): file', () => {
+	// it('has(git-extended://): file', () => {
 	// 	assert.strictEqual(
 	// 		trie.has(
 	// 			Uri.joinPath(repoGL.uri, 'src/extension.ts').with({
-	// 				scheme: 'gitlens',
+	// 				scheme: 'git-extended',
 	// 				authority: 'abcd',
 	// 				query: JSON.stringify({ ref: '1234567890' }),
 	// 			}),
@@ -522,7 +522,7 @@ describe('UriEntryTrie Test Suite', () => {
 	// 	assert.strictEqual(
 	// 		trie.has(
 	// 			Uri.joinPath(repoGL.uri, 'foo/bar/baz.ts').with({
-	// 				scheme: 'gitlens',
+	// 				scheme: 'git-extended',
 	// 				authority: 'abcd',
 	// 				query: JSON.stringify({ ref: '1234567890' }),
 	// 			}),
@@ -532,7 +532,7 @@ describe('UriEntryTrie Test Suite', () => {
 	// 	assert.strictEqual(
 	// 		trie.has(
 	// 			Uri.joinPath(repoNested.uri, 'src/index.ts').with({
-	// 				scheme: 'gitlens',
+	// 				scheme: 'git-extended',
 	// 				authority: 'abcd',
 	// 				query: JSON.stringify({ ref: '1234567890' }),
 	// 			}),
@@ -546,7 +546,7 @@ describe('UriEntryTrie Test Suite', () => {
 		assertRepoEntry(trie.get(repoNested.uri), repoNested);
 
 		assert.strictEqual(trie.get(Uri.file('C:\\Users\\Name\\code\\company\\repo')), undefined);
-		assert.strictEqual(trie.get(Uri.file('D:\\Users\\Name\\code\\gitkraken\\vscode-gitlens')), undefined);
+		assert.strictEqual(trie.get(Uri.file('D:\\Users\\Name\\code\\byrizki\\vscode-git-extended')), undefined);
 	});
 
 	it('get(vscode-vfs://): repo', () => {
@@ -554,7 +554,7 @@ describe('UriEntryTrie Test Suite', () => {
 		assertRepoEntry(trie.get(repoVSCvfs.uri), repoVSCvfs);
 
 		assert.strictEqual(trie.get(Uri.file('C:\\Users\\Name\\code\\company\\repo')), undefined);
-		assert.strictEqual(trie.get(Uri.file('D:\\Users\\Name\\code\\gitkraken\\vscode-gitlens')), undefined);
+		assert.strictEqual(trie.get(Uri.file('D:\\Users\\Name\\code\\byrizki\\vscode-git-extended')), undefined);
 	});
 
 	it('get(github://): repo', () => {
@@ -562,11 +562,11 @@ describe('UriEntryTrie Test Suite', () => {
 		assertRepoEntry(trie.get(repoVSCvfs.uri.with({ scheme: 'github' })), repoVSCvfs);
 	});
 
-	// it('get(gitlens://): repo', () => {
+	// it('get(git-extended://): repo', () => {
 	// 	assertRepoEntry(
 	// 		trie.get(
 	// 			repoGL.uri.with({
-	// 				scheme: 'gitlens',
+	// 				scheme: 'git-extended',
 	// 				authority: 'abcd',
 	// 				query: JSON.stringify({ ref: '1234567890' }),
 	// 			}),
@@ -577,7 +577,7 @@ describe('UriEntryTrie Test Suite', () => {
 	// 	assertRepoEntry(
 	// 		trie.get(
 	// 			repoNested.uri.with({
-	// 				scheme: 'gitlens',
+	// 				scheme: 'git-extended',
 	// 				authority: 'abcd',
 	// 				query: JSON.stringify({ ref: '1234567890' }),
 	// 			}),
@@ -617,7 +617,7 @@ describe('UriEntryTrie Test Suite', () => {
 		);
 	});
 
-	// it('get(gitlens://): repo (ignore case)', () => {
+	// it('get(git-extended://): repo (ignore case)', () => {
 	// 	assertRepoEntry(
 	// 		trie.get(
 	// 			repoGL.uri.with({
@@ -634,7 +634,7 @@ describe('UriEntryTrie Test Suite', () => {
 	// 			Uri.parse(
 	// 				repoGL.uri
 	// 					.with({
-	// 						scheme: 'gitlens',
+	// 						scheme: 'git-extended',
 	// 						authority: 'abcd',
 	// 						query: JSON.stringify({ ref: '1234567890' }),
 	// 					})
@@ -666,12 +666,12 @@ describe('UriEntryTrie Test Suite', () => {
 		assertFileEntry(trie.get(uri.with({ scheme: 'github' })), uri);
 	});
 
-	// it('get(gitlens://): file', () => {
+	// it('get(git-extended://): file', () => {
 	// 	const uri = Uri.joinPath(repoGL.uri, 'src/extension.ts');
 	// 	assertFileEntry(
 	// 		trie.get(
 	// 			uri.with({
-	// 				scheme: 'gitlens',
+	// 				scheme: 'git-extended',
 	// 				authority: 'abcd',
 	// 				query: JSON.stringify({ ref: '1234567890' }),
 	// 			}),
@@ -709,11 +709,11 @@ describe('UriEntryTrie Test Suite', () => {
 		);
 	});
 
-	// it('getClosest(gitlens://): file', () => {
+	// it('getClosest(git-extended://): file', () => {
 	// 	assertRepoEntry(
 	// 		trie.getClosest(
 	// 			Uri.joinPath(repoGL.uri, 'src/extension.ts').with({
-	// 				scheme: 'gitlens',
+	// 				scheme: 'git-extended',
 	// 				authority: 'abcd',
 	// 				query: JSON.stringify({ ref: '1234567890' }),
 	// 			}),
@@ -738,11 +738,11 @@ describe('UriEntryTrie Test Suite', () => {
 		);
 	});
 
-	// it('getClosest(gitlens://): missing repo file', () => {
+	// it('getClosest(git-extended://): missing repo file', () => {
 	// 	assertRepoEntry(
 	// 		trie.getClosest(
 	// 			Uri.joinPath(repoGL.uri, 'src/extension.ts').with({
-	// 				scheme: 'gitlens',
+	// 				scheme: 'git-extended',
 	// 				authority: 'abcd',
 	// 				query: JSON.stringify({ ref: '1234567890' }),
 	// 			}),
@@ -754,7 +754,7 @@ describe('UriEntryTrie Test Suite', () => {
 	// 	assertRepoEntry(
 	// 		trie.getClosest(
 	// 			Uri.joinPath(repoGL.uri, 'foo/bar/baz.ts').with({
-	// 				scheme: 'gitlens',
+	// 				scheme: 'git-extended',
 	// 				authority: 'abcd',
 	// 				query: JSON.stringify({ ref: '1234567890' }),
 	// 			}),
@@ -765,7 +765,7 @@ describe('UriEntryTrie Test Suite', () => {
 	// 	assertRepoEntry(
 	// 		trie.getClosest(
 	// 			Uri.joinPath(repoNested.uri, 'foo/bar/baz.ts').with({
-	// 				scheme: 'gitlens',
+	// 				scheme: 'git-extended',
 	// 				authority: 'abcd',
 	// 				query: JSON.stringify({ ref: '1234567890' }),
 	// 			}),
@@ -787,21 +787,21 @@ describe('UriTrie(Repositories) Test Suite', () => {
 
 	const repoGL: Repo = {
 		type: 'repo',
-		name: 'vscode-gitlens',
-		uri: Uri.file('c:/Users/Name/code/gitkraken/vscode-gitlens'),
-		fsPath: 'c:/Users/Name/code/gitkraken/vscode-gitlens',
+		name: 'vscode-git-extended',
+		uri: Uri.file('c:/Users/Name/code/byrizki/vscode-git-extended'),
+		fsPath: 'c:/Users/Name/code/byrizki/vscode-git-extended',
 	};
 	const repoNested: Repo = {
 		type: 'repo',
 		name: 'repo',
-		uri: Uri.file('c:/Users/Name/code/gitkraken/vscode-gitlens/nested/repo'),
-		fsPath: 'c:/Users/Name/code/gitkraken/vscode-gitlens/nested/repo',
+		uri: Uri.file('c:/Users/Name/code/byrizki/vscode-git-extended/nested/repo'),
+		fsPath: 'c:/Users/Name/code/byrizki/vscode-git-extended/nested/repo',
 	};
 	const repoGLvfs: Repo = {
 		type: 'repo',
-		name: 'vscode-gitlens',
-		uri: Uri.parse('vscode-vfs://github/gitkraken/vscode-gitlens'),
-		fsPath: 'github/gitkraken/vscode-gitlens',
+		name: 'vscode-git-extended',
+		uri: Uri.parse('vscode-vfs://github/byrizki/vscode-git-extended'),
+		fsPath: 'github/byrizki/vscode-git-extended',
 	};
 	const repoVSCvfs: Repo = {
 		type: 'repo',
@@ -844,7 +844,7 @@ describe('UriTrie(Repositories) Test Suite', () => {
 		assert.strictEqual(trie.has(repoNested.uri.with({ path: repoGL.uri.path.toUpperCase() })), !isLinux);
 
 		assert.strictEqual(trie.has(Uri.file('C:\\Users\\Name\\code\\company\\repo')), false);
-		assert.strictEqual(trie.has(Uri.file('D:\\Users\\Name\\code\\gitkraken\\vscode-gitlens')), false);
+		assert.strictEqual(trie.has(Uri.file('D:\\Users\\Name\\code\\byrizki\\vscode-git-extended')), false);
 	});
 
 	it('has(vscode-vfs://)', () => {
@@ -873,11 +873,11 @@ describe('UriTrie(Repositories) Test Suite', () => {
 		assert.strictEqual(trie.has(repoGLvfs.uri.with({ scheme: 'github', authority: 'azdo' })), false);
 	});
 
-	it('has(gitlens://)', () => {
+	it('has(git-extended://)', () => {
 		assert.strictEqual(
 			trie.has(
 				repoGL.uri.with({
-					scheme: 'gitlens',
+					scheme: 'git-extended',
 					authority: 'abcd',
 					query: JSON.stringify({ ref: '1234567890' }),
 				}),
@@ -889,7 +889,7 @@ describe('UriTrie(Repositories) Test Suite', () => {
 				Uri.parse(
 					repoGL.uri
 						.with({
-							scheme: 'gitlens',
+							scheme: 'git-extended',
 							authority: 'abcd',
 							query: JSON.stringify({ ref: '1234567890' }),
 						})
@@ -902,7 +902,7 @@ describe('UriTrie(Repositories) Test Suite', () => {
 		assert.strictEqual(
 			trie.has(
 				repoNested.uri.with({
-					scheme: 'gitlens',
+					scheme: 'git-extended',
 					authority: 'abcd',
 					query: JSON.stringify({ ref: '1234567890' }),
 				}),
@@ -914,7 +914,7 @@ describe('UriTrie(Repositories) Test Suite', () => {
 				Uri.parse(
 					repoNested.uri
 						.with({
-							scheme: 'gitlens',
+							scheme: 'git-extended',
 							authority: 'abcd',
 							query: JSON.stringify({ ref: '1234567890' }),
 						})
@@ -928,7 +928,7 @@ describe('UriTrie(Repositories) Test Suite', () => {
 		assert.strictEqual(
 			trie.has(
 				Uri.file('C:\\Users\\Name\\code\\company\\repo').with({
-					scheme: 'gitlens',
+					scheme: 'git-extended',
 					authority: 'abcd',
 					query: JSON.stringify({ ref: '1234567890' }),
 				}),
@@ -942,7 +942,7 @@ describe('UriTrie(Repositories) Test Suite', () => {
 		assertRepoEntry(trie.get(repoNested.uri), repoNested);
 
 		assert.strictEqual(trie.get(Uri.file('C:\\Users\\Name\\code\\company\\repo')), undefined);
-		assert.strictEqual(trie.get(Uri.file('D:\\Users\\Name\\code\\gitkraken\\vscode-gitlens')), undefined);
+		assert.strictEqual(trie.get(Uri.file('D:\\Users\\Name\\code\\byrizki\\vscode-git-extended')), undefined);
 	});
 
 	it('get(vscode-vfs://)', () => {
@@ -950,7 +950,7 @@ describe('UriTrie(Repositories) Test Suite', () => {
 		assertRepoEntry(trie.get(repoVSCvfs.uri), repoVSCvfs);
 
 		assert.strictEqual(trie.get(Uri.file('C:\\Users\\Name\\code\\company\\repo')), undefined);
-		assert.strictEqual(trie.get(Uri.file('D:\\Users\\Name\\code\\gitkraken\\vscode-gitlens')), undefined);
+		assert.strictEqual(trie.get(Uri.file('D:\\Users\\Name\\code\\byrizki\\vscode-git-extended')), undefined);
 	});
 
 	it('get(github://)', () => {
@@ -958,11 +958,11 @@ describe('UriTrie(Repositories) Test Suite', () => {
 		assertRepoEntry(trie.get(repoVSCvfs.uri.with({ scheme: 'github' })), repoVSCvfs);
 	});
 
-	it('get(gitlens://)', () => {
+	it('get(git-extended://)', () => {
 		assertRepoEntry(
 			trie.get(
 				repoGL.uri.with({
-					scheme: 'gitlens',
+					scheme: 'git-extended',
 					authority: 'abcd',
 					query: JSON.stringify({ ref: '1234567890' }),
 				}),
@@ -973,7 +973,7 @@ describe('UriTrie(Repositories) Test Suite', () => {
 		assertRepoEntry(
 			trie.get(
 				repoNested.uri.with({
-					scheme: 'gitlens',
+					scheme: 'git-extended',
 					authority: 'abcd',
 					query: JSON.stringify({ ref: '1234567890' }),
 				}),
@@ -1013,7 +1013,7 @@ describe('UriTrie(Repositories) Test Suite', () => {
 		);
 	});
 
-	it('get(gitlens://) (ignore case)', () => {
+	it('get(git-extended://) (ignore case)', () => {
 		assertRepoEntry(
 			trie.get(
 				repoGL.uri.with({
@@ -1030,7 +1030,7 @@ describe('UriTrie(Repositories) Test Suite', () => {
 				Uri.parse(
 					repoGL.uri
 						.with({
-							scheme: 'gitlens',
+							scheme: 'git-extended',
 							authority: 'abcd',
 							query: JSON.stringify({ ref: '1234567890' }),
 						})
@@ -1075,14 +1075,14 @@ describe('UriTrie(Repositories) Test Suite', () => {
 		assertRepoEntry(trie.getClosest(Uri.joinPath(repoVSCvfsUri, 'src/main.ts'), true), repoVSCvfs);
 	});
 
-	it('getClosest(gitlens://)', () => {
+	it('getClosest(git-extended://)', () => {
 		const repoGLUri = Uri.joinPath(repoGL.uri, 'src/extension.ts').with({
-			scheme: 'gitlens',
+			scheme: 'git-extended',
 			authority: 'abcd',
 			query: JSON.stringify({ ref: '1234567890' }),
 		});
 		const repoNestedUri = Uri.joinPath(repoNested.uri, 'src/index.ts').with({
-			scheme: 'gitlens',
+			scheme: 'git-extended',
 			authority: 'abcd',
 			query: JSON.stringify({ ref: '1234567890' }),
 		});

@@ -140,7 +140,7 @@ export class Git {
 		if (promise === undefined) {
 			waiting = false;
 
-			// Fixes https://github.com/gitkraken/vscode-gitlens/issues/73 & https://github.com/gitkraken/vscode-gitlens/issues/161
+			// Fixes https://github.com/byrizki/vscode-git-extended/issues/73 & https://github.com/byrizki/vscode-git-extended/issues/161
 			// See https://stackoverflow.com/questions/4144417/how-to-handle-asian-characters-in-file-names-in-git-on-os-x
 			args.splice(
 				0,
@@ -237,7 +237,7 @@ export class Git {
 
 		const gitCommand = `[${spawnOpts.cwd as string}] git ${args.join(' ')}`;
 
-		// Fixes https://github.com/gitkraken/vscode-gitlens/issues/73 & https://github.com/gitkraken/vscode-gitlens/issues/161
+		// Fixes https://github.com/byrizki/vscode-git-extended/issues/73 & https://github.com/byrizki/vscode-git-extended/issues/161
 		// See https://stackoverflow.com/questions/4144417/how-to-handle-asian-characters-in-file-names-in-git-on-os-x
 		args.splice(
 			0,
@@ -986,7 +986,7 @@ export class Git {
 		{
 			all,
 			argsOrFormat,
-			// TODO@eamodio remove this in favor of argsOrFormat
+			// TODO remove this in favor of argsOrFormat
 			fileMode = 'full',
 			filters,
 			firstParent = false,
@@ -1001,7 +1001,7 @@ export class Git {
 		}: {
 			all?: boolean;
 			argsOrFormat?: string | string[];
-			// TODO@eamodio remove this in favor of argsOrFormat
+			// TODO remove this in favor of argsOrFormat
 			fileMode?: 'full' | 'simple' | 'none';
 			filters?: GitDiffFilter[];
 			firstParent?: boolean;
@@ -1908,16 +1908,16 @@ export class Git {
 
 		if (Logger.isDebugging) {
 			if (ex != null) {
-				console.error(Logger.timestamp, '[GitLens (Git)]', command ?? emptyStr, ex);
+				console.error(Logger.timestamp, '[Git Extended (Git)]', command ?? emptyStr, ex);
 			} else if (slow) {
-				console.warn(Logger.timestamp, '[GitLens (Git)]', command ?? emptyStr);
+				console.warn(Logger.timestamp, '[Git Extended (Git)]', command ?? emptyStr);
 			} else {
-				console.log(Logger.timestamp, '[GitLens (Git)]', command ?? emptyStr);
+				console.log(Logger.timestamp, '[Git Extended (Git)]', command ?? emptyStr);
 			}
 		}
 
 		if (this._gitOutput == null) {
-			this._gitOutput = window.createOutputChannel('GitLens (Git)');
+			this._gitOutput = window.createOutputChannel('Git Extended (Git)');
 		}
 		this._gitOutput.appendLine(
 			`${Logger.timestamp} [${slow ? '*' : ' '}${duration.toString().padStart(6)}ms] ${command}${

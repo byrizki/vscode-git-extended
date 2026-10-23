@@ -38,7 +38,7 @@ export class TagsNode extends ViewNode<TagsView | RepositoriesView> {
 			const tags = await this.repo.getTags({ sort: true });
 			if (tags.values.length === 0) return [new MessageNode(this.view, this, 'No tags could be found.')];
 
-			// TODO@eamodio handle paging
+			// TODO handle paging
 			const tagNodes = tags.values.map(
 				t => new TagNode(GitUri.fromRepoPath(this.uri.repoPath!, t.ref), this.view, this, t),
 			);

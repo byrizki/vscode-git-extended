@@ -39,7 +39,7 @@ export async function showDebugLoggingWarningMessage(): Promise<boolean> {
 	const disable = { title: 'Disable Debug Logging' };
 	const result = await showMessage(
 		'warn',
-		'GitLens debug logging is currently enabled. Unless you are reporting an issue, it is recommended to be disabled. Would you like to disable it?',
+		'Git Extended debug logging is currently enabled. Unless you are reporting an issue, it is recommended to be disabled. Would you like to disable it?',
 		SuppressedMessages.SuppressDebugLoggingWarning,
 		{ title: "Don't Show Again" },
 		disable,
@@ -85,7 +85,7 @@ export function showFileNotUnderSourceControlWarningMessage(message: string): Pr
 export function showGitDisabledErrorMessage() {
 	return showMessage(
 		'error',
-		'GitLens requires Git to be enabled. Please re-enable Git \u2014 set `git.enabled` to true and reload.',
+		'Git Extended requires Git to be enabled. Please re-enable Git \u2014 set `git.enabled` to true and reload.',
 		SuppressedMessages.GitDisabledWarning,
 	);
 }
@@ -93,14 +93,14 @@ export function showGitDisabledErrorMessage() {
 export function showGitInvalidConfigErrorMessage() {
 	return showMessage(
 		'error',
-		'GitLens is unable to use Git. Your Git configuration seems to be invalid. Please resolve any issues with your Git configuration and reload.',
+		'Git Extended is unable to use Git. Your Git configuration seems to be invalid. Please resolve any issues with your Git configuration and reload.',
 	);
 }
 
 export function showGitMissingErrorMessage() {
 	return showMessage(
 		'error',
-		"GitLens was unable to find Git. Please make sure Git is installed. Also ensure that Git is either in the PATH, or that 'git.path' is pointed to its installed location.",
+		"Git Extended was unable to find Git. Please make sure Git is installed. Also ensure that Git is either in the PATH, or that 'git.path' is pointed to its installed location.",
 		SuppressedMessages.GitMissingWarning,
 	);
 }
@@ -111,7 +111,7 @@ export function showGitVersionUnsupportedErrorMessage(
 ): Promise<MessageItem | undefined> {
 	return showMessage(
 		'error',
-		`GitLens requires a newer version of Git (>= ${required}) than is currently installed (${version}). Please install a more recent version of Git.`,
+		`Git Extended requires a newer version of Git (>= ${required}) than is currently installed (${version}). Please install a more recent version of Git.`,
 		SuppressedMessages.GitVersionWarning,
 	);
 }
@@ -119,14 +119,14 @@ export function showGitVersionUnsupportedErrorMessage(
 export function showInsidersErrorMessage() {
 	return showMessage(
 		'error',
-		'GitLens (Insiders) cannot be used while GitLens is also enabled. Please ensure that only one version is enabled.',
+		'Git Extended (Insiders) cannot be used while Git Extended is also enabled. Please ensure that only one version is enabled.',
 	);
 }
 
 export function showPreReleaseExpiredErrorMessage(version: string, insiders: boolean) {
 	return showMessage(
 		'error',
-		`This GitLens ${
+		`This Git Extended ${
 			insiders ? '(Insiders)' : 'pre-release'
 		} version (${version}) has expired. Please upgrade to a more recent version.`,
 	);
@@ -188,14 +188,14 @@ export async function showWhatsNewMessage(version: string) {
 	const whatsnew = { title: "See What's New" };
 	const result = await showMessage(
 		'info',
-		`GitLens ${version} is here — check out what's new!`,
+		`Git Extended ${version} is here — check out what's new!`,
 		undefined,
 		null,
 		whatsnew,
 	);
 
 	if (result === whatsnew) {
-		void (await env.openExternal(Uri.parse('https://help.gitkraken.com/gitlens/gitlens-release-notes-current/')));
+		void (await env.openExternal(Uri.parse('https://github.com/byrizki/vscode-git-extended/blob/main/CHANGELOG.md')));
 	}
 }
 

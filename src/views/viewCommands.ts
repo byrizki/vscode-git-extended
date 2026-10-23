@@ -1043,7 +1043,7 @@ export class ViewCommands {
 				throw new Error(`Unexpected command: ${command.command}`);
 		}
 
-		// TODO@eamodio Revisit this
+		// TODO Revisit this
 		// return CommitActions.openChanges(node.file, node instanceof ViewRefFileNode ? node.ref : node.commit, {
 		// 	preserveFocus: true,
 		// 	preview: false,

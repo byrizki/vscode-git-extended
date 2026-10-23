@@ -63,7 +63,7 @@ export class VslsGitProvider extends LocalGitProvider {
 	}
 
 	override canHandlePathOrUri(scheme: string, pathOrUri: string | Uri): string | undefined {
-		// TODO@eamodio To support virtual repositories, we need to verify that the path is local here (by converting the shared path to a local path)
+		// TODO To support virtual repositories, we need to verify that the path is local here (by converting the shared path to a local path)
 		return super.canHandlePathOrUri(scheme, pathOrUri);
 	}
 

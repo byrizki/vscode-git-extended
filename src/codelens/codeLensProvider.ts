@@ -487,7 +487,7 @@ export class GitCodeLensProvider implements CodeLensProvider {
 		const recentCommit = first(blame.commits.values());
 		if (recentCommit == null) return lens;
 
-		// TODO@eamodio This is FAR too expensive, but this accounts for commits that delete lines -- is there another way?
+		// TODO This is FAR too expensive, but this accounts for commits that delete lines -- is there another way?
 		// if (lens.uri != null) {
 		// 	const commit = await this.container.git.getCommitForFile(lens.uri.repoPath, lens.uri.fsPath, {
 		// 		range: lens.blameRange,

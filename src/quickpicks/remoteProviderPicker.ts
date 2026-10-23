@@ -21,7 +21,7 @@ export class ConfigureCustomRemoteProviderCommandQuickPickItem extends CommandQu
 
 	override async execute(): Promise<void> {
 		await env.openExternal(
-			Uri.parse('https://github.com/gitkraken/vscode-gitlens#remote-provider-integration-settings-'),
+			Uri.parse('https://github.com/byrizki/vscode-git-extended#remote-provider-integration-settings-'),
 		);
 	}
 }

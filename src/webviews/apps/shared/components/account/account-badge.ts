@@ -15,7 +15,7 @@ const template = html<AccountBadge>`
 		<pop-over placement="${x => x.placement}" class="badge-popover">
 			${x => x.popoverText}
 			<br /><br />
-			✨ indicates GitLens+ features
+			✨ indicates Git Extended+ features
 		</pop-over>
 	</template>
 `;
@@ -103,7 +103,7 @@ export class AccountBadge extends FASTElement {
 	@volatile
 	get label() {
 		if (this.subscription == null) {
-			return 'GitLens Free';
+			return 'Git Extended Free';
 		}
 
 		let label = this.subscription.plan.effective.name;
@@ -111,11 +111,11 @@ export class AccountBadge extends FASTElement {
 			case SubscriptionState.Free:
 			case SubscriptionState.FreePreviewTrialExpired:
 			case SubscriptionState.FreePlusTrialExpired:
-				label = 'GitLens Free';
+				label = 'Git Extended Free';
 				break;
 			case SubscriptionState.FreeInPreviewTrial:
 			case SubscriptionState.FreePlusInTrial: {
-				label = 'GitLens Pro (Trial)';
+				label = 'Git Extended Pro (Trial)';
 				break;
 			}
 			case SubscriptionState.VerificationRequired:
@@ -138,7 +138,7 @@ export class AccountBadge extends FASTElement {
 	@volatile
 	get popoverText() {
 		return this.isPro
-			? 'You have access to all GitLens and GitLens+ features on any repo.'
-			: 'You have access to GitLens+ features on local & public repos, and all other GitLens features on any repo.';
+			? 'You have access to all Git Extended and Git Extended+ features on any repo.'
+			: 'You have access to Git Extended+ features on local & public repos, and all other Git Extended features on any repo.';
 	}
 }

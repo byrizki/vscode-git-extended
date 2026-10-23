@@ -7,7 +7,7 @@ import { getEditorCommand } from './system/utils';
 let _terminal: Terminal | undefined;
 let _disposable: Disposable | undefined;
 
-const extensionTerminalName = 'GitLens';
+const extensionTerminalName = 'Git Extended';
 
 function ensureTerminal(): Terminal {
 	if (_terminal == null) {

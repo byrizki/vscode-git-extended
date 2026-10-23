@@ -7,7 +7,7 @@
 dist/webviews/*.css
 emoji/**
 images/docs/sponsors/**
-images/docs/gitlens-preview.gif
+images/docs/git-extended-preview.gif
 images/icons/**
 images/originals/**
 node_modules/**

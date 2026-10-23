@@ -329,7 +329,7 @@ export abstract class ViewBase<
 	get activeSelection(): ViewNode | undefined {
 		if (this.tree == null || this.root == null) return undefined;
 
-		// TODO@eamodio: https://github.com/microsoft/vscode/issues/157406
+		// TODO: https://github.com/microsoft/vscode/issues/157406
 		return this.tree.selection[0];
 	}
 

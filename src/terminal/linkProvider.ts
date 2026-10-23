@@ -102,7 +102,7 @@ export class GitTerminalLinkProvider implements Disposable, TerminalLinkProvider
 
 			if (branchResults === undefined) {
 				branchResults = await this.container.git.getBranches(repoPath);
-				// TODO@eamodio handle paging
+				// TODO handle paging
 			}
 
 			let branch = branchResults.values.find(r => r.name === ref);
@@ -126,7 +126,7 @@ export class GitTerminalLinkProvider implements Disposable, TerminalLinkProvider
 
 			if (tagResults === undefined) {
 				tagResults = await this.container.git.getTags(repoPath);
-				// TODO@eamodio handle paging
+				// TODO handle paging
 			}
 
 			const tag = tagResults.values.find(r => r.name === ref);
