@@ -394,9 +394,11 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 			let worktree: GitWorktree | undefined;
 			try {
 				worktree = await state.repo.createWorktree(uri, {
-					commitish: state.reference?.name,
+					commitish: state.reference?.ref ?? state.reference?.name,
 					createBranch: state.flags.includes('-b') ? state.createBranch : undefined,
-					detach: state.flags.includes('--detach'),
+					detach:
+						state.flags.includes('--detach') ||
+						(!state.flags.includes('-b') && state.reference?.refType !== 'branch'),
 					force: state.flags.includes('--force'),
 				});
 

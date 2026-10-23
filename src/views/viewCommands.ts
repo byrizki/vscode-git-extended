@@ -71,7 +71,6 @@ import {
 	ViewRefNode,
 } from './nodes/viewNode';
 import { WorktreeNode } from './nodes/worktreeNode';
-import { WorktreesNode } from './nodes/worktreesNode';
 
 interface CompareSelectedInfo {
 	ref: string;
@@ -439,13 +438,15 @@ export class ViewCommands {
 	}
 
 	@debug()
-	private async createWorktree(node?: BranchNode | WorktreesNode) {
-		if (node instanceof WorktreesNode) {
-			node = undefined;
-		}
-		if (node != null && !(node instanceof BranchNode)) return undefined;
+	private async createWorktree(node?: ViewNode) {
+		const from =
+			node instanceof ViewRefNode
+				? node.ref
+				: node instanceof BranchTrackingStatusNode
+				? node.branch
+				: undefined;
 
-		return WorktreeActions.create(node?.repoPath, undefined, node?.ref);
+		return WorktreeActions.create(getNodeRepoPath(node), undefined, from);
 	}
 
 	@debug()
