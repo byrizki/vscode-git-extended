@@ -8,6 +8,7 @@ node_modules
 images/settings
 *.vsix
 gitlens-*.vsix
+.worktrees/
 tsconfig*.tsbuildinfo
 .yarn
 .DS_Store

@@ -552,22 +552,29 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 		const pickedFriendlyPath = truncateLeft(GitWorktree.getFriendlyPath(pickedUri), 60);
 
 		let canCreateDirectlyInPicked = true;
-		let recommendedRootUri;
+		let recommendedRootUri: Uri;
 
 		const repoUri = state.repo.uri;
-		const trailer = `${basename(repoUri.path)}.worktrees`;
+		const defaultUri = context.defaultUri;
 
-		if (repoUri.toString() !== pickedUri.toString()) {
+		const isWorktreesContainer =
+			basename(pickedUri.path) === '.worktrees' ||
+			pickedUri.path.endsWith('/.worktrees') ||
+			(defaultUri != null && pickedUri.toString() === defaultUri.toString());
+
+		if (isWorktreesContainer) {
+			recommendedRootUri = pickedUri;
+			// Never create directly in the container root; worktrees must be in subfolders
+			canCreateDirectlyInPicked = false;
+		} else if (repoUri.toString() !== pickedUri.toString()) {
 			if (isDescendent(pickedUri, repoUri)) {
-				recommendedRootUri = Uri.joinPath(repoUri, '..', trailer);
-			} else if (basename(pickedUri.path) === trailer) {
-				recommendedRootUri = pickedUri;
+				recommendedRootUri = defaultUri ?? Uri.joinPath(repoUri, '.worktrees');
+				canCreateDirectlyInPicked = false;
 			} else {
-				recommendedRootUri = Uri.joinPath(pickedUri, trailer);
+				recommendedRootUri = Uri.joinPath(pickedUri, '.worktrees');
 			}
 		} else {
-			recommendedRootUri = Uri.joinPath(repoUri, '..', trailer);
-			// Don't allow creating directly into the main worktree folder
+			recommendedRootUri = defaultUri ?? Uri.joinPath(repoUri, '.worktrees');
 			canCreateDirectlyInPicked = false;
 		}
 
@@ -602,7 +609,7 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 					[],
 					{
 						label: isRemoteBranch ? 'Create Local Branch and Worktree' : context.title,
-						description: ' in subfolder',
+						description: canCreateDirectlyInPicked ? ' in subfolder' : undefined,
 						detail: `Will create worktree in $(folder) ${recommendedFriendlyPath}`,
 					},
 					recommendedRootUri,
@@ -614,7 +621,7 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 						label: isRemoteBranch
 							? 'Create New Local Branch and Worktree'
 							: 'Create New Branch and Worktree',
-						description: ' in subfolder',
+						description: canCreateDirectlyInPicked ? ' in subfolder' : undefined,
 						detail: `Will create worktree in $(folder) ${recommendedNewBranchFriendlyPath}`,
 					},
 					recommendedRootUri,

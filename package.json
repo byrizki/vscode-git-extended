@@ -1650,7 +1650,7 @@
 					},
 					"git-extended.worktrees.defaultLocation": {
 						"type": "string",
-						"default": null,
+						"default": "${workspaceFolder}/.worktrees",
 						"markdownDescription": "Specifies the default path in which new worktrees will be created",
 						"scope": "resource",
 						"order": 11

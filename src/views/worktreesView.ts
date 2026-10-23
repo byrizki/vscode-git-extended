@@ -6,7 +6,7 @@ import { Commands } from '../constants';
 import type { Container } from '../container';
 import { ensurePlusFeaturesEnabled, PlusFeatures } from '../features';
 import { GitUri } from '../git/gitUri';
-import type { RepositoryChangeEvent } from '../git/models/repository';
+import type { Repository, RepositoryChangeEvent } from '../git/models/repository';
 import { RepositoryChange, RepositoryChangeComparisonMode } from '../git/models/repository';
 import type { GitWorktree } from '../git/models/worktree';
 import { executeCommand } from '../system/command';
@@ -54,8 +54,21 @@ export class WorktreesViewNode extends RepositoriesSubscribeableNode<WorktreesVi
 
 			this.view.message = undefined;
 
-			const splat = repositories.length === 1;
-			this.children = repositories.map(
+			// Deduplicate repositories that share the same main repo (i.e. worktrees of the same repo)
+			const uniqueRepos: Repository[] = [];
+			const seen = new Set<string>();
+
+			for (const repo of repositories) {
+				const mainRepo = await repo.getMainRepository();
+				const key = mainRepo?.path ?? repo.path;
+				if (!seen.has(key)) {
+					seen.add(key);
+					uniqueRepos.push(mainRepo ?? repo);
+				}
+			}
+
+			const splat = uniqueRepos.length === 1;
+			this.children = uniqueRepos.map(
 				r => new WorktreesRepositoryNode(GitUri.fromRepoPath(r.path), this.view, this, r, splat),
 			);
 		}

@@ -2559,10 +2559,10 @@ export class GitProviderService implements Disposable {
 		let defaultUri = await provider.getWorktreesDefaultUri?.(rp);
 		if (defaultUri != null) return defaultUri;
 
-		// If we don't have a default set, default it to the parent folder of the repo folder
+		// If we don't have a default set, default it to the .worktrees folder of the repo folder
 		defaultUri = this.getRepository(rp)?.uri;
 		if (defaultUri != null) {
-			defaultUri = Uri.joinPath(defaultUri, '..');
+			defaultUri = Uri.joinPath(defaultUri, '.worktrees');
 		}
 		return defaultUri;
 	}

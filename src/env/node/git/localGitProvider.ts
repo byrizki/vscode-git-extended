@@ -1,6 +1,6 @@
 import { readdir, realpath } from 'fs';
 import { homedir, hostname, userInfo } from 'os';
-import { resolve as resolvePath } from 'path';
+import { basename, resolve as resolvePath } from 'path';
 import { env as process_env } from 'process';
 import type { CancellationToken, Event, TextDocument, WorkspaceFolder } from 'vscode';
 import { Disposable, env, EventEmitter, extensions, FileType, Range, Uri, window, workspace } from 'vscode';
@@ -613,6 +613,7 @@ export class LocalGitProvider implements GitProvider, Disposable {
 			accumulator.add(current);
 			return accumulator;
 		}, new Set<string>());
+		excludes.add('.worktrees');
 
 		let repoPaths;
 		try {
@@ -685,7 +686,7 @@ export class LocalGitProvider implements GitProvider, Disposable {
 				for (f of files) {
 					if (f.name === '.git') {
 						repositories.push(resolvePath(root, f.name));
-					} else if (depth >= 0 && f.isDirectory() && !excludes.has(f.name)) {
+					} else if (depth >= 0 && f.isDirectory() && !excludes.has(f.name) && f.name !== '.worktrees') {
 						try {
 							await this.repositorySearchCore(resolvePath(root, f.name), depth, excludes, repositories);
 						} catch (ex) {
@@ -4723,7 +4724,13 @@ export class LocalGitProvider implements GitProvider, Disposable {
 	@log()
 	async getWorktreesDefaultUri(repoPath: string): Promise<Uri | undefined> {
 		let location = configuration.get('worktrees.defaultLocation');
-		if (location == null) return undefined;
+		if (location == null) {
+			const folder = this.container.git.getRepository(repoPath)?.folder;
+			return this.getAbsoluteUri(
+				folder?.uri != null ? Uri.joinPath(folder.uri, '.worktrees') : '.worktrees',
+				repoPath,
+			);
+		}
 
 		if (location.startsWith('~')) {
 			location = joinPaths(homedir(), location.slice(1));
@@ -4732,8 +4739,8 @@ export class LocalGitProvider implements GitProvider, Disposable {
 		const folder = this.container.git.getRepository(repoPath)?.folder;
 		location = interpolate(location, {
 			userHome: homedir(),
-			workspaceFolder: folder?.uri.fsPath,
-			workspaceFolderBasename: folder?.name,
+			workspaceFolder: folder?.uri.fsPath ?? repoPath,
+			workspaceFolderBasename: folder?.name ?? basename(repoPath),
 		});
 
 		return this.getAbsoluteUri(location, repoPath);
